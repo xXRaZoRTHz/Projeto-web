@@ -31,7 +31,7 @@
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
                     </div>
                     
-                    <!-- Botão de menu hamburguer (aparece em telas pequenas) -->
+                    <!-- Botão de menu hamburguer-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -94,10 +94,10 @@
     <main>
         <!-- banner falta setar um texto pra cada item--> 
         <section >
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade img-fluid" data-bs-ride="carousel"">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="height: 600px; object-fit: cover;" alt=".">
+                        <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="max-height: 600px; object-fit: cover;" alt=".">
                         <div class="container h-100">
                             <div class="position-absolute rounded bannerbox1">
                                 <h2>Faça um agendamento agora!</h2>
@@ -140,15 +140,8 @@
         <!--serviços  -->
         <!-- Aqui falta colocar as imagens dos serviços e estiliza-las -->
         <section >
-            <div class="seccao container-fluid">
+            <div class="seccao container">
                 <h2>Serviços</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-
-
-                </div>
-
             </div>
             <div class="row justify-content-center text-center ">
                 <div class="col-md-4 col-sd-12 my-5">
@@ -197,26 +190,54 @@
         -->
         <!-- newsletter -->
         <section>
-            <div class="seccao container-fluid">
+            <div class="seccao container">
                 <h2>Newsletter</h2>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                </div>
-            </div>
             <div>
-                <div class="d-flex newsl">
-                <img src="" alt="">
-                <p></p>
-                <input type="email" name="" id="" placeholder="Insira seu Email aqui!" class="email">
-                <input class="botao px-3 btn btn-primary" type="submit" value="Receber Email!" >
-
-                </div>
+                <nav class="navbar newsl">
+                    <div class="container-fluid">
+                        <img src="" alt="">
+                        <p class="">Receba as melhores ofertas e novidades!</p>
+                        <form class="d-flex" >
+                        <input type="email" name="" id="" placeholder="Insira seu Email!" class="email form-control mx-1" aria-label="Email">
+                        <input class="botao btn btn-primary" type="submit" value="Receber Email!" >
+                      </form>
+                    </div>
+                  </nav>
             </div>
         </section>
+        <section>
+            <div class="seccao container">
+                <h2>Por que nos escolher</h2>
+            </div>
+            <div class="carousel-item active">
+                        <img src="../img/banner/banner.jpg" class="img-fluid d-block mx-auto usimg" style="max-height: 600px; object-fit: cover;" alt=".">
+                        <div class="container h-100">
+                            <div class="position-absolute rounded usbox">
+                                <h2>Sobre nois ai</h2>
+                                <p>LOREM IPSUM</p>
+                                <button class="btn btn-primary botao">é nois!</button>
+                            </div>
+                        </div>
+                    </div>
+        </section>
     </main>
-    <footer>
-
+    <footer >
+        <div class="row">
+            <div class="col-md-6 col-sd-12">
+                <h5>Informações</h5>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="">Sobre nós</a>
+                    <a class="nav-link" href="">Fale conosco</a>
+                    <a class="nav-link" href="">Cancelamentos e reembolsos</a>
+                    <a class="nav-link" href=""><img src="../img/principais/livro.png" alt=""></a>
+                </nav>
+            </div>
+            <div class="col-md-6 col-sd-12 ">
+                <h5>Métodos de pagamento</h5>
+                <img class="mt-4" src="../img/principais/metodos.png" alt="">
+            </div>
+        </div>
     </footer>
 </body>
 </html>
