@@ -20,7 +20,7 @@ header p{
     color: var(--text);
 }
 main{
-    height: 2100px;
+    height: 2600px;
 }
 .navbar-nav .nav-link {
     color: var(--text);
@@ -37,38 +37,38 @@ main{
 .bannerbox1 {
     background-color: var(--bgbox);
     padding: 40px;
-    border-radius: 20px; /* Arredonda os cantos */
+    border-radius: 20px; 
     width: 500px;
     text-align: center;
     position: absolute; /* pra posicionar sobre o banner */
     bottom: 150px;
     right: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: white;
+    color: var(--text);
 }
 .bannerbox2 {
     background-color: var(--bgbox);
     padding: 40px;
-    border-radius: 20px; /* Arredonda os cantos */
+    border-radius: 20px; 
     width: 500px;
     text-align: center;
     position: absolute; /* pra posicionar sobre o banner */
     bottom: 150px;
     left: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: white;
+    color: var(--text);
 }
 .bannerbox3 {
     background-color: var(--bgbox);
     padding: 40px;
-    border-radius: 20px; /* Arredonda os cantos */
+    border-radius: 20px; 
     width: 500px;
     text-align: center;
     position: absolute; /* pra posicionar sobre o banner */
     bottom: 150px;
     right: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: white;
+    color: var(--text);
 }
 /* aqui são os botões do banner */
 .bannerbox1 button{
@@ -141,17 +141,48 @@ box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
     width: 500px;
     text-align: center;
     position: absolute; /* pra posicionar sobre o banner */
-    bottom: 150px;
-    left: 200px;
     border: 2px solid var(--bgstrokebox);
     color: white;
+    top: 1800px;
+    right: 800px;
 }
 .usimg{
 width: 80%;
+}
+.servbox{
+    background-color: var(--bgbox);
+    width: 50%;
+    border: 1px solid var(--bgstrokebox);
+    border-radius: 20px;
+    padding: 50px;
+    width: 450px;
+    max-height: 300px;
+}
+iframe{
+    border-radius: 20px;
+    max-height: 300px;
+    max-width: 100%;
+
 }
 footer{
     background-color: var(--bgtheme);
 }
 footer img{
-    height: 50%;
+    max-height: 50%;
+}
+.livroimg{
+    max-height: 75px;
+}
+/* cor dos links do footer */
+.textcolor{
+    color: var(--text);
+    display: inline-block;
+}
+#backToTop {
+    z-index: 999;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 24px;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
 }
