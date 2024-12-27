@@ -181,8 +181,9 @@ footer img{
 #backToTop {
     z-index: 999;
     border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 24px;
+    padding: 5px 10px;
+    font-size: 20px;
     display: none;
     transition: opacity 0.3s ease-in-out;
+    background-color: var(--bgstrokebox);
 }
