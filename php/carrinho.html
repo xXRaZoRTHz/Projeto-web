@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/carrinho.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.php">
+                         <a href="index.html">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -50,7 +51,7 @@
                                 <a class="nav-link" href="#">Serviços</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contactos">Contactos</a>
+                                <a class="nav-link" href="#">Contatos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Fale conosco</a>
@@ -78,13 +79,13 @@
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="carrinho.html">
+                    <a href="">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
                     </a>
                     <p class="mt-2">Carrinho</p>
                 </div>
                 <div class="text-center">
-                    <a href="login.html">
+                    <a href="">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
                     </a>
                     <p class="mt-2">Login</p>
@@ -94,159 +95,37 @@
     </section>
 </header>
     <main>
-        <!-- banner falta setar um texto pra cada item--> 
-        <section >
-            <div id="carouselExampleFade" class="carousel slide carousel-fade img-fluid" data-bs-ride="carousel"">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 243px; object-fit: cover;" alt=".">
-                        <div class="container h-100">
-                            <div class=" bannerbox1">
-                                <h2>Faça um agendamento agora!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/banner/banner3.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 243px;  overflow: hidden;" alt="...">
-                        <div class="container h-100">
-                            <div class=" bannerbox2">
-                                <h2>Faça um agendamento agora!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/banner/vetbanner.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 243px; ; overflow: hidden;" alt=".">
-                        <div class="container h-100">
-                            <div class=" bannerbox3">
-                                <h2>Faça um agendamento agoraaa!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </section>
-        <!--serviços  -->
-        <!-- Aqui falta colocar as imagens dos serviços e estiliza-las -->
-        <section >
-            <div class="seccao container">
-                <h2>Serviços</h2>
-            </div>
-            <div class="row justify-content-center text-center ">
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Saúde Pet</h3>
-                    <img src="" alt="">
-                    <h2>Check-up Completo</h2>
-                </div>
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Emergência</h3>
-                    <img src="" alt="">
-                    <h2>Atendimento 24h</h2>
-                </div>
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Estética</h3>
-                    <img src="" alt="">
-                    <h2>Banho e Tosa</h2>
-                </div>
-                <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5">Ver Todos</button>
-                </div>
-            </div>
-        </section>
-        <!-- Aqui há de ser a farmácia se der tempo de implementá-la 
-        <section >
-            <div class="row justify-content-center text-center gap-5">
-                <div class="col-md-3 col-sm-12 justify-content-center">
-                    <h3>Saúde Pet</h3>
-                    <img src="" alt="">
-                    <h2>Check-up Completo</h2>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <h3>Emergência</h3>
-                    <img src="" alt="">
-                    <h2>Atendimento 24h</h2>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <h3>Estética</h3>
-                    <img src="" alt="">
-                    <h2>Banho e Tosa</h2>
-                </div>
-                <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5">Ver Todos</button>
-                </div>
-            </div>
-        </section>
-        -->
-        <!-- newsletter -->
         <section>
-            <div class="seccao container">
-                <h2>Newsletter</h2>
-            </div>
-            <div>
-                <nav class="navbar newsl">
-                    <div class="container-fluid">
-                        <img src="" alt="">
-                        <p class="">Receba as melhores ofertas e novidades!</p>
-                        <form class="d-flex" >
-                        <input type="email" name="" id="" placeholder="Insira seu Email!" class="email form-control mx-1" aria-label="Email">
-                        <input class="botao btn btn-primary" type="submit" value="Receber Email!" >
-                      </form>
-                    </div>
-                  </nav>
-            </div>
-        </section>
-        <!-- Por que nos escolher hein??????¿ -->
-        <section >
-            <div class="seccao container">
-                <h2>Por que nos escolher</h2>
-            </div>
-            <div class="container-fluid">
-                        <img src="../img/banner/banner.jpg" class="img-fluid d-block mx-auto usimg" style="max-height: 600px; overflow: hidden; object-fit: cover;" alt=".">
-                        <div class="container h-100">
-                            <div class="position-absolute rounded usbox">
-                                <h2>Sobre nois ai, há de ter nossas redes sociais</h2>
-                                <p>LOREM IPSUM</p>
-                                <nav  class="nav justify-content-center">
-                                    <a class="nav-link" href=""><img src="../img/principais/instagram.png" alt="Nosso Instagram"></a>
-                                    <a class="nav-link" href=""><img src="../img/principais/facebook.png" alt="Nosso Facebook"></a>
-                                    <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="Nosso Twitter"></a>
-                                    <a class="nav-link" href=""><img src="../img/principais/youtube 1.png" alt="Nosso YouTube"></a></nav>
-                                <button class="btn btn-primary botao">é nois!</button>
-                            </div>
-                        </div>
-                    </div>
-        </section>
-        <!-- Contactos -->
-        <section id="contactos">
-            <div class="seccao container">
-                <h2>Contactos</h2>
-            </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12 mb-5">
-                    <div class="servbox mx-auto img-fluid">
-                        <h5>Telefone: 987 675 456</h5>
-                        <h5>Email: geral.vetworld@gmail.com</h5>
-                        <h5>Endereço: Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</h5>
+                <div class="col-md-9 col-sm-12">
+                    <div class="title mt-5 ms-md-5 ms-2">
+                        <h1>Carrinho</h1>
+                        <span class="linhaTitle ms-md-3 ms-2"></span>
+                        </div>
+                    <div class="col-8">
+                        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                        <!-- os itens estarão aqui -->
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="caixa mx-auto">
+                        <div class="nItens">
+                            <span>0 artigos</span>
+                            <span>0,00€</span>
+                        </div>
+                        <span class="linha"></span>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>0,00€</span>
+                        </div>
+                        <div class="taxas">
+                            <span>Impostos incluidos </span>
+                            <span> 0,00€</span>
+                        </div>
+                        <button class="btn btn-primary botao" onclick="window.location.href='faturacao.html';">Finalizar compra</button>
                     </div>
                 </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="img-fluid">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3113.327785456777!2d-9.153204785460298!3d38.71028275097347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRua%20das%20Rosas%2C%20N%C2%BA%20125%2C%20Loja%202%201200-345%20Lisboa%2C%20Portugal!5e0!3m2!1spt-PT!2spt!4v1735214179828!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
             </div>
         </section>
         <!-- Botão do TOP -->

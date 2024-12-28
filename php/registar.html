@@ -105,13 +105,6 @@
               </div>
             </div>
             <div class="col-md-4">
-              <label for="nif" class="form-label">NIF</label>
-              <input type="text" class="form-control" id="nif" required>
-              <div class="valid-feedback">
-                Válido!
-              </div>
-            </div>
-            <div class="col-md-4">
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
                 <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
@@ -145,8 +138,63 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                 <label class="form-check-label" for="invalidCheck">
-                  Aceitar os termos e condições. <a href="">Leia aqui</a>
+                  Aceitar os termos e condições. <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Leia aqui</a>
                 </label>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Termos e condições</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Agradecemos por escolher a nossa clínica veterinária. Para garantir a transparência e proteção dos nossos utilizadores e serviços, pedimos que leia atentamente os Termos e Condições antes de efetuar o registo no nosso site. Ao registar-se, concorda em cumprir os seguintes termos:  </p>
+                                <h3>1. Aceitação dos Termos</h3>
+                                <p>Ao criar uma conta no site da Clínica Veterinária, declara que leu, entendeu e concorda com estes Termos e Condições. Caso não concorde com qualquer parte destes termos, não deverá concluir o registo.</p>
+                                <h3>2. Elegibilidade para Registo</h3>
+                                <p>- Apenas utilizadores com idade igual ou superior a 18 anos podem registar-se no site.</p>
+                                <p>- É necessário fornecer informações pessoais precisas, atuais e completas durante o processo de registo.</p>
+                                <h3>3. Uso Permitido</h3>
+                                <p>Ao registar-se no nosso site, compromete-se a:</p>
+                                <p>- Utilizar o site apenas para fins legais e relacionados com os serviços da clínica, como agendamento de consultas, acesso a histórico de tratamentos e pedidos de informações.</p>
+                                <p>- Não partilhar o seu acesso ou informações da conta com terceiros.</p>
+                                <h3>4. Dados Pessoais</h3>
+                                <p>- Os dados fornecidos durante o registo serão tratados de acordo com a nossa <strong>Política de Privacidade</strong>.</p>
+                                <p>- A clínica compromete-se a proteger a sua privacidade e os seus dados pessoais, utilizando-os apenas para gerir os serviços oferecidos.</p>
+                                <p>- É sua responsabilidade manter os dados da conta atualizados.</p>
+                                <h3>5. Responsabilidade do Utilizador</h3>
+                                <p>- O utilizador é responsável por manter a confidencialidade das credenciais de acesso à conta.</p>
+                                <p>- Em caso de uso não autorizado ou suspeita de violação da conta, deve informar imediatamente a clínica.</p>
+                                <h3>6. Serviços Disponíveis</h3>
+                                <p>Após o registo, o utilizador poderá:</p>
+                                <p>- Agendar e gerir consultas para os seus animais de estimação.</p>
+                                <p>- Aceder a informações sobre tratamentos e serviços.</p>
+                                <p>- Receber notificações e atualizações sobre a saúde e bem-estar dos seus animais.</p>
+                                <h3>7. Direitos da Clínica</h3>
+                                <p>Reservamo-nos o direito de:</p>
+                                <p>- Suspender ou encerrar a conta de utilizadores que violem estes Termos e Condições ou utilizem o site de forma inadequada.</p>
+                                <p>- Alterar ou descontinuar temporariamente os serviços disponíveis no site por motivos técnicos ou administrativos.</p>
+                                <h3>8. Limitação de Responsabilidade</h3>
+                                <p>- A clínica não será responsável por danos diretos, indiretos ou incidentais decorrentes do uso do site, incluindo, mas não limitado a, perda de dados ou interrupção de serviços.</p>
+                                <p>- O site é fornecido "tal como está" e pode conter erros ou interrupções temporárias.</p>
+                                <h3>9. Alterações aos Termos</h3>
+                                <p>Podemos atualizar estes Termos e Condições periodicamente. Quaisquer alterações serão notificadas no site. O uso continuado do site após a notificação implica aceitação das alterações.</p>
+                                <h3>10. Resolução de Disputas</h3>
+                                <p>Qualquer disputa relacionada com o uso do site será resolvida de acordo com as leis em vigor em [país/região da clínica], em tribunais competentes.</p>
+                                <h3>11. Contato</h3>
+                                <p>Se tiver dúvidas ou preocupações sobre estes Termos e Condições, pode contactar-nos através de:</p>
+                                <p>- <strong>Email:</strong> geral.vetworld@gmail.com</p>
+                                <p>- <strong>Telefone:</strong> 987 675 456</p>
+                                <p>- <strong>Endereço:</strong> Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</p>
+                                <p><strong>Ao clicar em "Aceito", confirma que leu e concorda com estes Termos e Condições.</strong></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="invalid-feedback">
                   Você deve aceitar antes de se registar.
                 </div>
@@ -155,13 +203,16 @@
             <div class="col-12">
               <button class="btn btn-primary" onclick="validaNIF()" type="submit">Submit form</button>
             </div>
-          </form>
-          
+        </form>
+        <!-- Botão do TOP -->
+        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </button>
     </main>
     <footer class="pt-2 " >
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sd-12">
+                <div class="col-md-6 col-sm-12">
                     <h5 class="textcolor">Informações</h5>
                     <nav class="nav flex-column ">
                         <div>
@@ -178,7 +229,7 @@
                         </div>
                     </nav>   
                 </div>
-                <div class="col-md-6 col-sd-12 text-md-end">
+                <div class="col-md-6 col-sm-12 text-md-end">
                     <h5 class="mx-md-5 textcolor">Métodos de pagamento</h5>
                     <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="Métodos de pagamento: MBWay, Multibanco, Paypal, Maestro, MasterCard, Visa">
                 </div>
@@ -273,4 +324,30 @@ function validaNIF($nif, $ignoreFirst=true) {
     }, false)
   })
 })()
+</script>
+<!-- termos e condições -->
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})
+</script>
+<!-- botão do top -->
+<script>
+    window.addEventListener("scroll", function () {
+        const button = document.getElementById("backToTop");
+        if (window.scrollY > 200) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+    document.getElementById("backToTop").addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 </script>

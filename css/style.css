@@ -19,6 +19,13 @@ header{
 header p{
     color: var(--text);
 }
+html {
+    scroll-behavior: smooth;
+}
+/* pra corrigir o scroll dos contactos */
+#contactos {
+    scroll-margin-top: 250px;
+}
 main{
     height: 2600px;
 }

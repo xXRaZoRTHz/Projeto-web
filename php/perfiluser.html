@@ -28,7 +28,7 @@
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.php">
+                         <a href="index.html">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -95,16 +95,30 @@
     </section>
 </header>
     <main>
-        <form action="">
-            <label for="inputRecEmail" class="form-label">Recuperar senha</label>
-            <div id="emailHelpBlock" class="form-text">
-                Insira o endereço de e-mail associado à sua conta VetWorld.
+        <section>
+            <div class="row">          
+                    <div class="list-group col-md-3 text-center menu">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        Dados do perfil
+                        </a>
+                        <a href="agendamentos.html" class="list-group-item list-group-item-action container-fluid">Agendamentos</a>
+                        <a href="animais.html" class="list-group-item list-group-item-action container-fluid">Animais</a>
+                        <a href="histcompras.html" class="list-group-item list-group-item-action container-fluid">Histórico de compras</a>
+                </div>
+                <div class="col-md-9">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><p> <strong>Nome do utilizador:</strong> </p></li>
+                        <li class="list-group-item"><p> <strong>Email:</strong> </p></li>
+                        <li class="list-group-item"><p> <strong>Telefone:</strong> </p></li>
+                        <li class="list-group-item"><a class="btn btn-primary" href="">Alterar Dados</a></li>
+                      </ul>
+                </div>
             </div>
-            <input type="email" id="inputRecEmail" class="form-control" aria-describedby="emailHelpBlock">
-            </div>
-                <button type="submit" class="btn btn-primary btnlog">Entrar</button>
-            </div>
-        </form>
+        </section>
+        <!-- Botão do TOP -->
+        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </button>
     </main>
     <footer class="pt-2 " >
         <div class="container">

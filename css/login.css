@@ -2,8 +2,6 @@ main{
     height: 500px;
 }
 .login {
-
-    width: 100%;
     max-width: 700px;
     min-width: 200px;
     background-color: var(--bgtheme);
@@ -26,4 +24,10 @@ main{
     align-items: center;
     height: 400px;
 
+}
+.menu{
+    border: 1px solid black;
+    height: 500px;
+    padding-right:0px;
+    border-radius: 0px;
 }
