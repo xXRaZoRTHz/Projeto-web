@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -27,7 +26,7 @@
             <!-- Navbar -->
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
-                    <div class="text-center navbar-brand">
+                    <div class="text-center navbar-brand me-5">
                          <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
@@ -51,7 +50,7 @@
                                 <a class="nav-link" href="#">Agende Agora</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contatos</a>
+                                <a class="nav-link" href="#contactos">Contactos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Fale conosco</a>
@@ -79,13 +78,13 @@
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="">
+                    <a href="carrinho.html">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
                     </a>
                     <p class="mt-2">Carrinho</p>
                 </div>
                 <div class="text-center">
-                    <a href="">
+                    <a href="login.html">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
                     </a>
                     <p class="mt-2">Login</p>
@@ -94,38 +93,65 @@
         </div>
     </section>
 </header>
-    <main>
-        <div class="form-container">
-            <form>
-              <div class="login">
-                <h1 class="text-center mb-5">Login</h1>
-                <div class="row g-1 mb-3 ms-5 align-items-center">
-                  <div class="col-3">
-                    <label for="inputEmail" class="col-form-label" style="min-width: 200px;">Email</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com">
-                  </div>
+    <main class="h-auto">
+        <!-- CARTÕES -->
+        <section>
+            <div class="card-group mt-5">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                          <img src="../img/eutanasia.jpg" class="card-img-top" alt="Imagem de eutanásia veterinária">
+                          <div class="card-body">
+                            <h5 class="card-title">Eutanásia e Cremação</h5>
+                            <p class="card-text">Procedimento humanitário para aliviar o sofrimento de animais, com opções de cremação individual ou coletiva.</p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-1 mb-3 ms-5 align-items-center">
-                  <div class="col-3">
-                    <label for="Password" class="col-form-label" style="min-width: 100px;">Password</label>
-                  </div>
-                  <div class="col-auto">
-                    <input type="password" id="Password" class="form-control" placeholder="Senha">
-                  </div>
+            </div>
+            <!-- Conteúdo dentro dos cartões -->
+            <div class="modal fade" id="modal1"  tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal1">Eutanásia e Cremação</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Procedimento humanitário para aliviar o sofrimento de animais com doenças incuráveis, com opção de cremação individual ou coletiva.</p>
+                            <p><strong>Preço:</strong></p>
+                            <ul>
+                                <li><strong>Eutanásia:</strong> 100€.</li>
+                                <li><strong>Cremação individual:</strong> 300€.</li>
+                                <li><strong>Cremação coletiva:</strong> 150€.</li>
+                            </ul>
+                            <p><strong class="text-success">Benefícios:</strong> Proporciona um final digno e respeitoso.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3 ms-5">
-                  <a href="redefsenha.html">Esqueci a palavra passe</a>
-                </div>
-                <div class="mb-3 ms-5">
-                  <label class="form-label">Ainda não é registado? <a href="registar.html">Registar-se</a></label>
-                </div>
-                <button type="submit" class="btn btn-primary btnlog">Entrar</button>
-              </div>
-            </form>
-          </div>
-          
+            </div>
+        </section>
+        <!-- Paginação -->
+         <div class="container ">
+        <nav aria-label="Page navigation example" >
+            <ul class="pagination justify-content-center mt-5">
+              <li class="page-item"><a class="page-link" href="servicos2.html">Anterior</a></li>
+              <li class="page-item"><a class="page-link" href="servicos.html">1</a></li>
+              <li class="page-item"><a class="page-link" href="servicos2.html">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Botão do TOP -->
+        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </button>
     </main>
     <footer class="pt-2 " >
         <div class="container">
@@ -142,8 +168,8 @@
                         <div>
                             <a class="nav-link textcolor" href="">Cancelamentos e reembolsos</a>
                         </div>
-                        <div>
-                            <a class="nav-link" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
+                        <div class="mt-2 mb-3">
+                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
                         </div>
                     </nav>   
                 </div>
@@ -185,4 +211,13 @@
             behavior: "smooth"
         });
     });
+</script>
+<!-- info dos serviços -->
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})
 </script>

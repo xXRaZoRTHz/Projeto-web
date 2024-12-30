@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="João Oliveira, Lucas Lacerda e Tasmini Satar">
+    <meta name="description" content="Clínica Veterinária Online">
+    <!-- se quiserem adicionar mais keywords, fiquem a vontade -->
+    <meta name="keywords" content="clínica veterinária,clínica veterinária em Lisboa,veterinário em Lisboa, atendimento veterinário, consulta veterinária, saúde animal, cuidados com animais, veterinário, vacinação de pets, emergência veterinária, cirurgia veterinária, hospital veterinário, clínica veterinária perto de mim, exames laboratoriais para pets, veterinário especializado, pet shop, cuidados com cães e gatos, exames veterinários, clínica para pets, saúde de cães e gatos, veterinário 24h, atendimento de emergência para animais, consultas veterinárias para cães e gatos">
+
+    <meta name="robots" content="follow">
+    <title>VetWorld</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../javascript/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="../javascript/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<header class="sticky-top">
+    <section>
+        <div class="d-flex justify-content-between align-items-center pt-3 container position-top">
+            <!-- Navbar -->
+            <div class="d-flex justify-content-center">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="text-center navbar-brand me-5">
+                         <a href="index.php">
+                        <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
+                        </a>
+                    <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
+                    </div>
+                    
+                    <!-- Botão de menu hamburguer-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Menu de navegação -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav gap-5">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agende Agora</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contactos">Contactos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Fale conosco</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="btn-group" role="group">
+                                    <button type="button" id="dropdownMenuButton" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="../img/principais/pt.png" alt="Bandeira de Portugal" style="width: 30px; height: 20px;">
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">
+                                                <img src="../img/principais/us.png" alt="Bandeira dos EUA" style="width: 30px; height: 20px;"> Estados Unidos
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#">
+                                                <img src="../img/principais/es.png" alt="Bandeira da Espanha" style="width: 30px; height: 20px;"> Espanha
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                                
+                    </div>
+                </nav>
+            </div>
+        <!-- Carrinho e Login -->
+            <div class="d-flex gap-4">
+                <div class="text-center">
+                    <a href="carrinho.html">
+                        <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
+                    </a>
+                    <p class="mt-2">Carrinho</p>
+                </div>
+                <div class="text-center">
+                    <a href="login.html">
+                        <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
+                    </a>
+                    <p class="mt-2">Login</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+    <main class="h-auto">
+        <!-- CARTÕES -->
+        <section>
+            <div class="card-group mt-5">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                          <img src="../img/parasitas.jpg" class="card-img-top" alt="Imagem de controle de parasitas">
+                          <div class="card-body">
+                            <h5 class="card-title">Controle de Parasitas</h5>
+                            <p class="card-text">Aplicação de antipulgas, carrapaticidas e vermífugos para proteger o animal contra parasitas.</p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card h-100">
+                          <img src="../img/radiologia.jpg" class="card-img-top" alt="Imagem de raio-x veterinário">
+                          <div class="card-body">
+                            <h5 class="card-title">Radiologia e Ultrassonografia</h5>
+                            <p class="card-text">Exames de imagem para diagnóstico preciso de problemas internos ou condições ósseas.</p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2">Saber mais</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                          <div class="card h-100">
+                            <img src="../img/checkup.jpg" class="card-img-top" alt="Imagem de check-up veterinário">
+                            <div class="card-body">
+                              <h5 class="card-title">Check-ups Preventivos</h5>
+                              <p class="card-text">Exames regulares para monitorar a saúde do animal e prevenir o desenvolvimento de doenças silenciosas.</p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal3">Saber mais</a>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="card h-100">
+                              <img src="../img/emergencia.jpg" class="card-img-top" alt="Imagem de atendimento veterinário de emergência">
+                              <div class="card-body">
+                              <h5 class="card-title">Atendimento de Emergência</h5>
+                              <p class="card-text">Cuidados rápidos e eficazes para salvar vidas em casos críticos, como acidentes e intoxicações.</p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal4">Saber mais</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="card h-100">
+                              <img src="../img/internacao.jpg" class="card-img-top" alt="Imagem de internação veterinária">
+                              <div class="card-body">
+                              <h5 class="card-title">Internação</h5>
+                              <p class="card-text">Monitoramento intensivo e tratamento especializado para animais em recuperação ou com doenças graves.</p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5">Saber mais</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col">
+                          <div class="card h-100">
+                              <img src="../img/reproducao.jpg" class="card-img-top" alt="Imagem de reprodução animal">
+                              <div class="card-body">
+                              <h5 class="card-title">Serviços de Reprodução</h5>
+                              <p class="card-text">Inseminação artificial, acompanhamento pré-natal e outros serviços relacionados à reprodução segura.</p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal6">Saber mais</a>
+                              </div>
+                          </div>
+                      </div>
+                    
+                </div>
+            </div>
+            <!-- Conteúdo dentro dos cartões -->
+            <div class="modal fade" id="modal1"  tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal1">Controle de Parasitas</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Administração de medicamentos contra pulgas, carrapatos e vermes. Inclui aplicação tópica, comprimidos ou injeções.</p>
+                            <p><strong>Indicado para:</strong> Animais expostos a ambientes externos ou em contato com outros animais.</p>
+                            <p><strong class="text-success">Benefícios:</strong> Prevenção de anemia, infecções de pele e doenças transmitidas por parasitas.</p>
+                            <p><strong>Preço:</strong></p>
+                            <ul>
+                                <li><strong>Antipulgas:</strong> 40€.</li>
+                                <li><strong>Vermífugo:</strong> 20€.</li>
+                            </ul>
+                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal2"  tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal2">Radiologia e Ultrassonografia</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Exames de imagem para avaliar ossos, órgãos internos, e identificar condições como fraturas, tumores ou gestação.</p>
+                            <p><strong class="text-success">Benefícios:</strong> Diagnóstico preciso e não invasivo.</p>
+                            <p><strong>Preço:</strong></p>
+                            <ul>
+                                <li><strong>Raio-X:</strong> 100€.</li>
+                                <li><strong>Ultrassonografia:</strong> 150€.</li>
+                            </ul>
+                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal3"  tabindex="-1" aria-labelledby="modal3" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal3">Check-ups Preventivos</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Exames regulares para monitorar a saúde do animal, especialmente em idosos ou animais com doenças crônicas.</p>
+                            <p><strong>Inclui:</strong> Consultas, exames de sangue, urina e outras avaliações específicas.</p>
+                            <p><strong class="text-success">Benefícios:</strong> Identificação precoce de doenças silenciosas, como insuficiência renal ou diabetes.</p>
+                            <p><strong>Preço:</strong> 80€.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal4"  tabindex="-1" aria-labelledby="modal4" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal4">Atendimento de Emergência</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Atendimento imediato para acidentes, intoxicações ou condições críticas, como insuficiência respiratória.</p>
+                            <p><strong class="text-success">Benefícios:</strong> Resposta rápida que pode salvar vidas.</p>
+                            <p><strong>Preço:</strong> 150€, incluindo consulta de emergência.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal5"  tabindex="-1" aria-labelledby="modal5" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal5">Internação</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Cuidados intensivos para animais em recuperação de cirurgias ou com doenças graves. Inclui monitoramento constante e administração de medicamentos.</p>
+                            <p><strong>Indicado para:</strong> Casos graves que exigem supervisão 24h.</p>
+                            <p><strong>Preço:</strong> 100€ por dia.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="modal6"  tabindex="-1" aria-labelledby="modal6" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal6">Serviços de Reprodução</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Inseminação artificial, diagnóstico de gestação e acompanhamento pré-natal.</p>
+                            <p><strong class="text-success">Benefícios:</strong> Controle reprodutivo e segurança na gestação.</p>
+                            <p><strong>Preço:</strong></p>
+                            <ul>
+                                <li><strong>Acompanhamento pré-natal:</strong> 300€.</li>
+                                <li><strong>Inseminação artificial:</strong> 400€.</li>
+                            </ul>
+                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Paginação -->
+         <div class="container ">
+        <nav aria-label="Page navigation example" >
+            <ul class="pagination justify-content-center mt-5">
+              <li class="page-item"><a class="page-link" href="servicos.html">Anterior</a></li>
+              <li class="page-item"><a class="page-link" href="servicos.html">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="servicos3.html">3</a></li>
+              <li class="page-item"><a class="page-link" href="servicos3.html">Próximo</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Botão do TOP -->
+        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
+            <i class="fa-solid fa-circle-arrow-up"></i>
+        </button>
+    </main>
+    <footer class="pt-2 " >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h5 class="textcolor">Informações</h5>
+                    <nav class="nav flex-column ">
+                        <div>
+                            <a class="nav-link textcolor" href="">Sobre nós</a>
+                        </div>
+                        <div>
+                            <a class="nav-link textcolor" href="">Fale conosco</a>
+                        </div>
+                        <div>
+                            <a class="nav-link textcolor" href="">Cancelamentos e reembolsos</a>
+                        </div>
+                        <div class="mt-2 mb-3">
+                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
+                        </div>
+                    </nav>   
+                </div>
+                <div class="col-md-6 col-sm-12 text-md-end">
+                    <h5 class="mx-md-5 textcolor">Métodos de pagamento</h5>
+                    <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="Métodos de pagamento: MBWay, Multibanco, Paypal, Maestro, MasterCard, Visa">
+                </div>
+            </div>
+        </div>
+        <div class="text-center pb-2 text-white">
+            <p>© 2024 VetWorld. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- para as bandeiras do header-->
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function (event) {
+        const selectedFlag = event.target.querySelector('img').src;
+        const mainButton = document.getElementById('dropdownMenuButton').querySelector('img');
+        mainButton.src = selectedFlag;
+    });
+    });
+</script>
+<!-- para o botão top -->
+<script>
+    window.addEventListener("scroll", function () {
+        const button = document.getElementById("backToTop");
+        if (window.scrollY > 200) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    });
+    document.getElementById("backToTop").addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+<!-- info dos serviços -->
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})
+</script>

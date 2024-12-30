@@ -3,6 +3,8 @@
 --bgbox:rgba(158, 224, 249, 0.7);
 --bgstrokebox: #00B2FF;
 --text: white;
+--boxinfo: #43c1ff;
+--boxinput:#b8e4ff;
 }
 *{
     padding: 0;
@@ -53,6 +55,7 @@ main{
     border: 2px solid var(--bgstrokebox);
     color: var(--text);
 }
+
 .bannerbox2 {
     background-color: var(--bgbox);
     padding: 40px;
@@ -144,10 +147,10 @@ box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
 .usbox {
     background-color: var(--bgbox);
     padding: 40px;
-    border-radius: 20px; /* Arredonda os cantos */
+    border-radius: 20px; 
     width: 500px;
     text-align: center;
-    position: absolute; /* pra posicionar sobre o banner */
+    position: absolute; 
     border: 2px solid var(--bgstrokebox);
     color: white;
     top: 1800px;
@@ -156,6 +159,7 @@ box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
 .usimg{
 width: 80%;
 }
+
 .servbox{
     background-color: var(--bgbox);
     width: 50%;
@@ -179,6 +183,7 @@ footer img{
 }
 .livroimg{
     max-height: 75px;
+
 }
 /* cor dos links do footer */
 .textcolor{
@@ -193,4 +198,24 @@ footer img{
     display: none;
     transition: opacity 0.3s ease-in-out;
     background-color: var(--bgstrokebox);
+}
+/* FAQ */
+.infobox {
+    background-color: var(--boxinfo);
+    color: var(--text);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+.inputbox {
+    background-color: var(--boxinput);
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+}
+.form-control {
+    border-radius: 10px;
 }
