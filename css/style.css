@@ -95,7 +95,7 @@ main{
 }
 /* As barras azuis que separa as seccões do site */
 .seccao{
-    background-color: var(--bgtheme);
+    background-color: var(--boxinfo);
     width: 95%;
     margin-left: auto;
     margin-right:auto;

@@ -8,7 +8,6 @@
     <meta name="description" content="Clínica Veterinária Online">
     <!-- se quiserem adicionar mais keywords, fiquem a vontade -->
     <meta name="keywords" content="clínica veterinária,clínica veterinária em Lisboa,veterinário em Lisboa, atendimento veterinário, consulta veterinária, saúde animal, cuidados com animais, veterinário, vacinação de pets, emergência veterinária, cirurgia veterinária, hospital veterinário, clínica veterinária perto de mim, exames laboratoriais para pets, veterinário especializado, pet shop, cuidados com cães e gatos, exames veterinários, clínica para pets, saúde de cães e gatos, veterinário 24h, atendimento de emergência para animais, consultas veterinárias para cães e gatos">
-
     <meta name="robots" content="follow">
     <title>VetWorld</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -17,6 +16,7 @@
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="../css/carrinho.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -27,8 +27,8 @@
             <!-- Navbar -->
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
-                    <div class="text-center navbar-brand">
-                         <a href="index.html">
+                    <div class="text-center navbar-brand me-5">
+                         <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -42,19 +42,19 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav gap-5">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="servicos.html">Serviços</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Agende Agora</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Serviços</a>
+                                <a class="nav-link" href="#contactos">Contactos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contatos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Fale conosco</a>
+                                <a class="nav-link" href="faq.html">Fale conosco</a>
                             </li>
                             <li class="nav-item">
                                 <div class="btn-group" role="group">
@@ -79,13 +79,13 @@
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="">
+                    <a href="carrinho.html">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
                     </a>
                     <p class="mt-2">Carrinho</p>
                 </div>
                 <div class="text-center">
-                    <a href="">
+                    <a href="login.html">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
                     </a>
                     <p class="mt-2">Login</p>
@@ -94,65 +94,45 @@
         </div>
     </section>
 </header>
-    <main>
-        <section>
-            <div class="position-relative m-4 w-75 mx-auto">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
-                  <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-                <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">3</button>
-            </div>
+    <main class="h-auto">
+        <!-- banner falta setar um texto pra cada item--> 
+        <section >
             <div class="row">
-                <div class="col-md-9 col-sm-12">
+                <div class="col-12">
                     <div class="title mt-5 ms-md-5 ms-2">
-                        <h1>Confirme a sua compra</h1>
-                        <span class="linhaTitle ms-md-3 ms-2"></span>
-                        </div>
-                        <div class="row text-md-center"> 
-                            <div class="col-8">
-                                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                                <!-- os itens estarão aqui -->
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Dados da faturação</h4>
-                                <div class="vstack">
-                                    <div><p>Nome:</p></div>
-                                    <div><p>NIF:</p></div>
-                                    <div><p>Tel:</p></div>
-                                    <div><p>Morada:</p></div>
-                                    <div><p>Cidade:</p></div>
-                                  </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Método de pagamento</h4>
-                                <div class="vstack gap-3">
-                                    <div class="p-2"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 class="me-4 w-100 ">Adicionar animal</h1>
+                        <span class="linhaTitle2 me-4" style="width: 300%;"></span>
                     </div>
-                <div class="col-md-3 col-sm-12">
-                    <div class="caixa mx-auto">
-                        <div class="nItens">
-                            <span>0 artigos</span>
-                            <span>0,00€</span>
+                    
+                    <form action="">
+                        <div class="row mt-5">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="animal" class="form-label"><h3>Nome:</h3></label>
+                                <input type="text" class="form-control" placeholder="Digite o nome do animal" name="nome" id="nomeani">
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="animal" class="form-label"><h3>Selecione a espécie</h3></label>
+                                <select class="form-select" aria-label="Seleção de espécie">
+                                    <option selected>Escolha a espécie</option>
+                                    <option value="1">Cão</option>
+                                    <option value="2">Gato</option>
+                                    <option value="3">Ave</option>
+                                    <option value="4">Réptil</option>
+                                    <option value="5">Roedor</option>
+                                    <option value="6">Coelho</option>
+                                    <option value="7">Equino</option>
+                                    <option value="8">Bovino</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="date" class="form-label" aria-label="Selecione a data"><h3>Data de nascimento</h3></label>
+                                <input class="form-control w-25" type="date" name="date" id="dateani">
+                            </div>
                         </div>
-                        <span class="linha"></span>
-                        <div class="total">
-                            <span>Total</span>
-                            <span>0,00€</span>
-                        </div>
-                        <div class="taxas">
-                            <span>Impostos incluidos </span>
-                            <span> 0,00€</span>
-                        </div>
-                        <button class="btn btn-primary botao" onclick="window.location.href='faturacao.html';">Finalizar compra</button>
-                    </div>
+                        <input type="submit" class="btn btn-primary botao mt-5 mb-5" value="Adicionar Animal">
+                    </form>
+                    
                 </div>
-            </div>
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >

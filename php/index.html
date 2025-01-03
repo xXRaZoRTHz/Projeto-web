@@ -8,7 +8,6 @@
     <meta name="description" content="Clínica Veterinária Online">
     <!-- se quiserem adicionar mais keywords, fiquem a vontade -->
     <meta name="keywords" content="clínica veterinária,clínica veterinária em Lisboa,veterinário em Lisboa, atendimento veterinário, consulta veterinária, saúde animal, cuidados com animais, veterinário, vacinação de pets, emergência veterinária, cirurgia veterinária, hospital veterinário, clínica veterinária perto de mim, exames laboratoriais para pets, veterinário especializado, pet shop, cuidados com cães e gatos, exames veterinários, clínica para pets, saúde de cães e gatos, veterinário 24h, atendimento de emergência para animais, consultas veterinárias para cães e gatos">
-
     <meta name="robots" content="follow">
     <title>VetWorld</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -48,7 +47,7 @@
                                 <a class="nav-link" href="servicos.html">Serviços</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Agende Agora</a>
+                                <a class="nav-link" href="agendar.html">Agende Agora</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contactos">Contactos</a>
@@ -146,51 +145,105 @@
             <div class="seccao container">
                 <h2>Serviços</h2>
             </div>
-            <div class="row justify-content-center text-center ">
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Saúde Pet</h3>
-                    <img src="" alt="">
-                    <h2>Check-up Completo</h2>
+            <div class="card-group mt-5 w-75 mx-auto">
+                <div class="row row-cols-1 row-cols-md-3 g-4 ">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="../img/consultas.jpg" class="card-img-top" alt="Imagem de consulta veterinária">
+                        <div class="card-body">
+                          <h5 class="card-title">Consultas de Avaliação Geral</h5>
+                          <p class="card-text">Avaliação completa do estado de saúde do animal para diagnóstico precoce e orientações de cuidados personalizados.</p>
+                          <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                        <img src="../img/higiene.jpg" class="card-img-top" alt="Imagem de cuidados estéticos em animais">
+                        <div class="card-body">
+                            <h5 class="card-title">Banho</h5>
+                            <p class="card-text">O banho é realizado por profissionais capacitados e com produtos específicos para garantir a saúde e o bem-estar do seu pet.</p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5">Saber mais</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                        <img src="../img/vacinacao.jpg" class="card-img-top" alt="Imagem de vacinação animal">
+                        <div class="card-body">
+                            <h5 class="card-title">Vacinação</h5>
+                            <p class="card-text">Aplicação de vacinas essenciais para proteger o animal contra doenças graves e de fácil transmissão.</p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2">Saber mais</a>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Emergência</h3>
-                    <img src="" alt="">
-                    <h2>Atendimento 24h</h2>
+            </div>
+            <div class="modal fade" id="modal1"  tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal1">Consulta de Avaliação Geral</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Descrição:</strong> Uma consulta abrangente onde o veterinário avalia o estado geral de saúde do animal, verifica peso, temperatura, batimentos cardíacos, saúde bucal, olhos, ouvidos, e outros parâmetros importantes.</p>
+                            <p><strong>Indicado para:</strong> Qualquer animal, especialmente novos pacientes ou antes de outros serviços (vacinas, exames, cirurgias).</p>
+                            <p> <strong class="text-success">Benefícios:</strong> Prevenção de doenças, diagnóstico precoce de problemas de saúde e orientações personalizadas para o tutor.</p>
+                            <p><strong>Preço:</strong> 50€.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-12 my-5">
-                    <h3>Estética</h3>
-                    <img src="" alt="">
-                    <h2>Banho e Tosa</h2>
+                </div>
+                <div class="modal fade" id="modal5"  tabindex="-1" aria-labelledby="modal5" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modal5">Banho</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Descrição:</strong> Nosso serviço é ajustado às necessidades individuais de cada pet, considerando o porte, tipo de pelagem e possíveis condições de saúde. Garantimos cuidado, carinho e segurança em todas as etapas.</p>
+                                <p><strong>Preço:</strong> 25€</p>
+                                <p><strong class="text-success">Benefícios:</strong> Prevenção de infecções de pele, parasitas e desconforto.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                                <button type="button" class="btn btn-primary">Agendar agora</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal2"  tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modal2">Vacinação</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Descrição:</strong> Vacinas são aplicadas para imunizar o animal contra doenças específicas, como raiva, parvovirose, leptospirose e cinomose.</p>
+                                <p><strong>Indicado para:</strong> Filhotes (vacinação inicial), reforços anuais em adultos.</p>
+                                <p><strong class="text-success">Benefícios:</strong> Proteção contra doenças graves e de fácil transmissão.</p>
+                                <p><strong>Preço:</strong> 45€</p>
+                                <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                                <button type="button" class="btn btn-primary">Agendar agora</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5">Ver Todos</button>
+                    <button class=" btn btn-primary botao ml-5 "onclick="window.location.href='servicos.html';">Ver Todos</button>
                 </div>
             </div>
         </section>
-        <!-- Aqui há de ser a farmácia se der tempo de implementá-la 
-        <section >
-            <div class="row justify-content-center text-center gap-5">
-                <div class="col-md-3 col-sm-12 justify-content-center">
-                    <h3>Saúde Pet</h3>
-                    <img src="" alt="">
-                    <h2>Check-up Completo</h2>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <h3>Emergência</h3>
-                    <img src="" alt="">
-                    <h2>Atendimento 24h</h2>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <h3>Estética</h3>
-                    <img src="" alt="">
-                    <h2>Banho e Tosa</h2>
-                </div>
-                <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5">Ver Todos</button>
-                </div>
-            </div>
-        </section>
-        -->
         <!-- newsletter -->
         <section>
             <div class="seccao container">
@@ -262,13 +315,13 @@
                     <h5 class="textcolor">Informações</h5>
                     <nav class="nav flex-column ">
                         <div>
-                            <a class="nav-link textcolor" href="">Sobre nós</a>
+                            <a class="nav-link textcolor" href="sobrenos.html">Sobre nós</a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="">Fale conosco</a>
+                            <a class="nav-link textcolor" href="faq.html">Fale conosco</a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="">Cancelamentos e reembolsos</a>
+                            <a class="nav-link textcolor" href="reembolso.html">Cancelamentos e reembolsos</a>
                         </div>
                         <div class="mt-2 mb-3">
                             <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
