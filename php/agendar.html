@@ -116,9 +116,11 @@
                                         <option value="3">Three</option>
                                     </select>
                                     <!-- ADICIONAR ANIMAL -->
-                                    <button type="button" class="btn btn-primary botao w-50" data-bs-toggle="modal" data-bs-target="#addAnimalModal">
-                                        Adicionar animal
+                                    <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar animal">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-dog"></i>
                                     </button>
+
                                     <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -263,3 +265,8 @@
         });
     });
 </script>
+<!-- TOOLTIP -->
+ <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+ </script>

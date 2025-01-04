@@ -20,6 +20,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <?php 
+        require 'Languages/init.php';
+    ?>
 <header class="sticky-top">
     <section>
         <div class="d-flex justify-content-between align-items-center pt-3 container position-top">
@@ -28,7 +31,7 @@
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand me-5">
                          <a href="index.php">
-                        <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
+                        <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="<?php echo $lang['logop']; ?>">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
                     </div>
@@ -41,31 +44,37 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav gap-5">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="index.php"><?php echo $lang['home']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="servicos.html">Serviços</a>
+                                <a class="nav-link" href="servicos.html"><?php echo $lang['servicos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="agendar.html">Agende Agora</a>
+                                <a class="nav-link" href="agendar.html"><?php echo $lang['agende']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contactos">Contactos</a>
+                                <a class="nav-link" href="#contactos"><?php echo $lang['contactos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html">Fale conosco</a>
+                                <a class="nav-link" href="faq.html"><?php echo $lang['faq']; ?></a>
                             </li>
                             <li class="nav-item">
                                 <div class="btn-group" role="group">
                                     <button type="button" id="dropdownMenuButton" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="../img/principais/pt.png" alt="Bandeira de Portugal" style="width: 30px; height: 20px;">
+                                        <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">
-                                                <img src="../img/principais/us.png" alt="Bandeira dos EUA" style="width: 30px; height: 20px;"> Estados Unidos
+                                        <li><a class="dropdown-item me-1" href="#?lang=en">
+                                                <img src="../img/principais/us.png" alt="<?php echo $lang['usp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['in']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#">
-                                                <img src="../img/principais/es.png" alt="Bandeira da Espanha" style="width: 30px; height: 20px;"> Espanha
+                                        <li><a class="dropdown-item" href="#?lang=es">
+                                                <img src="../img/principais/es.png" alt="<?php echo $lang['esp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['es']; ?> 
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#?lang=fr">
+                                                <img src="../img/principais/Flag_of_France.png" alt="<?php echo $lang['frp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['fr']; ?>
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#?lang=pt">
+                                                <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['pt']; ?>
                                             </a></li>
                                     </ul>
                                 </div>
@@ -79,15 +88,15 @@
             <div class="d-flex gap-4">
                 <div class="text-center">
                     <a href="carrinho.html">
-                        <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
+                        <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['carp']; ?>">
                     </a>
-                    <p class="mt-2">Carrinho</p>
+                    <p class="mt-2"><?php echo $lang['carrinho']; ?></p>
                 </div>
                 <div class="text-center">
                     <a href="login.html">
-                        <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
+                        <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
                     </a>
-                    <p class="mt-2">Login</p>
+                    <p class="mt-2"><?php echo $lang['login']; ?></p>
                 </div>
             </div>
         </div>
@@ -99,32 +108,32 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade img-fluid" data-bs-ride="carousel"">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; object-fit: cover;" alt=".">
+                        <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; object-fit: cover;" alt="<?php echo $lang['bannerp1']; ?>">
                         <div class="container h-100">
                             <div class=" bannerbox1">
-                                <h2>Faça um agendamento agora!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
+                                <h2><?php echo $lang['bannerTitle1']; ?></h2>
+                                <p><?php echo $lang['bannerText1']; ?></p>
+                                <button class="btn btn-primary"><?php echo $lang['bannerButton1']; ?></button>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="../img/banner/banner3.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 243px;  overflow: hidden;" alt="...">
+                        <img src="../img/banner/banner3.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 243px;  overflow: hidden;" alt="<?php echo $lang['bannerp2']; ?>">
                         <div class="container h-100">
                             <div class=" bannerbox2">
-                                <h2>Faça um agendamento agora!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
+                                <h2><?php echo $lang['bannerTitle2']; ?></h2>
+                                <p><?php echo $lang['bannerText2']; ?></p>
+                                <button class="btn btn-primary"><?php echo $lang['bannerButton2']; ?></button>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="../img/banner/vetbanner.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; ; overflow: hidden;" alt=".">
+                        <img src="../img/banner/vetbanner.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; ; overflow: hidden;" alt="<?php echo $lang['bannerp3']; ?>">
                         <div class="container h-100">
                             <div class=" bannerbox3">
-                                <h2>Faça um agendamento agora!</h2>
-                                <p>LOREM IPSUM</p>
-                                <button class="btn btn-primary">Agendar agora!</button>
+                                <h2><?php echo $lang['bannerTitle3']; ?></h2>
+                                <p><?php echo $lang['bannerText3']; ?></p>
+                                <button class="btn btn-primary"><?php echo $lang['bannerButton3']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -143,37 +152,37 @@
         <!-- Aqui falta colocar as imagens dos serviços e estiliza-las -->
         <section >
             <div class="seccao container">
-                <h2>Serviços</h2>
+                <h2><?php echo $lang['servicos']; ?></h2>
             </div>
             <div class="card-group mt-5 w-75 mx-auto">
                 <div class="row row-cols-1 row-cols-md-3 g-4 ">
                     <div class="col">
                       <div class="card h-100">
-                        <img src="../img/consultas.jpg" class="card-img-top" alt="Imagem de consulta veterinária">
+                        <img src="../img/consultas.jpg" class="card-img-top" alt="<?php echo $lang['sAGp']; ?>">
                         <div class="card-body">
-                          <h5 class="card-title">Consultas de Avaliação Geral</h5>
-                          <p class="card-text">Avaliação completa do estado de saúde do animal para diagnóstico precoce e orientações de cuidados personalizados.</p>
-                          <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
+                          <h5 class="card-title"><?php echo $lang['sAGt']; ?></h5>
+                          <p class="card-text"><?php echo $lang['sAGdc']; ?></p>
+                          <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1"><?php echo $lang['sbtnsaber']; ?></a>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                        <img src="../img/higiene.jpg" class="card-img-top" alt="Imagem de cuidados estéticos em animais">
+                        <img src="../img/higiene.jpg" class="card-img-top" alt="<?php echo $lang['sBap']; ?>">
                         <div class="card-body">
-                            <h5 class="card-title">Banho</h5>
-                            <p class="card-text">O banho é realizado por profissionais capacitados e com produtos específicos para garantir a saúde e o bem-estar do seu pet.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5">Saber mais</a>
+                            <h5 class="card-title"><?php echo $lang['sBat']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sBadc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5"><?php echo $lang['sbtnsaber']; ?></a>
                         </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                        <img src="../img/vacinacao.jpg" class="card-img-top" alt="Imagem de vacinação animal">
+                        <img src="../img/vacinacao.jpg" class="card-img-top" alt="<?php echo $lang['sVap']; ?>">
                         <div class="card-body">
-                            <h5 class="card-title">Vacinação</h5>
-                            <p class="card-text">Aplicação de vacinas essenciais para proteger o animal contra doenças graves e de fácil transmissão.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2">Saber mais</a>
+                            <h5 class="card-title"><?php echo $lang['sVat']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sVadc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2"><?php echo $lang['sbtnsaber']; ?></a>
                         </div>
                         </div>
                     </div>
@@ -183,18 +192,18 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal1">Consulta de Avaliação Geral</h1>
+                            <h1 class="modal-title fs-5" id="modal1"><?php echo $lang['sAGt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Uma consulta abrangente onde o veterinário avalia o estado geral de saúde do animal, verifica peso, temperatura, batimentos cardíacos, saúde bucal, olhos, ouvidos, e outros parâmetros importantes.</p>
-                            <p><strong>Indicado para:</strong> Qualquer animal, especialmente novos pacientes ou antes de outros serviços (vacinas, exames, cirurgias).</p>
-                            <p> <strong class="text-success">Benefícios:</strong> Prevenção de doenças, diagnóstico precoce de problemas de saúde e orientações personalizadas para o tutor.</p>
-                            <p><strong>Preço:</strong> 50€.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sAGd']; ?></p>
+                            <p><strong><?php echo $lang['sindicado']; ?></strong><?php echo $lang['sAGi']; ?></p>
+                            <p> <strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong><?php echo $lang['sAGb']; ?> </p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 50€.</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
                         </div>
                     </div>
                 </div>
@@ -203,17 +212,17 @@
                     <div class="modal-dialog modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="modal5">Banho</h1>
+                                <h1 class="modal-title fs-5" id="modal5"><?php echo $lang['sBat']; ?></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p><strong>Descrição:</strong> Nosso serviço é ajustado às necessidades individuais de cada pet, considerando o porte, tipo de pelagem e possíveis condições de saúde. Garantimos cuidado, carinho e segurança em todas as etapas.</p>
-                                <p><strong>Preço:</strong> 25€</p>
-                                <p><strong class="text-success">Benefícios:</strong> Prevenção de infecções de pele, parasitas e desconforto.</p>
+                                <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sBad']; ?></p>
+                                <p><strong><?php echo $lang['spreco']; ?></strong> 25€</p>
+                                <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sBab']; ?></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                                <button type="button" class="btn btn-primary">Agendar agora</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                                <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -222,41 +231,41 @@
                     <div class="modal-dialog modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="modal2">Vacinação</h1>
+                                <h1 class="modal-title fs-5" id="modal2"><?php echo $lang['sVat']; ?></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p><strong>Descrição:</strong> Vacinas são aplicadas para imunizar o animal contra doenças específicas, como raiva, parvovirose, leptospirose e cinomose.</p>
-                                <p><strong>Indicado para:</strong> Filhotes (vacinação inicial), reforços anuais em adultos.</p>
-                                <p><strong class="text-success">Benefícios:</strong> Proteção contra doenças graves e de fácil transmissão.</p>
-                                <p><strong>Preço:</strong> 45€</p>
-                                <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                                <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sVad']; ?></p>
+                                <p><strong><?php echo $lang['sindicado']; ?></strong> <?php echo $lang['sVai']; ?>.</p>
+                                <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sVab']; ?></p>
+                                <p><strong><?php echo $lang['spreco']; ?></strong> 45€</p>
+                                <p><strong><?php echo $lang['snota']; ?></strong> <?php echo $lang['snotad']; ?></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                                <button type="button" class="btn btn-primary">Agendar agora</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                                <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5 "onclick="window.location.href='servicos.html';">Ver Todos</button>
+                    <button class=" btn btn-primary botao ml-5 "onclick="window.location.href='servicos.html';"><?php echo $lang['sbtnver']; ?></button>
                 </div>
             </div>
         </section>
         <!-- newsletter -->
         <section>
             <div class="seccao container">
-                <h2>Newsletter</h2>
+                <h2><?php echo $lang['newsl']; ?></h2>
             </div>
             <div>
                 <nav class="navbar newsl">
                     <div class="container-fluid">
                         <img src="" alt="">
-                        <p class="">Receba as melhores ofertas e novidades!</p>
+                        <p class=""><?php echo $lang['newsld']; ?></p>
                         <form class="d-flex" >
-                        <input type="email" name="" id="" placeholder="Insira seu Email!" class="email form-control mx-1" aria-label="Email">
-                        <input class="botao btn btn-primary" type="submit" value="Receber Email!" >
+                        <input type="email" name="" id="" placeholder="<?php echo $lang['newsp']; ?>" class="email form-control mx-1" aria-label="Email">
+                        <input class="botao btn btn-primary" type="submit" value="<?php echo $lang['newsbtn']; ?>" >
                       </form>
                     </div>
                   </nav>
@@ -286,14 +295,14 @@
         <!-- Contactos -->
         <section id="contactos">
             <div class="seccao container">
-                <h2>Contactos</h2>
+                <h2><?php echo $lang['contactos']; ?></h2>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12 mb-5">
                     <div class="servbox mx-auto img-fluid">
-                        <h5>Telefone: 987 675 456</h5>
-                        <h5>Email: geral.vetworld@gmail.com</h5>
-                        <h5>Endereço: Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</h5>
+                        <h5><?php echo $lang['tel']; ?> 987 675 456</h5>
+                        <h5><?php echo $lang['email']; ?> geral.vetworld@gmail.com</h5>
+                        <h5><?php echo $lang['endereco']; ?> Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</h5>
                     </div>
                 </div>
                     <div class="col-md-6 col-sm-12">
@@ -312,30 +321,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h5 class="textcolor">Informações</h5>
+                    <h5 class="textcolor"><?php echo $lang['info']; ?></h5>
                     <nav class="nav flex-column ">
                         <div>
-                            <a class="nav-link textcolor" href="sobrenos.html">Sobre nós</a>
+                            <a class="nav-link textcolor" href="sobrenos.html"><?php echo $lang['sobrenos']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="faq.html">Fale conosco</a>
+                            <a class="nav-link textcolor" href="faq.html"><?php echo $lang['faq']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="reembolso.html">Cancelamentos e reembolsos</a>
+                            <a class="nav-link textcolor" href="reembolso.html"><?php echo $lang['cancelamento']; ?></a>
                         </div>
                         <div class="mt-2 mb-3">
-                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
+                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="<?php echo $lang['livrop']; ?>"></a>
                         </div>
                     </nav>   
                 </div>
                 <div class="col-md-6 col-sm-12 text-md-end">
-                    <h5 class="mx-md-5 textcolor">Métodos de pagamento</h5>
-                    <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="Métodos de pagamento: MBWay, Multibanco, Paypal, Maestro, MasterCard, Visa">
+                    <h5 class="mx-md-5 textcolor"><?php echo $lang['metodos']; ?></h5>
+                    <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="ç<?php echo $lang['metodosp']; ?>">
                 </div>
             </div>
         </div>
         <div class="text-center pb-2 text-white">
-            <p>© 2024 VetWorld. Todos os direitos reservados.</p>
+            <p><?php echo $lang['direitos']; ?></p>
         </div>
     </footer>
 </body>

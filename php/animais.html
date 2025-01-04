@@ -106,7 +106,24 @@
                         <a href="histcompras.html" class="list-group-item list-group-item-action container-fluid">Histórico de compras</a>
                 </div>
                 <div class="col-md-9">
-                    
+                    <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar animal">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-dog"></i>
+                    </button>
+
+                    <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addAnimalModalLabel">Adicionar Animal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="nomeani" class="form-label">Nome do Animal</label>
+                                            <input type="text" class="form-control" id="nomeani" placeholder="Insira o nome do animal">
+                                        </div>
                 </div>
             </div>
         </section>
