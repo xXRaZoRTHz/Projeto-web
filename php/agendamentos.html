@@ -96,14 +96,27 @@
 </header>
     <main>
         <section>
-            <div class="row">          
-                    <div class="list-group col-md-3 text-center menu">
-                        <a href="perfiluser.html" class="list-group-item list-group-item-action container-fluid" >
-                        Dados do perfil
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action  active" aria-current="true">Agendamentos</a>
-                        <a href="animais.html" class="list-group-item list-group-item-action container-fluid">Animais</a>
-                        <a href="histcompras.html" class="list-group-item list-group-item-action container-fluid">Histórico de compras</a>
+            <div class="row">                    
+                <div class="col-md-3">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <h2 class="navbar-toggler" style="border: 1px solid white;">
+                            Agendamentos
+                        </h2>
+                        <div class="collapse navbar-collapse" id="navbarMenu">
+                            <div class="list-group text-center w-100 menu ">
+                                <a href="perfiluser.html" class="list-group-item list-group-item-action">
+                                    Dados do perfil
+                                </a>
+                                <a href="agendamentos.html" class="list-group-item list-group-item-action active" aria-current="true">Agendamentos</a>
+                                <a href="animais.html" class="list-group-item list-group-item-action">Animais</a>
+                                <a href="histcompras.html" class="list-group-item list-group-item-action">Histórico de compras</a>
+                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
                 <div class="col-md-9">
                     

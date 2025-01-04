@@ -26,8 +26,12 @@ main{
 
 }
 .menu{
-    border: 1px solid black;
-    height: 500px;
-    padding-right:0px;
     border-radius: 0px;
+}
+.col-md-3{
+    padding: 0;
+}
+.navbar{
+    padding: 0;
+    margin-bottom: 10px;
 }
