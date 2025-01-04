@@ -1,6 +1,4 @@
 <?php 
-
-$idani = $_GET['id'];
 $nome = $_POST['ctx_nome'];
 $tel = $_POST['ctx_tel'];
 $email = $_POST['ctx_email'];
@@ -24,6 +22,4 @@ if($senha != $repass){
     }
     mysqli_close($liga);
 }
-
-
 ?>

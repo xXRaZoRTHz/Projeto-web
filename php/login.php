@@ -134,9 +134,17 @@ endif;
         </div>
     </section>
 </header>
-    <main>
-        <div class="form-container">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">>
+    <main class="h-auto">
+        <?php if (isset($_SESSION['mensagem_sucesso'])): ?>
+            
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo htmlspecialchars($_SESSION['mensagem_sucesso']); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php unset($_SESSION['mensagem_sucesso']); ?>
+        <?php endif; ?>
+        <div class="form-container mb-5">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
               <div class="login">
                 <h1 class="text-center mb-5">Login</h1>
                 <?php
@@ -174,7 +182,7 @@ endif;
           </div>
           
     </main>
-    <footer class="pt-2 " >
+    <footer class="pt-2 mt-5" >
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
