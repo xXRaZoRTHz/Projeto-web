@@ -2,7 +2,6 @@
 
 $id = $_GET['id'];
 $nome = $_POST['ctx_nome'];
-$nif = $_POST['ctx_nif'];
 $tel = $_POST['ctx_tel'];
 $email = $_POST['ctx_email'];
 $senha = $_POST['ctx_pass'];
@@ -11,11 +10,11 @@ $repass = $_POST['ctx_repass'];
 if($senha != $repass){
     echo "<script> 
             alert('As Passwords não coincidem!');
-            window.location.href = '../index.html';
+            window.location.href = '../index.php';
         </script>";
 }else{
-    $query = "INSERT INTO tbl_cliente(nome, nif, telefone, email, senha)
-    VALUES('$nome', '$nif', '$tel', '$email', '$senha')";
+    $query = "INSERT INTO tbl_cliente(nome, telefone, email, senha)
+    VALUES('$nome', '$tel', '$email', '$senha')";
     include 'ligaBD.php';
     if(mysqli_query($liga,$query)){
         echo "<script>alert('Registo inserido com sucesso!');

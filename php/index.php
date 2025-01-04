@@ -93,7 +93,7 @@
                     <p class="mt-2"><?php echo $lang['carrinho']; ?></p>
                 </div>
                 <div class="text-center">
-                    <a href="login.html">
+                    <a href="login.php">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
                     </a>
                     <p class="mt-2"><?php echo $lang['login']; ?></p>

@@ -1,3 +1,23 @@
+<?php
+//conexão
+require_once 'ligaBD.php';
+
+//sessão
+session_start();
+
+//verificação
+if(!isset($_SESSION['logado'])):
+    header('Location: login.php');
+endif;
+
+//dados
+$id = $_SESSION['id_usuario'];
+$sql = "SELECT * FROM tbl_cliente WHERE idcliente = '$id'";
+$resultado1 = mysqli_query($liga, $sql);
+$dados = mysqli_fetch_array($resultado1);
+mysqli_close($liga);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -17,7 +37,7 @@
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -96,114 +116,38 @@
 </header>
     <main>
         <section>
-            <div class="position-relative m-4 w-75 mx-auto">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
-                  <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
-            </div>
-            <div class="container" >
-            <div class="row">
-                <div class="col-md-9 col-sm-12">
-                    <div class="title mt-5 ms-md-5 ms-2">
-                        <h1 class="w-100">Métodos de pagamento</h1>
-                        <span class="linhaTitle ms-md-3 ms-2"></span>
-                    </div>
-                    <div class="container mt-4">
-                        <div class="accordion" id="paymentAccordion">
-                            <div class="accordion-item mb-5">
-                                <h2 class="accordion-header">
-                                    <label class="accordion-button collapsed radio-label" data-bs-toggle="collapse" data-bs-target="#creditCard">
-                                        <input type="radio" name="paymentOption" class="form-check-input me-2">
-                                        Cartão de Crédito
-                                        <img src="../img/principais/Visa_2021.svg" alt="Visa" class="payment-icon">
-                                    </label>
-                                </h2>
-                                <div id="creditCard" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
-                                    <div class="accordion-body">
-                                        <div class="container mt-4">
-                                            <form>
-                                                <div class="row">
-                                                <div class="mb-3 col-12">
-                                                    <label for="cardName" class="form-label">Nome no cartão</label>
-                                                    <input type="text" class="form-control" id="cardName" placeholder="Introduz o nome do titular do cartão">
-                                                </div>                                
-                                                <div class="col-md-8">
-                                                    <label for="cardNumber" class="form-label">Número do cartão</label>
-                                                    <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="expiryDate" class="form-label">Validade</label>
-                                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
-                                                </div>
-                                                <div class="mt-3 col-md-2 col-sm-3">
-                                                    <label for="cvv" class="form-label">CVV</label>
-                                                    <input type="text" class="form-control" id="cvv" placeholder="000">
-                                                </div>
-                                                <div class="form-check mt-3">
-                                                    <input class="form-check-input" type="checkbox" id="saveCard">
-                                                    <label class="form-check-label" for="saveCard">
-                                                        Guardar cartão
-                                                    </label>
-                                                </div>
-                                            </div>
-                                                <!-- Nota -->
-                                                <p class="text-muted mt-3">
-                                                    O pagamento só será efetuado após a revisão da encomenda no passo seguinte.
-                                                </p>
-                                                <button class="btn btn-primary botao" onclick="window.location.href='faturacao.html';">Próximo</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                                
-                            <div class="accordion-item mb-5">
-                                <h2 class="accordion-header">
-                                    <label class="accordion-button collapsed radio-label" data-bs-toggle="collapse" data-bs-target="#mbway">
-                                        <input type="radio" name="paymentOption" class="form-check-input me-2">
-                                        MB WAY
-                                        <img src="../img/principais/MB_WAY.jpg" alt="MB Way" class="payment-icon">
-                                    </label>
-                                </h2>
-                                <div id="mbway" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
-                                    <div class="accordion-body">
-                                        <form action="">
-                                            <p>Após a revisão da encomenda, poderás finalizar o processo de pagamento através da App MB WAY.</p>
-                                            <div class="mb-3 col-6">
-                                                <label for="mbtel" class="form-label">Telefone</label>
-                                                <input type="tel" class="form-control" id="mbtel">
-                                            </div>
-                                            <button class="btn btn-primary botao mt-2" onclick="window.location.href='faturacao.html';">Próximo</button>
-                                        </form>
-                                    </div>
-                                </div>
+            <div class="row">          
+                <div class="col-md-3">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <h2 class="navbar-toggler" style="border: 1px solid white;">
+                            Dados do perfil
+                        </h2>
+                        <div class="collapse navbar-collapse" id="navbarMenu">
+                            <div class="list-group text-center w-100 menu ">
+                                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                    Dados do perfil
+                                </a>
+                                <a href="agendamentos.html" class="list-group-item list-group-item-action">Agendamentos</a>
+                                <a href="animais.html" class="list-group-item list-group-item-action">Animais</a>
+                                <a href="histcompras.html" class="list-group-item list-group-item-action">Histórico de compras</a>
+                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
                             </div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
-                <div class="col-md-3 col-sm-12 text-center">
-                    <div class="caixa mx-auto">
-                        <div class="nItens">
-                            <span>0 artigos</span>
-                            <span>0,00€</span>
-                        </div>
-                        <span class="linha"></span>
-                        <div class="total">
-                            <span>Total</span>
-                            <span>0,00€</span>
-                        </div>
-                        <div class="taxas">
-                            <span>Impostos incluidos </span>
-                            <span> 0,00€</span>
-                        </div>
-                        
-                    </div>
+                
+                <div class="col-md-9">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><p> <strong>Nome do utilizador:</strong> </p></li>
+                        <li class="list-group-item"><p> <strong>Email:</strong> </p></li>
+                        <li class="list-group-item"><p> <strong>Telefone:</strong> </p></li>
+                        <li class="list-group-item"><a class="btn btn-primary" href="">Alterar Dados</a></li>
+                      </ul>
                 </div>
             </div>
-            
-        </div>
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >

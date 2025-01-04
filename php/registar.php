@@ -28,7 +28,7 @@
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.html">
+                         <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -85,7 +85,7 @@
                     <p class="mt-2">Carrinho</p>
                 </div>
                 <div class="text-center">
-                    <a href="">
+                    <a href="login.php">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
                     </a>
                     <p class="mt-2">Login</p>
@@ -96,10 +96,10 @@
 </header>
 <!-- Para quem for mexer estilizar aqui, para checar tudo e aparecer uma msg verde positiva dq td deu certo, é só add uma div com a vlasse valid-feedback dentro da div q ta o input q queiras, o contrário é a msma coisa só q com o invalid-feedback-->
     <main>
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation" novalidate form id="form_registo" method="POST" action="validacao.php">
             <div class="col-md-4">
               <label for="nome" class="form-label">Nome Completo</label>
-              <input type="text" class="form-control" id="nome" required>
+              <input type="text" class="form-control" name="ctx_nome" id="nome" required maxlength="50">
               <div class="valid-feedback">
                 Válido!
               </div>
@@ -107,7 +107,7 @@
             <div class="col-md-4">
               <label for="email" class="form-label">Email</label>
               <div class="input-group has-validation">
-                <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
+                <input type="email" class="form-control" name="ctx_email" id="email" aria-describedby="inputGroupPrepend" required maxlength="50">
                 <div class="invalid-feedback">
                   Por favor, selecione um email válido!.
                 </div>
@@ -115,21 +115,21 @@
             </div>
             <div class="col-md-6">
               <label for="tel" class="form-label">Telefone</label>
-              <input type="tel" class="form-control" id="tel" required>
+              <input type="tel" class="form-control" name="ctx_tel" id="tel" required maxlength="9">
               <div class="invalid-feedback">
                 Por favor, selecione um telefone válido!.
               </div>
             </div>
             <div class="col-md-3">
               <label for="pass" class="form-label">Password</label>
-              <input type="password" class="form-control" id="pass" required>
+              <input type="password" class="form-control" name="ctx_pass" id="pass" required maxlength="50" minlength="8">
               <div class="invalid-feedback">
                 A senha deve conter 8 digitos e pelo menos uma letra maiúscula, um número e um símbolo!
               </div>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Confirmar a Password</label>
-                <input type="password" class="form-control" required>
+                <input type="password" class="form-control" name="ctx_repass" required maxlength="50" minlength="8">
                 <div class="invalid-feedback">
                   A senha não coincide com a digitada primeiramente!
                 </div>
@@ -202,7 +202,7 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" onclick="validaNIF()" type="submit">Submit form</button>
+              <button class="btn btn-primary" onclick="validaNIF()" name="btn_regista" type="submit">Submit form</button>
             </div>
         </form>
         <!-- Botão do TOP -->

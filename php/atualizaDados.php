@@ -10,7 +10,7 @@ $repass = $_POST['ctx_repass'];
 
 include "ligaBD.php";
 
-$query = "UPDATE tbl_cliente SET nome = '$nome', nif = '$nif', telefone = '$tel',email ='$email', senha ='$senha' WHERE idcliente = $id";
+$query = "UPDATE tbl_cliente SET nome = '$nome', nif = '$nif', telefone = '$tel', email ='$email', senha ='$senha' WHERE idcliente = $id";
 
 if(mysqli_query($liga,$query)){
     echo "Registo Atualizado";

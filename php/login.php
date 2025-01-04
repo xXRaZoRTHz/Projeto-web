@@ -1,3 +1,43 @@
+<link rel="stylesheet" href="index.php">
+
+<?php
+
+require_once 'ligaBD.php';
+
+session_start();
+
+if(isset($_POST['btn-entrar'])):
+	$erros = array();
+	$login = mysqli_escape_string($liga, $_POST['email']);
+    $senha1 = mysqli_escape_string($liga, $_POST['senha1']);
+
+    if(empty($login) or empty($senha1)):
+        $erros[] = "<li> O campo login/senha precisa ser preenchido </li>";
+    else:
+        $sql = "SELECT email FROM tbl_cliente WHERE email = '$login'";
+        $resultado1 = mysqli_query($liga, $sql);
+
+        if(mysqli_num_rows($resultado1) > 0):
+            $sql = "SELECT * FROM tbl_cliente WHERE email = '$login' AND senha = '$senha1'";
+            $resultado1 = mysqli_query($liga, $sql);
+
+                if(mysqli_num_rows($resultado1) == 1):
+                    $dados = mysqli_fetch_array($resultado1);
+                    mysqli_close($liga);
+                    $_SESSION['logado'] = true;
+                    $_SESSION['id_usuario'] = $dados['idcliente'];
+                    header('Location: perfiluser.php');
+                else:
+                    $erros[] = "<li> Usuário e senha não conferem </li>";
+        endif;
+        else:
+            $erros[] = "<li> Usuario Inexistente </li>";
+        endif;
+    endif;
+
+endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -28,7 +68,7 @@
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.html">
+                         <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -96,15 +136,22 @@
 </header>
     <main>
         <div class="form-container">
-            <form>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">>
               <div class="login">
                 <h1 class="text-center mb-5">Login</h1>
+                <?php
+                    if(!empty($erros)):
+                        foreach($erros as $erro):
+                            echo $erro;
+                        endforeach;
+                    endif;
+                ?>
                 <div class="row g-1 mb-3 ms-5 align-items-center">
                   <div class="col-3">
                     <label for="inputEmail" class="col-form-label" style="min-width: 200px;">Email</label>
                   </div>
                   <div class="col-auto">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com">
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com">
                   </div>
                 </div>
                 <div class="row g-1 mb-3 ms-5 align-items-center">
@@ -112,16 +159,16 @@
                     <label for="Password" class="col-form-label" style="min-width: 100px;">Password</label>
                   </div>
                   <div class="col-auto">
-                    <input type="password" id="Password" class="form-control" placeholder="Senha">
+                    <input type="password" name="senha1" id="Password" class="form-control" placeholder="Senha">
                   </div>
                 </div>
                 <div class="mb-3 ms-5">
                   <a href="redefsenha.html">Esqueci a palavra passe</a>
                 </div>
                 <div class="mb-3 ms-5">
-                  <label class="form-label">Ainda não é registado? <a href="registar.html">Registar-se</a></label>
+                  <label class="form-label">Ainda não é registado? <a href="registar.php">Registar-se</a></label>
                 </div>
-                <button type="submit" class="btn btn-primary btnlog">Entrar</button>
+                <button type="submit" name="btn-entrar" class="btn btn-primary btnlog">Entrar</button>
               </div>
             </form>
           </div>
