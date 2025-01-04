@@ -48,7 +48,7 @@ mysqli_close($liga);
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.html">
+                         <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>

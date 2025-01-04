@@ -10,7 +10,7 @@ $repass = $_POST['ctx_repass'];
 if($senha != $repass){
     echo "<script> 
             alert('As Passwords não coincidem!');
-            window.location.href = '../index.html';
+            window.location.href = '../index.php';
         </script>";
 }else{
     $query = "INSERT INTO tbl_cliente(nome, telefone, email, senha)
