@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="index.html">
+<link rel="stylesheet" href="index.php">
 
 <?php
 
