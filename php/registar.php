@@ -96,7 +96,7 @@
 </header>
 <!-- Para quem for mexer estilizar aqui, para checar tudo e aparecer uma msg verde positiva dq td deu certo, é só add uma div com a vlasse valid-feedback dentro da div q ta o input q queiras, o contrário é a msma coisa só q com o invalid-feedback-->
     <main>
-        <form class="row g-3 needs-validation" novalidate form id="form_registo" method="POST" action="validacao.php">
+        <form class="row g-3 needs-validation" novalidate form id="form_registo" method="POST" action="Sys/validacao.php">
             <div class="col-md-4">
               <label for="nome" class="form-label">Nome Completo</label>
               <input type="text" class="form-control" name="ctx_nome" id="nome" required maxlength="50">
@@ -202,7 +202,7 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" onclick="validaNIF()" name="btn_regista" type="submit">Submit form</button>
+              <button class="btn btn-primary botao" onclick="validaNIF()" name="btn_regista" type="submit">Registar</button>
             </div>
         </form>
         <!-- Botão do TOP -->
