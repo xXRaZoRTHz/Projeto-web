@@ -2,7 +2,7 @@
 
 <?php
 
-require_once 'ligaBD.php';
+require_once 'Sys/ligaBD.php';
 
 session_start();
 

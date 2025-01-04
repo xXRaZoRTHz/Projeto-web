@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $user = "root";
-$pass = "251212lucas123";
+$pass = "1235";
 $bd = "bdvet";
 
 $liga = mysqli_connect($server,$user,$pass,$bd);

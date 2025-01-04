@@ -1,6 +1,6 @@
 <?php
 //conexão
-require_once 'ligaBD.php';
+require_once 'Sys/ligaBD.php';
 
 //sessão
 session_start();
