@@ -1,3 +1,43 @@
+<link rel="stylesheet" href="index.php">
+
+<?php
+
+require_once 'ligaBD.php';
+
+session_start();
+
+if(isset($_POST['btn-entrar'])):
+	$erros = array();
+	$login = mysqli_escape_string($liga, $_POST['email']);
+    $senha1 = mysqli_escape_string($liga, $_POST['senha1']);
+
+    if(empty($login) or empty($senha1)):
+        $erros[] = "<li> O campo login/senha precisa ser preenchido </li>";
+    else:
+        $sql = "SELECT email FROM tbl_cliente WHERE email = '$login'";
+        $resultado1 = mysqli_query($liga, $sql);
+
+        if(mysqli_num_rows($resultado1) > 0):
+            $sql = "SELECT * FROM tbl_cliente WHERE email = '$login' AND senha = '$senha1'";
+            $resultado1 = mysqli_query($liga, $sql);
+
+                if(mysqli_num_rows($resultado1) == 1):
+                    $dados = mysqli_fetch_array($resultado1);
+                    mysqli_close($liga);
+                    $_SESSION['logado'] = true;
+                    $_SESSION['id_usuario'] = $dados['idcliente'];
+                    header('Location: perfiluser.php');
+                else:
+                    $erros[] = "<li> Usuário e senha não conferem </li>";
+        endif;
+        else:
+            $erros[] = "<li> Usuario Inexistente </li>";
+        endif;
+    endif;
+
+endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -28,7 +68,7 @@
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
                     <div class="text-center navbar-brand">
-                         <a href="index.html">
+                         <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
                     <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
@@ -45,10 +85,10 @@
                                 <a class="nav-link" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Agende Agora</a>
+                                <a class="nav-link" href="#">Serviços</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Serviços</a>
+                                <a class="nav-link" href="#">Agende Agora</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contatos</a>
@@ -95,30 +135,44 @@
     </section>
 </header>
     <main>
-        <section>
-            <div class="row">          
-                    <div class="list-group col-md-3 text-center menu">
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                        Dados do perfil
-                        </a>
-                        <a href="agendamentos.html" class="list-group-item list-group-item-action container-fluid">Agendamentos</a>
-                        <a href="animais.html" class="list-group-item list-group-item-action container-fluid">Animais</a>
-                        <a href="histcompras.html" class="list-group-item list-group-item-action container-fluid">Histórico de compras</a>
+        <div class="form-container">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">>
+              <div class="login">
+                <h1 class="text-center mb-5">Login</h1>
+                <?php
+                    if(!empty($erros)):
+                        foreach($erros as $erro):
+                            echo $erro;
+                        endforeach;
+                    endif;
+                ?>
+                <div class="row g-1 mb-3 ms-5 align-items-center">
+                  <div class="col-3">
+                    <label for="inputEmail" class="col-form-label" style="min-width: 200px;">Email</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com">
+                  </div>
                 </div>
-                <div class="col-md-9">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><p> <strong>Nome do utilizador:</strong> </p></li>
-                        <li class="list-group-item"><p> <strong>Email:</strong> </p></li>
-                        <li class="list-group-item"><p> <strong>Telefone:</strong> </p></li>
-                        <li class="list-group-item"><a class="btn btn-primary" href="">Alterar Dados</a></li>
-                      </ul>
+                <div class="row g-1 mb-3 ms-5 align-items-center">
+                  <div class="col-3">
+                    <label for="Password" class="col-form-label" style="min-width: 100px;">Password</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="password" name="senha1" id="Password" class="form-control" placeholder="Senha">
+                  </div>
                 </div>
-            </div>
-        </section>
-        <!-- Botão do TOP -->
-        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
-            <i class="fa-solid fa-circle-arrow-up"></i>
-        </button>
+                <div class="mb-3 ms-5">
+                  <a href="redefsenha.html">Esqueci a palavra passe</a>
+                </div>
+                <div class="mb-3 ms-5">
+                  <label class="form-label">Ainda não é registado? <a href="registar.php">Registar-se</a></label>
+                </div>
+                <button type="submit" name="btn-entrar" class="btn btn-primary btnlog">Entrar</button>
+              </div>
+            </form>
+          </div>
+          
     </main>
     <footer class="pt-2 " >
         <div class="container">
