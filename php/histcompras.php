@@ -107,19 +107,63 @@
                         </h2>
                         <div class="collapse navbar-collapse" id="navbarMenu">
                             <div class="list-group text-center w-100 menu ">
-                                <a href="perfiluser.html" class="list-group-item list-group-item-action" >
+                                <a href="perfiluser.php" class="list-group-item list-group-item-action" >
                                     Dados do perfil
                                 </a>
-                                <a href="agendamentos.html" class="list-group-item list-group-item-action">Agendamentos</a>
-                                <a href="animais.html" class="list-group-item list-group-item-action">Animais</a>
-                                <a href="histcompras.html" class="list-group-item list-group-item-action active aria-current="true"">Histórico de compras</a>
+                                <a href="agendamentos.php" class="list-group-item list-group-item-action">Agendamentos</a>
+                                <a href="animais.php" class="list-group-item list-group-item-action">Animais</a>
+                                <a href="histcompras.php" class="list-group-item list-group-item-action active aria-current="true"">Histórico de compras</a>
                                 <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
                             </div>
                         </div>
                     </nav>
                 </div>
                 <div class="col-md-9">
-                    
+                <?php
+
+                        include 'Sys/ligaBD.php';
+                        $query = "
+                            SELECT 
+                                tbl_dimservico.servico as servico_nome,
+                                tbl_dimservico.preco as servico_preco,
+                                tbl_factoagendamento.data,
+                                tbl_factoagendamento.hora
+                            FROM 
+                                tbl_factoagendamento
+                            JOIN 
+                                tbl_dimservico
+                            ON 
+                                tbl_factoagendamento.idservico = tbl_dimservico.idservico
+                        ";
+                        $resultado2=mysqli_query($liga,$query);
+                        ?>
+                        <table class="table text-center">
+                            <thead>
+                                <th>Serviço:</th>
+                                <th>Data:</th>
+                                <th>Hora:</th>
+                                <th>Preço:</th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $resultado = mysqli_query($liga,$query);
+                                    if(mysqli_num_rows($resultado)>0){
+                                    while($row = mysqli_fetch_assoc($resultado)){ ?>
+                                        <tr class="align-center">
+                                            <td><?= $row['servico_nome']; ?></td>
+                                            <td><?= $row['data']; ?></td>
+                                            <td><?= $row['hora']; ?></td>
+                                            <td><?= $row['servico_preco'];?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    }else{
+                                        echo "<tr><td class='ps-5' colspan=11>Ainda não houve compras</td></tr>";
+                                    }
+                                    mysqli_close($liga);
+                                ?>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </section>

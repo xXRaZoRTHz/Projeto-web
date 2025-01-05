@@ -94,8 +94,7 @@
         </div>
     </section>
 </header>
-    <main class="h-auto">
-        <!-- banner falta setar um texto pra cada item--> 
+    <main class="h-auto"> 
         <section >
             <div class="row">
                 <div class="col-12">
