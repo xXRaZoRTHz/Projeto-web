@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -96,72 +99,72 @@
 </header>
     <main>
         <section>
-            <div class="row">                  
-                    <div class="col-md-3">
-                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <h2 class="navbar-toggler" style="border: 1px solid white;">
-                                Seus Animais
-                            </h2>
-                            <div class="collapse navbar-collapse" id="navbarMenu">
-                                <div class="list-group text-center w-100 menu ">
-                                    <a href="perfiluser.html" class="list-group-item list-group-item-action" aria-current="true">
-                                        Dados do perfil
-                                    </a>
-                                    <a href="agendamentos.html" class="list-group-item list-group-item-action ">Agendamentos</a>
-                                    <a href="animais.html" class="list-group-item list-group-item-action active">Animais</a>
-                                    <a href="histcompras.html" class="list-group-item list-group-item-action">Histórico de compras</a>
-                                    <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                <div class="col-md-9">
-                    <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar animal">
-                        <i class="fa-solid fa-plus"></i>
-                        <i class="fa-solid fa-dog"></i>
-                    </button>
-
-                    <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="addAnimalModalLabel">Adicionar Animal</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="form_registo" method="POST" action="Sys/validacaoAnimal.php">
-                                        <div class="mb-3">
-                                            <label for="nomeani" class="form-label">Nome do Animal</label>
-                                            <input type="text" class="form-control" id="nomeani" placeholder="Insira o nome do animal">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="especie" class="form-label">Espécie</label>
-                                            <select class="form-select" id="especie">
-                                                <option selected>Escolha a espécie</option>
-                                                <option value="1">Cão</option>
-                                                <option value="2">Gato</option>
-                                                <option value="3">Ave</option>
-                                                <option value="4">Réptil</option>
-                                                <option value="5">Roedor</option>
-                                                <option value="6">Coelho</option>
-                                                <option value="7">Equino</option>
-                                                <option value="8">Bovino</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="dateani" class="form-label">Data de Nascimento</label>
-                                            <input type="date" class="form-control" id="dateani">
-                                        </div>
-                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
-                                    </form>
-                                </div>
+            <div class="row">                    
+                <div class="col-md-3">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <h2 class="navbar-toggler" style="border: 1px solid white;">
+                            Agendamentos
+                        </h2>
+                        <div class="collapse navbar-collapse" id="navbarMenu">
+                            <div class="list-group text-center w-100 menu ">
+                                <a href="perfiluser.php" class="list-group-item list-group-item-action">
+                                    Dados do perfil
+                                </a>
+                                <a href="agendamentos.php" class="list-group-item list-group-item-action active" aria-current="true">Agendamentos</a>
+                                <a href="animais.php" class="list-group-item list-group-item-action">Animais</a>
+                                <a href="histcompras.php" class="list-group-item list-group-item-action">Histórico de compras</a>
+                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
                             </div>
                         </div>
-                    </div>
-            </div>
+                    </nav>
+                </div>
+                <div class="col-md-9">
+                    <?php
+
+                        include 'Sys/ligaBD.php';
+                        $query = "
+                            SELECT 
+                                tbl_dimservico.servico as servico_nome,
+                                tbl_factoagendamento.data,
+                                tbl_factoagendamento.hora
+                            FROM 
+                                tbl_factoagendamento
+                            JOIN 
+                                tbl_dimservico
+                            ON 
+                                tbl_factoagendamento.idservico = tbl_dimservico.idservico
+                        ";
+                        $resultado2=mysqli_query($liga,$query);
+                        ?>
+                        <table class="table text-center">
+                            <thead>
+                                <th>Serviço:</th>
+                                <th>Data:</th>
+                                <th>Hora:</th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $resultado = mysqli_query($liga,$query);
+                                    if(mysqli_num_rows($resultado)>0){
+                                    while($row = mysqli_fetch_assoc($resultado)){ ?>
+                                        <tr class="align-center">
+                                            <td><?= $row['servico_nome']; ?></td>
+                                            <td><?= $row['data']; ?></td>
+                                            <td><?= $row['hora']; ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    }else{
+                                        echo "<tr><td class='ps-5' colspan=11>Ainda não há agendamentos</td></tr>";
+                                    }
+                                    mysqli_close($liga);
+                                ?>
+                            </tbody>
+                        </table>
+                </div>
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >

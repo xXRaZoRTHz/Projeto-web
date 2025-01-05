@@ -1,23 +1,10 @@
 <?php
-//conexão
-require_once 'Sys/ligaBD.php';
-
-//sessão
-session_start();
-
-//verificação
-if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
-endif;
-
-//dados
-$id = $_SESSION['id_usuario'];
-$sql = "SELECT * FROM tbl_cliente WHERE idcliente = '$id'";
-$resultado1 = mysqli_query($liga, $sql);
-$dados = mysqli_fetch_array($resultado1);
-mysqli_close($liga);
+    $id = $_GET['id'];
+    include 'Sys/ligaBD.php';
+    $query = "SELECT * FROM tbl_animalcliente WHERE idanimal = $id";
+    $resultado = mysqli_query($liga,$query);
+    $row = mysqli_fetch_assoc($resultado);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -28,7 +15,6 @@ mysqli_close($liga);
     <meta name="description" content="Clínica Veterinária Online">
     <!-- se quiserem adicionar mais keywords, fiquem a vontade -->
     <meta name="keywords" content="clínica veterinária,clínica veterinária em Lisboa,veterinário em Lisboa, atendimento veterinário, consulta veterinária, saúde animal, cuidados com animais, veterinário, vacinação de pets, emergência veterinária, cirurgia veterinária, hospital veterinário, clínica veterinária perto de mim, exames laboratoriais para pets, veterinário especializado, pet shop, cuidados com cães e gatos, exames veterinários, clínica para pets, saúde de cães e gatos, veterinário 24h, atendimento de emergência para animais, consultas veterinárias para cães e gatos">
-
     <meta name="robots" content="follow">
     <title>VetWorld</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -37,7 +23,8 @@ mysqli_close($liga);
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -47,7 +34,7 @@ mysqli_close($liga);
             <!-- Navbar -->
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-expand-lg">
-                    <div class="text-center navbar-brand">
+                    <div class="text-center navbar-brand me-5">
                          <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="logo da clínica VetWorld">
                         </a>
@@ -62,19 +49,19 @@ mysqli_close($liga);
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav gap-5">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="servicos.html">Serviços</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Agende Agora</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Serviços</a>
+                                <a class="nav-link" href="#contactos">Contactos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contatos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Fale conosco</a>
+                                <a class="nav-link" href="faq.html">Fale conosco</a>
                             </li>
                             <li class="nav-item">
                                 <div class="btn-group" role="group">
@@ -99,13 +86,13 @@ mysqli_close($liga);
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="">
+                    <a href="carrinho.html">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="Carrinho">
                     </a>
                     <p class="mt-2">Carrinho</p>
                 </div>
                 <div class="text-center">
-                    <a href="">
+                    <a href="login.html">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="Login">
                     </a>
                     <p class="mt-2">Login</p>
@@ -114,48 +101,46 @@ mysqli_close($liga);
         </div>
     </section>
 </header>
-    <main>
-        <section>
-            <div class="row">          
-                <div class="col-md-3">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <h2 class="navbar-toggler" style="border: 1px solid white;">
-                            Dados do perfil
-                        </h2>
-                        <div class="collapse navbar-collapse" id="navbarMenu">
-                            <div class="list-group text-center w-100 menu ">
-                                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                                    Dados do perfil
-                                </a>
-                                <a href="agendamentos.php" class="list-group-item list-group-item-action">Agendamentos</a>
-                                <a href="animais.php" class="list-group-item list-group-item-action">Animais</a>
-                                <a href="histcompras.php" class="list-group-item list-group-item-action">Histórico de compras</a>
-                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
+    <main class="h-auto">
+        <!-- banner falta setar um texto pra cada item--> 
+        <section >
+            <div class="row">
+                <div class="col-12">
+                    <div class="title mt-5 ms-md-5 ms-2">
+                        <h1 class="me-4 w-100 ">Editar animal</h1>
+                        <span class="linhaTitle2 me-4" style="width: 300%;"></span>
+                    </div>
+                    
+                    <form id="form_registo" method="POST" action="Sys/atualizaDadosAni.php">
+                        <div class="row mt-5">
+                            <div class="col-md-6 col-sm-12">
+                                <label for="nomeani" class="form-label"><h3>Nome:</h3></label>
+                                <input type="text" class="form-control" placeholder="Digite o nome do animal" name="ctx_nomeani" value="<?=$row['nome']; ?>" id="nomeani" required>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="animal" class="form-label"><h3>Selecione a espécie</h3></label>
+                                <select class="form-select" aria-label="Seleção de espécie" name="ctx_especie" id="especie" required>
+                                    <option>Escolha a espécie</option>
+                                    <option value="1">Cão</option>
+                                    <option value="2">Gato</option>
+                                    <option value="3">Ave</option>
+                                    <option value="4">Réptil</option>
+                                    <option value="5">Roedor</option>
+                                    <option value="6">Coelho</option>
+                                    <option value="7">Equino</option>
+                                    <option value="8">Bovino</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label for="date" class="form-label" aria-label="Selecione a data"><h3>Data de nascimento</h3></label>
+                                <input class="form-control w-25" type="date" name="ctx_dataani" id="dateani" value="<?=$row['datanasc']; ?>" required>
                             </div>
                         </div>
-                    </nav>
+                        <input type="hidden" name="ctx_idanimal" value="<?= $row['idanimal']; ?>">
+                        <input type="submit" class="btn btn-primary botao mt-5 mb-5" value="Salvar">
+                    </form>
+                    
                 </div>
-                
-                <div class="col-md-9">
-                <?php
-
-                    include 'Sys/ligaBD.php';
-                    $query = "
-                        SELECT * FROM tbl_cliente
-                    ";
-                    $resultado=mysqli_query($liga,$query);
-                    $row = mysqli_fetch_assoc($resultado);?>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><p> <strong>Nome do utilizador:</strong> <?php echo($row['nome']);  ?></p></li>
-                        <li class="list-group-item"><p> <strong>Email:</strong> <?php echo($row['email']); ?></p></li>
-                        <li class="list-group-item"><p> <strong>Telefone:</strong> <?php echo($row['telefone']); ?></p></li>
-                        <li class="list-group-item"><a class="btn btn-primary botao" href="editaUser.php?id=<?=$row['idcliente'];?>">Alterar Dados</a></li>
-                      </ul>
-                </div>
-            </div>
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >

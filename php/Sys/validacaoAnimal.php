@@ -1,25 +1,19 @@
-<?php 
-$nome = $_POST['ctx_nome'];
-$tel = $_POST['ctx_tel'];
-$email = $_POST['ctx_email'];
-$senha = $_POST['ctx_pass'];
-$repass = $_POST['ctx_repass'];
-
-if($senha != $repass){
-    echo "<script> 
-            alert('As Passwords não coincidem!');
-            window.location.href = '../index.php';
-        </script>";
-}else{
-    $query = "INSERT INTO tbl_cliente(nome, telefone, email, senha)
-    VALUES('$nome', '$tel', '$email', '$senha')";
+<?php
+session_start();
+$nomeani = $_POST['ctx_nomeani'];
+$iddono = $_SESSION['id_usuario'];
+$especie = $_POST['ctx_especie'];
+$data = $_POST['ctx_dataani'];
+    $query = "INSERT INTO tbl_animalcliente(nome, idcliente, idtipo, datanasc)
+    VALUES('$nomeani', '$iddono', '$especie', '$data')";
     include 'ligaBD.php';
     if(mysqli_query($liga,$query)){
-        echo "<script>alert('Registo inserido com sucesso!');
-        </script>";
+        $_SESSION["mensagem_sucesso"] = "Utilizador registrado com sucesso!";
+        mysqli_close($liga);
+        header("Location: ../animais.php");
+        exit();
     }else{ 
         echo "<script>alert('Erro:'".mysqli_query_error().");</script>";
+        mysqli_close($liga);
     }
-    mysqli_close($liga);
-}
 ?>
