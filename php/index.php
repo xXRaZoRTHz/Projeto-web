@@ -105,7 +105,7 @@
     <main>
         <!-- banner falta setar um texto pra cada item--> 
         <section >
-            <div id="carouselExampleFade" class="carousel slide carousel-fade img-fluid" data-bs-ride="carousel"">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade img-fluid" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../img/banner/banner2.jpeg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; object-fit: cover;" alt="<?php echo $lang['bannerp1']; ?>">
