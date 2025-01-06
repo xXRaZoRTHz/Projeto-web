@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="index.php">
 
 <?php
-
+require 'Languages/init.php';
 require_once 'Sys/ligaBD.php';
-
-session_start();
 
 if(isset($_POST['btn-entrar'])):
 	$erros = array();
@@ -146,7 +144,7 @@ endif;
         <div class="form-container mb-5">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
               <div class="login">
-                <h1 class="text-center mb-5">Login</h1>
+                <h1 class="text-center mb-5"><?php echo $lang['login']; ?></h1>
                 <?php
                     if(!empty($erros)):
                         foreach($erros as $erro):
@@ -156,7 +154,7 @@ endif;
                 ?>
                 <div class="row g-1 mb-3 ms-5 align-items-center">
                   <div class="col-3">
-                    <label for="inputEmail" class="col-form-label" style="min-width: 200px;">Email</label>
+                    <label for="inputEmail" class="col-form-label" style="min-width: 200px;"><?php echo $lang['email']; ?></label>
                   </div>
                   <div class="col-auto">
                     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com">
@@ -164,19 +162,19 @@ endif;
                 </div>
                 <div class="row g-1 mb-3 ms-5 align-items-center">
                   <div class="col-3">
-                    <label for="Password" class="col-form-label" style="min-width: 100px;">Password</label>
+                    <label for="Password" class="col-form-label" style="min-width: 100px;"><?php echo $lang['password']; ?></label>
                   </div>
                   <div class="col-auto">
-                    <input type="password" name="senha1" id="Password" class="form-control" placeholder="Senha">
+                    <input type="password" name="senha1" id="Password" class="form-control" placeholder="<?php echo $lang['password']; ?>">
                   </div>
                 </div>
                 <div class="mb-3 ms-5">
-                  <a href="redefsenha.html">Esqueci a palavra passe</a>
+                  <a href="redefsenha.html"><?php echo $lang['esquecipass']; ?></a>
                 </div>
                 <div class="mb-3 ms-5">
-                  <label class="form-label">Ainda não é registado? <a href="registar.php">Registar-se</a></label>
+                  <label class="form-label"><?php echo $lang['aindanaoregis']; ?><a href="registar.php"><?php echo $lang['registarse']; ?></a></label>
                 </div>
-                <button type="submit" name="btn-entrar" class="btn btn-primary btnlog">Entrar</button>
+                <button type="submit" name="btn-entrar" class="btn btn-primary btnlog"><?php echo $lang['btnentrar']; ?></button>
               </div>
             </form>
           </div>

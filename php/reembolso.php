@@ -1,3 +1,6 @@
+<?php 
+    require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -94,86 +97,54 @@
     </section>
 </header>
     <main class="h-auto">
-        <!-- CARTÕES -->
         <section>
-            <div class="card-group mt-5">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card h-100">
-                          <img src="../img/eutanasia.jpg" class="card-img-top" alt="Imagem de eutanásia veterinária">
-                          <div class="card-body">
-                            <h5 class="card-title">Eutanásia e Cremação</h5>
-                            <p class="card-text">Procedimento humanitário para aliviar o sofrimento de animais, com opções de cremação individual ou coletiva.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="../img/reproducao.jpg" class="card-img-top" alt="Imagem de reprodução animal">
-                            <div class="card-body">
-                            <h5 class="card-title">Serviços de Reprodução</h5>
-                            <p class="card-text">Inseminação artificial, acompanhamento pré-natal e outros serviços relacionados à reprodução segura.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2">Saber mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Conteúdo dentro dos cartões -->
-            <div class="modal fade" id="modal1"  tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal1">Eutanásia e Cremação</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Descrição:</strong> Procedimento humanitário para aliviar o sofrimento de animais com doenças incuráveis, com opção de cremação individual ou coletiva.</p>
-                            <p><strong>Preço:</strong> 150€</p>
-                            <p><strong class="text-success">Benefícios:</strong> Proporciona um final digno e respeitoso.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="modal fade" id="modal2"  tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal2">Serviços de Reprodução</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Descrição:</strong> Inseminação artificial, diagnóstico de gestação e acompanhamento pré-natal.</p>
-                            <p><strong class="text-success">Benefícios:</strong> Controle reprodutivo e segurança na gestação.</p>
-                            <p><strong>Preço:</strong> 325€</p>
-                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container py-5 inputbox">
+                <h2><?php echo $lang['chave_1_objetivo']; ?></h2>
+                <p><?php echo $lang['chave_objetivo']; ?></p>
+
+                <h2><?php echo $lang['chave_2_cancelamentos']; ?></h2>
+                <h3><?php echo $lang['chave_21_prazos']; ?></h3>
+                <ul>
+                    <li><?php echo $lang['chave_21_prazos_lista_1']; ?></li>
+                    <li><?php echo $lang['chave_21_prazos_lista_2']; ?></li>
+                </ul>
+                <h3><?php echo $lang['chave_22_formas_cancelamento']; ?></h3>
+                <ul>
+                    <li><?php echo $lang['chave_22_formas_cancelamento_lista_1']; ?></li>
+                    <li><?php echo $lang['chave_22_formas_cancelamento_lista_2']; ?></li>
+                </ul>
+
+                <h2><?php echo $lang['chave_3_reembolsos']; ?></h2>
+                <h3><?php echo $lang['chave_31_criterios_reembolso']; ?></h3>
+                <ul>
+                    <li><?php echo $lang['chave_31_criterios_reembolso_lista_1']; ?></li>
+                    <li><?php echo $lang['chave_31_criterios_reembolso_lista_2']; ?></li>
+                </ul>
+                <h3><?php echo $lang['chave_32_prazo_reembolso']; ?></h3>
+                <p><?php echo $lang['chave_32_prazo_reembolso_descricao']; ?></p>
+                <h3><?php echo $lang['chave_33_creditos']; ?></h3>
+                <p><?php echo $lang['chave_33_creditos_descricao']; ?></p>
+
+                <h2><?php echo $lang['chave_4_reagendamentos']; ?></h2>
+                <h3><?php echo $lang['chave_41_sem_custos']; ?></h3>
+                <p><?php echo $lang['chave_41_sem_custos_descricao']; ?></p>
+                <h3><?php echo $lang['chave_42_custos_reagendamento']; ?></h3>
+                <p><?php echo $lang['chave_42_custos_reagendamento_descricao']; ?></p>
+
+                <h2><?php echo $lang['chave_5_forca_maior']; ?></h2>
+                <p><?php echo $lang['chave_5_forca_maior_descricao']; ?></p>
+
+                <h2><?php echo $lang['chave_6_contato']; ?></h2>
+                <p><?php echo $lang['chave_6_contato_descricao']; ?></p>
+                <ul>
+                    <li><?php echo $lang['chave_6_contato_lista_telefone']; ?></li>
+                    <li><?php echo $lang['chave_6_contato_lista_email']; ?></li>
+                </ul>
+
+                <h2><?php echo $lang['chave_7_vigencia']; ?></h2>
+                <p><?php echo $lang['chave_7_vigencia_descricao']; ?></p>
+                    
         </section>
-        <!-- Paginação -->
-         <div class="container ">
-        <nav aria-label="Page navigation example" >
-            <ul class="pagination justify-content-center mt-5">
-              <li class="page-item"><a class="page-link" href="servicos2.html">Anterior</a></li>
-              <li class="page-item"><a class="page-link" href="servicos.html">1</a></li>
-              <li class="page-item"><a class="page-link" href="servicos2.html">2</a></li>
-              <li class="page-item active"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
-            </ul>
-          </nav>
-        </div>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
             <i class="fa-solid fa-circle-arrow-up"></i>
@@ -237,13 +208,4 @@
             behavior: "smooth"
         });
     });
-</script>
-<!-- info dos serviços -->
-<script>
-    const myModal = document.getElementById('myModal')
-    const myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', () => {
-    myInput.focus()
-})
 </script>

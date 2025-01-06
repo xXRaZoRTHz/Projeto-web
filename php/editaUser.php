@@ -1,4 +1,5 @@
-<?php
+<?php 
+    require 'Languages/init.php';
 	session_start();
     $id = $_GET['id'];
     include 'Sys/ligaBD.php';
@@ -116,44 +117,44 @@
 			<form id="form_registo" method="POST" action="Sys/atualizaDados.php?id=<?= $row['idcliente']; ?>">
 				<div class="row mt-5">
 				<div class="col-md-4">
-				<label for="nome" class="form-label">Nome Completo</label>
+				<label for="nome" class="form-label"><?php echo $lang['nomecli']; ?></label>
 				<input type="text" class="form-control" name="ctx_nome" id="nome" required maxlength="50" value="<?=$row['nome']; ?>">
 				<div class="valid-feedback">
-					Válido!
+                <?php echo $lang['valido']; ?>
 				</div>
 				</div>
 				<div class="col-md-4">
-				<label for="email" class="form-label">Email</label>
+				<label for="email" class="form-label"><?php echo $lang['email']; ?></label>
 				<div class="input-group has-validation">
 					<input type="email" class="form-control" name="ctx_email" id="email" aria-describedby="inputGroupPrepend" required maxlength="50" value="<?=$row['email']; ?>">
 					<div class="invalid-feedback">
-					Por favor, selecione um email válido!.
+					<?php echo $lang['validaemail']; ?>
 					</div>
 				</div>
 				</div>
 				<div class="col-md-4">
-				<label for="tel" class="form-label">Telefone</label>
+				<label for="tel" class="form-label"><?php echo $lang['telef']; ?></label>
 				<input type="tel" class="form-control" name="ctx_tel" id="tel" required maxlength="9" value="<?=$row['telefone']; ?>">
 				<div class="invalid-feedback">
-					Por favor, selecione um telefone válido!.
+                <?php echo $lang['validatelef']; ?>
 				</div>
 				</div>
 				<div class="col-md-6">
-				<label for="pass" class="form-label">Password</label>
+				<label for="pass" class="form-label"><?php echo $lang['password']; ?></label>
 				<input type="password" class="form-control" name="ctx_pass" id="pass" required maxlength="50" minlength="8" value="<?=$row['senha']; ?>">
 				<div class="invalid-feedback">
-					A senha deve conter 8 digitos e pelo menos uma letra maiúscula, um número e um símbolo!
+                <?php echo $lang['validapass']; ?>
 				</div>
 				</div>
 				<div class="col-md-6">
-					<label class="form-label">Confirmar a Password</label>
+					<label class="form-label"><?php echo $lang['repass']; ?></label>
 					<input type="password" class="form-control" name="ctx_repass" required maxlength="50" minlength="8">
 					<div class="invalid-feedback">
-					A senha não coincide com a digitada primeiramente!
+					<?php echo $lang['validarepass']; ?>
 					</div>
 				</div>
 				<div class="col-12">
-				<button class="btn btn-primary botao mb-5 mt-5" onclick="validaNIF()" name="btn_regista" type="submit">Registar</button>
+				<button class="btn btn-primary botao mb-5 mt-5" onclick="validaNIF()" name="btn_regista" type="submit"><?php echo $lang['salvar']; ?></button>
 				</div>
 			</div>
         </form>

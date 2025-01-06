@@ -1,3 +1,6 @@
+<?php 
+    require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -96,59 +99,35 @@
     <main class="h-auto">
         <section>
             <div class="container py-5 inputbox">
-                <h2>1. Reembolsos e Cancelamentos - Objetivo</h2>
-                <p>Esta política tem como finalidade estabelecer diretrizes claras e transparentes sobre os procedimentos de cancelamento e reembolso de agendamentos realizados em nossa clínica veterinária, visando o respeito às necessidades dos nossos clientes e a organização interna da clínica.</p>
-
-                <h2>2. Cancelamentos de Agendamentos</h2>
-
-                <h3>2.1. Prazos para Cancelamento:</h3>
+                <h2><?php echo $lang['chave_titulo_principal']; ?></h2>
+                <p><?php echo $lang['chave_sobre_nos_intro']; ?></p>
+                <p><?php echo $lang['chave_sobre_nos_missao']; ?></p>
+            
+                <h2><?php echo $lang['chave_por_que_somos_melhores']; ?></h2>
+                <p><?php echo $lang['chave_sobre_detalhes']; ?></p>
                 <ul>
-                    <li>Cancelamentos realizados com até <strong>24 horas</strong> de antecedência não acarretarão cobranças adicionais e, quando aplicável, o cliente poderá optar por reembolso integral ou reagendamento sem custos.</li>
-                    <li>Cancelamentos realizados com menos de <strong>24 horas</strong> de antecedência estarão sujeitos a cobrança de <strong>50%</strong> do valor do serviço agendado, salvo em casos excepcionais devidamente justificados.</li>
+                    <li>
+                        <strong><?php echo $lang['chave_atendimento_personalizado']; ?></strong> 
+                        <?php echo $lang['chave_atendimento_personalizado_descricao']; ?>
+                    </li>
+                    <li>
+                        <strong><?php echo $lang['chave_tecnologia_ponta']; ?></strong> 
+                        <?php echo $lang['chave_tecnologia_ponta_descricao']; ?>
+                    </li>
+                    <li>
+                        <strong><?php echo $lang['chave_amor_acoes']; ?></strong> 
+                        <?php echo $lang['chave_amor_acoes_descricao']; ?>
+                    </li>
+                    <li>
+                        <strong><?php echo $lang['chave_satisfacao_garantida']; ?></strong> 
+                        <?php echo $lang['chave_satisfacao_garantida_descricao']; ?>
+                    </li>
                 </ul>
-
-                <h3>2.2. Formas de Cancelamento:</h3>
-                <ul>
-                    <li>Telefone</li>
-                    <li>E-mail</li>
-                </ul>
-
-                <h2>3. Reembolsos</h2>
-
-                <h3>3.1. Critérios para Reembolso:</h3>
-                <ul>
-                    <li>Reembolsos integrais serão concedidos para cancelamentos feitos dentro do prazo de <strong>24 horas</strong> antes do horário agendado.</li>
-                    <li>Para cancelamentos fora do prazo, aplica-se a taxa de <strong>50%</strong>, e o restante do valor pago será reembolsado.</li>
-                </ul>
-
-                <h3>3.2. Prazo para Processamento do Reembolso:</h3>
-                <p>O reembolso será processado em até <strong>10 dias úteis</strong> após a solicitação e será realizado pelo mesmo método de pagamento utilizado no agendamento.</p>
-
-                <h3>3.3. Créditos para Futuras Consultas:</h3>
-                <p>Como alternativa ao reembolso, o cliente poderá optar por manter o valor como crédito para futuras consultas ou procedimentos, desde que acordado previamente.</p>
-
-                <h2>4. Reagendamentos</h2>
-
-                <h3>4.1. Sem Custos Adicionais:</h3>
-                <p>Reagendamentos solicitados com até <strong>24 horas</strong> de antecedência serão realizados sem cobranças adicionais.</p>
-
-                <h3>4.2. Custos de Reagendamento:</h3>
-                <p>Para solicitações feitas com menos de <strong>24 horas</strong> de antecedência, poderá ser aplicada uma taxa administrativa de <strong>20%</strong> do valor do serviço.</p>
-
-                <h2>5. Casos de Força Maior</h2>
-                <p>Cancelamentos ou reagendamentos decorrentes de situações de força maior (como emergências médicas, condições climáticas adversas, entre outros) serão analisados individualmente e poderão ser isentos de taxas.</p>
-
-                <h2>6. Contato</h2>
-                <p>Para quaisquer dúvidas ou solicitações relacionadas a esta política, entre em contato conosco por meio de:</p>
-                <ul>
-                    <li>Telefone: <strong>(351) 987 675 456</strong></li>
-                    <li>E-mail: <a href="mailto:geral.vetworld@gmail.com">geral.vetworld@gmail.com</a></li>
-                </ul>
-
-                <h2>7. Vigência da Política</h2>
-                <p>Esta política entra em vigor a partir da data de sua publicação e poderá ser revisada periodicamente para assegurar a melhor experiência aos nossos clientes.</p>
+            
+                <h2><?php echo $lang['chave_novo_padrao']; ?></h2>
+                <p><?php echo $lang['chave_sobre_nos_final']; ?></p>
+                <p><?php echo $lang['chave_convite']; ?></p>
             </div>
-        
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >

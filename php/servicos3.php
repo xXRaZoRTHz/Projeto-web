@@ -1,3 +1,6 @@
+<?php 
+    require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -94,9 +97,86 @@
     </section>
 </header>
     <main class="h-auto">
+        <!-- CARTÕES -->
         <section>
-            <!-- Sobre nois aqui -->
+            <div class="card-group mt-5">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                          <img src="../img/servicos/eutanasia.jpg" class="card-img-top" alt="<?php echo $lang['sECp']; ?>">
+                          <div class="card-body">
+                            <h5 class="card-title"><?php echo $lang['sECt']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sECdc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1"><?php echo $lang['sbtnsaber']; ?></a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="../img/servicos/reproducao.jpg" class="card-img-top" alt="<?php echo $lang['sRep']; ?>">
+                            <div class="card-body">
+                            <h5 class="card-title"><?php echo $lang['sRet']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sRedc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2"><?php echo $lang['sbtnsaber']; ?></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteúdo dentro dos cartões -->
+            <div class="modal fade" id="modal1"  tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal1"><?php echo $lang['sECt']; ?></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss<?php echo $lang['titulo']; ?>="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sECd']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sECb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 150€</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal fade" id="modal2"  tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal2"><?php echo $lang['sRet']; ?></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sRed']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sReb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 325€</p>
+                            <p><strong><?php echo $lang['snota']; ?></strong> <?php echo $lang['snotad']; ?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- Paginação -->
+         <div class="container ">
+        <nav aria-label="Page navigation example" >
+            <ul class="pagination justify-content-center mt-5">
+              <li class="page-item"><a class="page-link" href="servicos2.php">Anterior</a></li>
+              <li class="page-item"><a class="page-link" href="servicos.php">1</a></li>
+              <li class="page-item"><a class="page-link" href="servicos2.php">2</a></li>
+              <li class="page-item active"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+            </ul>
+          </nav>
+        </div>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
             <i class="fa-solid fa-circle-arrow-up"></i>
@@ -160,4 +240,13 @@
             behavior: "smooth"
         });
     });
+</script>
+<!-- info dos serviços -->
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})
 </script>

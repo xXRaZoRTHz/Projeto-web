@@ -1,10 +1,7 @@
-<?php
+<?php 
+require 'Languages/init.php';
 //conexão
 require_once 'Sys/ligaBD.php';
-
-//sessão
-session_start();
-
 //verificação
 if(!isset($_SESSION['logado'])):
     header('Location: login.php');
@@ -123,17 +120,15 @@ mysqli_close($liga);
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <h2 class="navbar-toggler" style="border: 1px solid white;">
-                            Dados do perfil
+                        <?php echo $lang['dadosperfil']; ?>
                         </h2>
                         <div class="collapse navbar-collapse" id="navbarMenu">
                             <div class="list-group text-center w-100 menu ">
-                                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                                    Dados do perfil
-                                </a>
-                                <a href="agendamentos.php" class="list-group-item list-group-item-action">Agendamentos</a>
-                                <a href="animais.php" class="list-group-item list-group-item-action">Animais</a>
-                                <a href="histcompras.php" class="list-group-item list-group-item-action">Histórico de compras</a>
-                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
+                                <a href="perfiluser.php" class="list-group-item list-group-item-action active"><?php echo $lang['dadosperfil']; ?></a>
+                                <a href="agendamentos.php" class="list-group-item list-group-item-action" aria-current="true"><?php echo $lang['agendamentos']; ?></a>
+                                <a href="animais.php" class="list-group-item list-group-item-action"><?php echo $lang['animais']; ?></a>
+                                <a href="histcompras.php" class="list-group-item list-group-item-action"><?php echo $lang['histcompras']; ?></a>
+                                <a href="index.php" class="list-group-item list-group-item-action text-danger"><?php echo $lang['sair']; ?></a>
                             </div>
                         </div>
                     </nav>
@@ -149,10 +144,10 @@ mysqli_close($liga);
                     $resultado=mysqli_query($liga,$query);
                     $row = mysqli_fetch_assoc($resultado);?>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><p> <strong>Nome do utilizador:</strong> <?php echo($row['nome']);  ?></p></li>
-                        <li class="list-group-item"><p> <strong>Email:</strong> <?php echo($row['email']); ?></p></li>
-                        <li class="list-group-item"><p> <strong>Telefone:</strong> <?php echo($row['telefone']); ?></p></li>
-                        <li class="list-group-item"><a class="btn btn-primary botao" href="editaUser.php?id=<?=$row['idcliente'];?>">Alterar Dados</a></li>
+                        <li class="list-group-item"><p> <strong><?php echo $lang['nomeuser']; ?></strong> <?php echo($row['nome']);  ?></p></li>
+                        <li class="list-group-item"><p> <strong><?php echo $lang['email']; ?></strong> <?php echo($row['email']); ?></p></li>
+                        <li class="list-group-item"><p> <strong><?php echo $lang['telef']; ?></strong> <?php echo($row['telefone']); ?></p></li>
+                        <li class="list-group-item"><a class="btn btn-primary botao" href="editaUser.php?id=<?=$row['idcliente'];?>"><?php echo $lang['btneditar']; ?></a></li>
                       </ul>
                 </div>
             </div>

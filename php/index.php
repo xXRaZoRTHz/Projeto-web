@@ -1,5 +1,5 @@
-<?php
-    session_start();
+<?php 
+        require 'Languages/init.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +24,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php 
-        require 'Languages/init.php';
-    ?>
 <header class="sticky-top">
     <section>
         <div class="d-flex justify-content-between align-items-center pt-3 container position-top">
@@ -37,7 +34,7 @@
                          <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="<?php echo $lang['logop']; ?>">
                         </a>
-                    <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
+                    <h1 class="text-white border-text">Vet<span>World</span></h1>
                     </div>
                     
                     <!-- Botão de menu hamburguer-->

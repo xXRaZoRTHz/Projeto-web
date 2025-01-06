@@ -1,3 +1,6 @@
+<?php 
+        require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 

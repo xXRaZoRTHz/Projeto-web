@@ -1,3 +1,6 @@
+<?php 
+    require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -100,61 +103,61 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100">
-                          <img src="../img/parasitas.jpg" class="card-img-top" alt="Imagem de controle de parasitas">
+                          <img src="../img/servicos/parasitas.jpg" class="card-img-top" alt="<?php echo $lang['sCPp']; ?>">
                           <div class="card-body">
-                            <h5 class="card-title">Controle de Parasitas</h5>
-                            <p class="card-text">Aplicação de antipulgas, carrapaticidas e vermífugos para proteger o animal contra parasitas.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1">Saber mais</a>
+                            <h5 class="card-title"><?php echo $lang['sCPt']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sCPdc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal1"><?php echo $lang['sbtnsaber']; ?></a>
                           </div>
                         </div>
                       </div>
                       <div class="col">
                         <div class="card h-100">
-                          <img src="../img/radiologia.jpg" class="card-img-top" alt="Imagem de raio-x veterinário">
+                          <img src="../img/servicos/raio-x.png" class="card-img-top" alt="<?php echo $lang['sRUp']; ?>">
                           <div class="card-body">
-                            <h5 class="card-title">Radiologia e Ultrassonografia</h5>
-                            <p class="card-text">Exames de imagem para diagnóstico preciso de problemas internos ou condições ósseas.</p>
-                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2">Saber mais</a>
+                            <h5 class="card-title"><?php echo $lang['sRUt']; ?></h5>
+                            <p class="card-text"><?php echo $lang['sRUdc']; ?></p>
+                            <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal2"><?php echo $lang['sbtnsaber']; ?></a>
                           </div>
                         </div>
                       </div>
                       <div class="col">
                           <div class="card h-100">
-                            <img src="../img/checkup.jpg" class="card-img-top" alt="Imagem de check-up veterinário">
+                            <img src="../img/servicos/checkup.jpg" class="card-img-top" alt="sCDp">
                             <div class="card-body">
-                              <h5 class="card-title">Check-ups Preventivos</h5>
-                              <p class="card-text">Exames regulares para monitorar a saúde do animal e prevenir o desenvolvimento de doenças silenciosas.</p>
-                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal3">Saber mais</a>
+                              <h5 class="card-title"><?php echo $lang['sCDt']; ?></h5>
+                              <p class="card-text"><?php echo $lang['sCDdc']; ?></p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal3"><?php echo $lang['sbtnsaber']; ?></a>
                             </div>
                           </div>
                       </div>
                       <div class="col">
                           <div class="card h-100">
-                              <img src="../img/emergencia.jpg" class="card-img-top" alt="Imagem de atendimento veterinário de emergência">
+                              <img src="../img/servicos/emergencia.jpg" class="card-img-top" alt="<?php echo $lang['sAEp']; ?>">
                               <div class="card-body">
-                              <h5 class="card-title">Atendimento de Emergência</h5>
-                              <p class="card-text">Cuidados rápidos e eficazes para salvar vidas em casos críticos, como acidentes e intoxicações.</p>
-                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal4">Saber mais</a>
+                              <h5 class="card-title"><?php echo $lang['sAEt']; ?></h5>
+                              <p class="card-text"><?php echo $lang['sAEdc']; ?></p>
+                              <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal4"><?php echo $lang['sbtnsaber']; ?></a>
                               </div>
                           </div>
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="../img/internacao.jpg" class="card-img-top" alt="Imagem de internação veterinária">
+                                <img src="../img/servicos/internacao.jpg" class="card-img-top" alt="<?php echo $lang['sInp']; ?>">
                                 <div class="card-body">
-                                <h5 class="card-title">Internação</h5>
-                                <p class="card-text">Monitoramento intensivo e tratamento especializado para animais em recuperação ou com doenças graves.</p>
-                                <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5">Saber mais</a>
+                                <h5 class="card-title"><?php echo $lang['sInt']; ?></h5>
+                                <p class="card-text"><?php echo $lang['sIndc']; ?></p>
+                                <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal5"><?php echo $lang['sbtnsaber']; ?></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                            <img src="../img/odontologia.jpg" class="card-img-top" alt="Imagem de odontologia veterinária">
+                            <img src="../img/servicos/odontologia.jpg" class="card-img-top" alt="<?php echo $lang['sOVp']; ?>">
                             <div class="card-body">
-                                <h5 class="card-title">Odontologia Veterinária</h5>
-                                <p class="card-text">Limpeza dentária e tratamentos para prevenir doenças bucais e garantir a saúde oral do pet.</p>
-                                <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal6">Saber mais</a>
+                                <h5 class="card-title"><?php echo $lang['sOVt']; ?></h5>
+                                <p class="card-text"><?php echo $lang['sOVdc']; ?></p>
+                                <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#modal6"><?php echo $lang['sbtnsaber']; ?></a>
                             </div>
                             </div>
                         </div>
@@ -165,19 +168,19 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal1">Controle de Parasitas</h1>
+                            <h1 class="modal-title fs-5" id="modal1"><?php echo $lang['sCPt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Administração de medicamentos contra pulgas, carrapatos e vermes. Inclui aplicação tópica, comprimidos ou injeções.</p>
-                            <p><strong>Indicado para:</strong> Animais expostos a ambientes externos ou em contato com outros animais.</p>
-                            <p><strong class="text-success">Benefícios:</strong> Prevenção de anemia, infecções de pele e doenças transmitidas por parasitas.</p>
-                            <p><strong>Preço:</strong> 25€</p>
-                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sCPd']; ?></p>
+                            <p><strong><?php echo $lang['sindicado']; ?></strong> <?php echo $lang['sCPi']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sCPb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 25€</p>
+                            <p><strong><?php echo $lang['snota']; ?></strong> <?php echo $lang['snotad']; ?></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -186,18 +189,18 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal2">Radiologia e Ultrassonografia</h1>
+                            <h1 class="modal-title fs-5" id="modal2"><?php echo $lang['sRUt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Exames de imagem para avaliar ossos, órgãos internos, e identificar condições como fraturas, tumores ou gestação.</p>
-                            <p><strong class="text-success">Benefícios:</strong> Diagnóstico preciso e não invasivo.</p>
-                            <p><strong>Preço:</strong> 125€</p>
-                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sRUd']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> </p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 125€</p>
+                            <p><strong><?php echo $lang['snota']; ?></strong> <?php echo $lang['snotad']; ?></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -206,18 +209,18 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal3">Check-ups Preventivos</h1>
+                            <h1 class="modal-title fs-5" id="modal3"><?php echo $lang['sCDt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Exames regulares para monitorar a saúde do animal, especialmente em idosos ou animais com doenças crônicas.</p>
-                            <p><strong>Inclui:</strong> Consultas, exames de sangue, urina e outras avaliações específicas.</p>
-                            <p><strong class="text-success">Benefícios:</strong> Identificação precoce de doenças silenciosas, como insuficiência renal ou diabetes.</p>
-                            <p><strong>Preço:</strong> 80€.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sCDd']; ?></p>
+                            <p><strong><?php echo $lang['sinclui']; ?></strong> <?php echo $lang['sCDi']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sCDb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 80€.</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -226,17 +229,17 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal4">Atendimento de Emergência</h1>
+                            <h1 class="modal-title fs-5" id="modal4"><?php echo $lang['sAEt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Atendimento imediato para acidentes, intoxicações ou condições críticas, como insuficiência respiratória.</p>
-                            <p><strong class="text-success">Benefícios:</strong> Resposta rápida que pode salvar vidas.</p>
-                            <p><strong>Preço:</strong> 150€, incluindo consulta de emergência.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sAEd']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sAEb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 150€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -245,17 +248,17 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal5">Internação</h1>
+                            <h1 class="modal-title fs-5" id="modal5"><?php echo $lang['sInt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Cuidados intensivos para animais em recuperação de cirurgias ou com doenças graves. Inclui monitoramento constante e administração de medicamentos.</p>
-                            <p><strong>Indicado para:</strong> Casos graves que exigem supervisão 24h.</p>
-                            <p><strong>Preço:</strong> 100€</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sInd']; ?></p>
+                            <p><strong><?php echo $lang['sindicado']; ?></strong> <?php echo $lang['sIni']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 100€</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -264,18 +267,18 @@
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modal6">Odontologia Veterinária</h1>
+                            <h1 class="modal-title fs-5" id="modal6"><?php echo $lang['sOVt']; ?></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p><strong>Descrição:</strong> Serviços odontológicos para tratar e prevenir problemas bucais, como tártaro e doenças periodontais.</p>
-                            <p><strong>Preço:</strong> 75€</p>
-                            <p><strong class="text-success">Benefícios:</strong> Prevenção de mau hálito, dor, e infecções bucais.</p>
-                            <p><strong>Nota:</strong> Requer consulta de avaliação geral.</p>
+                            <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sOVd']; ?></p>
+                            <p><strong class="text-success"><?php echo $lang['sbeneficio']; ?></strong> <?php echo $lang['sOVb']; ?></p>
+                            <p><strong><?php echo $lang['spreco']; ?></strong> 75€</p>
+                            <p><strong><?php echo $lang['snota']; ?></strong> <?php echo $lang['snotad']; ?></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                            <button type="button" class="btn btn-primary">Agendar agora</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar'];  ?></button>
                         </div>
                     </div>
                 </div>
@@ -285,11 +288,11 @@
          <div class="container ">
         <nav aria-label="Page navigation example" >
             <ul class="pagination justify-content-center mt-5">
-              <li class="page-item"><a class="page-link" href="servicos.html">Anterior</a></li>
-              <li class="page-item"><a class="page-link" href="servicos.html">1</a></li>
+              <li class="page-item"><a class="page-link" href="servicos.php">Anterior</a></li>
+              <li class="page-item"><a class="page-link" href="servicos.php">1</a></li>
               <li class="page-item active"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="servicos3.html">3</a></li>
-              <li class="page-item"><a class="page-link" href="servicos3.html">Próximo</a></li>
+              <li class="page-item"><a class="page-link" href="servicos3.php">3</a></li>
+              <li class="page-item"><a class="page-link" href="servicos3.php">Próximo</a></li>
             </ul>
           </nav>
         </div>

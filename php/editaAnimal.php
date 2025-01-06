@@ -1,4 +1,5 @@
-<?php
+<?php 
+    require 'Languages/init.php';
     $id = $_GET['id'];
     include 'Sys/ligaBD.php';
     $query = "SELECT * FROM tbl_animalcliente WHERE idanimal = $id";
@@ -107,37 +108,37 @@
             <div class="row">
                 <div class="col-12">
                     <div class="title mt-5 ms-md-5 ms-2">
-                        <h1 class="me-4 w-100 ">Editar animal</h1>
+                        <h1 class="me-4 w-100 "><?php echo $lang['editaani']; ?></h1>
                         <span class="linhaTitle2 me-4" style="width: 300%;"></span>
                     </div>
                     
                     <form id="form_registo" method="POST" action="Sys/atualizaDadosAni.php">
                         <div class="row mt-5">
                             <div class="col-md-6 col-sm-12">
-                                <label for="nomeani" class="form-label"><h3>Nome:</h3></label>
-                                <input type="text" class="form-control" placeholder="Digite o nome do animal" name="ctx_nomeani" value="<?=$row['nome']; ?>" id="nomeani" required>
+                                <label for="nomeani" class="form-label"><h3><?php echo $lang['nomeani']; ?></h3></label>
+                                <input type="text" class="form-control" placeholder="<?php echo $lang['ctxnomeani']; ?>" name="ctx_nomeani" value="<?=$row['nome']; ?>" id="nomeani" required>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <label for="animal" class="form-label"><h3>Selecione a espécie</h3></label>
                                 <select class="form-select" aria-label="Seleção de espécie" name="ctx_especie" id="especie" required>
-                                    <option>Escolha a espécie</option>
-                                    <option value="1">Cão</option>
-                                    <option value="2">Gato</option>
-                                    <option value="3">Ave</option>
-                                    <option value="4">Réptil</option>
-                                    <option value="5">Roedor</option>
-                                    <option value="6">Coelho</option>
-                                    <option value="7">Equino</option>
-                                    <option value="8">Bovino</option>
+                                    <option selected><?php echo $lang['escolha']; ?></option>
+                                    <option value="1"><?php echo $lang['cao']; ?></option>
+                                    <option value="2"><?php echo $lang['gato']; ?></option>
+                                    <option value="3"><?php echo $lang['ave']; ?></option>
+                                    <option value="4"><?php echo $lang['reptil']; ?></option>
+                                    <option value="5"><?php echo $lang['roedor']; ?></option>
+                                    <option value="6"><?php echo $lang['coelho']; ?></option>
+                                    <option value="7"><?php echo $lang['equino']; ?></option>
+                                    <option value="8"><?php echo $lang['bovino']; ?></option>
                                 </select>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <label for="date" class="form-label" aria-label="Selecione a data"><h3>Data de nascimento</h3></label>
+                                <label for="date" class="form-label" aria-label="Selecione a data"><h3><?php echo $lang['datanasc']; ?></h3></label>
                                 <input class="form-control w-25" type="date" name="ctx_dataani" id="dateani" value="<?=$row['datanasc']; ?>" required>
                             </div>
                         </div>
                         <input type="hidden" name="ctx_idanimal" value="<?= $row['idanimal']; ?>">
-                        <input type="submit" class="btn btn-primary botao mt-5 mb-5" value="Salvar">
+                        <input type="submit" class="btn btn-primary botao mt-5 mb-5" value="<?php echo $lang['salvar']; ?>">
                     </form>
                     
                 </div>

@@ -1,3 +1,6 @@
+<?php 
+    require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -99,9 +102,9 @@
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="infobox">
-                            <h1>Fale Conosco</h1>
+                            <h1><?php echo $lang['faq']; ?></h1>
                             <p>
-                                Tem alguma dúvida ou precisa de ajuda? Entre em contato! Estamos aqui para cuidar do seu pet com todo carinho e atenção que ele merece. Entraremos em contato por email o mais breve possível!
+                            <?php echo $lang['faqinfo']; ?> 
                             </p>
                         </div>
                     </div>
@@ -109,19 +112,19 @@
                         <div class="inputbox">
                             <form action="#" method="POST">
                                 <div class="mb-3">
-                                    <input type="text" name="name" class="form-control" placeholder="Nome" required>
+                                    <input type="text" name="name" class="form-control" placeholder="<?php echo $lang['ctxnome']; ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                    <input type="email" name="email" class="form-control" placeholder="<?php echo $lang['ctxemail']; ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="text" name="subject" class="form-control" placeholder="Assunto" required>
+                                    <input type="text" name="subject" class="form-control" placeholder="<?php echo $lang['ctxassunto']; ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <textarea name="message" class="form-control" placeholder="Mensagem" rows="4" required></textarea>
+                                    <textarea name="message" class="form-control" placeholder="<?php echo $lang['ctxmensagem']; ?>" rows="4" required></textarea>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary botao">Enviar Mensagem</button>
+                                    <button type="submit" class="btn btn-primary botao"><?php echo $lang['btnenviar']; ?></button>
                                 </div>
                             </form>
                         </div>

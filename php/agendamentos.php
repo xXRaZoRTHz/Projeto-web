@@ -1,5 +1,5 @@
 <?php 
-session_start();
+        require 'Languages/init.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -106,17 +106,17 @@ session_start();
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <h2 class="navbar-toggler" style="border: 1px solid white;">
-                            Agendamentos
+                        <?php echo $lang['agendamentos']; ?>
                         </h2>
                         <div class="collapse navbar-collapse" id="navbarMenu">
                             <div class="list-group text-center w-100 menu ">
                                 <a href="perfiluser.php" class="list-group-item list-group-item-action">
-                                    Dados do perfil
+                                <?php echo $lang['dadosperfil']; ?>
                                 </a>
-                                <a href="agendamentos.php" class="list-group-item list-group-item-action active" aria-current="true">Agendamentos</a>
-                                <a href="animais.php" class="list-group-item list-group-item-action">Animais</a>
-                                <a href="histcompras.php" class="list-group-item list-group-item-action">Histórico de compras</a>
-                                <a href="index.php" class="list-group-item list-group-item-action text-danger">Sair</a>
+                                <a href="agendamentos.php" class="list-group-item list-group-item-action active" aria-current="true"><?php echo $lang['agendamentos']; ?></a>
+                                <a href="animais.php" class="list-group-item list-group-item-action"><?php echo $lang['animais']; ?></a>
+                                <a href="histcompras.php" class="list-group-item list-group-item-action"><?php echo $lang['histcompras']; ?></a>
+                                <a href="index.php" class="list-group-item list-group-item-action text-danger"><?php echo $lang['sair']; ?></a>
                             </div>
                         </div>
                     </nav>
@@ -141,9 +141,9 @@ session_start();
                         ?>
                         <table class="table text-center">
                             <thead>
-                                <th>Serviço:</th>
-                                <th>Data:</th>
-                                <th>Hora:</th>
+                                <th><?php echo $lang['servico']; ?></th>
+                                <th><?php echo $lang['data']; ?></th>
+                                <th><?php echo $lang['hora']; ?></th>
                             </thead>
                             <tbody>
                                 <?php
@@ -158,7 +158,7 @@ session_start();
                                     <?php
                                     }
                                     }else{
-                                        echo "<tr><td class='ps-5' colspan=11>Ainda não há agendamentos</td></tr>";
+                                        echo "<tr><td class='ps-5' colspan=11><?php echo $lang['semagenda']; ?></td></tr>";
                                     }
                                     mysqli_close($liga);
                                 ?>

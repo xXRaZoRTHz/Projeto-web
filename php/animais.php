@@ -1,5 +1,5 @@
 <?php 
-session_start();
+    require 'Languages/init.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -106,17 +106,17 @@ session_start();
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <h2 class="navbar-toggler" style="border: 1px solid white;">
-                                Seus Animais
+                            <?php echo $lang['animais']; ?>
                             </h2>
                             <div class="collapse navbar-collapse" id="navbarMenu">
                                 <div class="list-group text-center w-100 menu ">
-                                    <a href="perfiluser.php" class="list-group-item list-group-item-action" aria-current="true">
-                                        Dados do perfil
+                                    <a href="perfiluser.php" class="list-group-item list-group-item-action">
+                                    <?php echo $lang['dadosperfil']; ?>
                                     </a>
-                                    <a href="agendamentos.php" class="list-group-item list-group-item-action ">Agendamentos</a>
-                                    <a href="animais.php" class="list-group-item list-group-item-action active">Animais</a>
-                                    <a href="histcompras.php" class="list-group-item list-group-item-action">Histórico de compras</a>
-                                    <a href="logout.php" class="list-group-item list-group-item-action text-danger">Sair</a>
+                                    <a href="agendamentos.php" class="list-group-item list-group-item-action" aria-current="true"><?php echo $lang['agendamentos']; ?></a>
+                                    <a href="animais.php" class="list-group-item list-group-item-action active"><?php echo $lang['animais']; ?></a>
+                                    <a href="histcompras.php" class="list-group-item list-group-item-action"><?php echo $lang['histcompras']; ?></a>
+                                    <a href="index.php" class="list-group-item list-group-item-action text-danger"><?php echo $lang['sair']; ?></a>
                                 </div>
                             </div>
                         </nav>
@@ -142,10 +142,10 @@ session_start();
                         ?>
                         <table class="table text-center">
                             <thead>
-                            <th>Nome do animal:</th>
-                            <th>Espécie</th>
-                            <th>Data de Nascimento:</th>
-                            <th>Opções</th>
+                            <th><?php echo $lang['nomeani']; ?></th>
+                            <th><?php echo $lang['especie']; ?></th>
+                            <th><?php echo $lang['datanasc']; ?></th>
+                            <th><?php echo $lang['opcoes']; ?></th>
                             </thead>
                             <tbody>
                                 <?php
@@ -164,14 +164,14 @@ session_start();
                                         <?php
                                         }
                                     }else{
-                                        echo "<tr><td colspan=11>Não existem animais registados</td></tr>";
+                                        echo "<tr><td colspan=11><?php echo $lang['semanimal']; ?></td></tr>";
                                     }
                                     mysqli_close($liga);
                                 ?>
                             </tbody>
                         </table>
                         <div class="col-3">
-                        <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar animal">
+                        <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang['btnaddani']; ?>">
                             <i class="fa-solid fa-plus"></i>
                             <i class="fa-solid fa-dog"></i>
                         </button>
@@ -180,34 +180,34 @@ session_start();
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addAnimalModalLabel">Adicionar Animal</h5>
+                                        <h5 class="modal-title" id="addAnimalModalLabel"><?php echo $lang['btnaddani']; ?></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <form id="form_registo" method="POST" action="Sys/validacaoAnimal.php">
                                             <div class="mb-3">
-                                                <label for="nomeani" class="form-label">Nome do Animal</label>
-                                                <input type="text" class="form-control" name="ctx_nomeani" id="nomeani" placeholder="Insira o nome do animal" required maxlength="20">
+                                                <label for="nomeani" class="form-label"><?php echo $lang['nomeani']; ?></label>
+                                                <input type="text" class="form-control" name="ctx_nomeani" id="nomeani" placeholder="<?php echo $lang['ctxnomeani']; ?>" required maxlength="20">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="especie" class="form-label">Espécie</label>
+                                                <label for="especie" class="form-label"><?php echo $lang['especie']; ?></label>
                                                 <select class="form-select" id="especie" name="ctx_especie" required>
-                                                    <option selected>Escolha a espécie</option>
-                                                    <option value="1">Cão</option>
-                                                    <option value="2">Gato</option>
-                                                    <option value="3">Ave</option>
-                                                    <option value="4">Réptil</option>
-                                                    <option value="5">Roedor</option>
-                                                    <option value="6">Coelho</option>
-                                                    <option value="7">Equino</option>
-                                                    <option value="8">Bovino</option>
+                                                    <option selected><?php echo $lang['escolha']; ?></option>
+                                                    <option value="1"><?php echo $lang['cao']; ?></option>
+                                                    <option value="2"><?php echo $lang['gato']; ?></option>
+                                                    <option value="3"><?php echo $lang['ave']; ?></option>
+                                                    <option value="4"><?php echo $lang['reptil']; ?></option>
+                                                    <option value="5"><?php echo $lang['roedor']; ?></option>
+                                                    <option value="6"><?php echo $lang['coelho']; ?></option>
+                                                    <option value="7"><?php echo $lang['equino']; ?></option>
+                                                    <option value="8"><?php echo $lang['bovino']; ?></option>
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="dateani" class="form-label">Data de Nascimento</label>
+                                                <label for="dateani" class="form-label"><?php echo $lang['datanasc']; ?></label>
                                                 <input type="date" class="form-control" id="dataani" name="ctx_dataani" required>
                                             </div>
-                                        <input type="submit" class="btn btn-primary botao" value="Salvar">
+                                        <input type="submit" class="btn btn-primary botao" value="<?php echo $lang['salvar']; ?>">
                                         </form>
                                     </div>
                                 </div>

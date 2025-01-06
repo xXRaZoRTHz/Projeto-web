@@ -5,6 +5,7 @@
 --text: white;
 --boxinfo: #43c1ff;
 --boxinput:#b8e4ff;
+--bgtitle:rgb(37, 164, 164);
 }
 *{
     padding: 0;
@@ -28,6 +29,7 @@ html {
 #contactos {
     scroll-margin-top: 250px;
 }
+
 main{
     height: 2600px;
 }
@@ -41,6 +43,12 @@ main{
 
 .border-text {
     -webkit-text-stroke: 0.5px rgb(63, 51, 189);
+    
+}
+header h1{
+    -webkit-box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
+    box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
 }
 /* aqui são os banners */
 .bannerbox1 {
