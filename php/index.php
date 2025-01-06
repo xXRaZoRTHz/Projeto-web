@@ -76,7 +76,7 @@ if (isset($_SESSION['username'])) {
                                         <li><a class="dropdown-item me-1" href="index.php?lang=en">
                                                 <img src="../img/principais/us.png" alt="<?php echo $lang['usp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['in']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=es">
+                                        <li><a class="dropdown-item" href="index.php?lang=es">
                                                 <img src="../img/principais/es.png" alt="<?php echo $lang['esp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['es']; ?> 
                                             </a></li>
                                         <li><a class="dropdown-item" href="#?lang=fr">
@@ -277,17 +277,16 @@ if (isset($_SESSION['username'])) {
             <div>
                 <nav class="navbar newsl">
                     <div class="container-fluid">
-                        <img src="" alt="">
                         <p class=""><?php echo $lang['newsld']; ?></p>
-                        <form method="POST" class="d-flex" >
-                        <input type="email" name="" id="" placeholder="<?php echo $lang['newsp']; ?>" class="email form-control mx-1" aria-label="Email">
+                        <form method="POST" action="Sys/newsletter.php" class="d-flex" >
+                        <input type="email" name="user_email" id="user_email"" placeholder="<?php echo $lang['newsp']; ?>" class="email form-control mx-1" aria-label="Email">
                         <input class="botao btn btn-primary" type="submit" value="<?php echo $lang['newsbtn']; ?>" >
                       </form>
                     </div>
                   </nav>
             </div>
         </section>
-        <!-- Por que nos escolher hein??????¿ -->
+    <!--Por que nos escolher -->
         <section >
             <div class="seccao container">
                 <h2>Por que nos escolher</h2>
