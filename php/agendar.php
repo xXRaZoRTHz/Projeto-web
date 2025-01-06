@@ -1,8 +1,9 @@
 <?php 
         require 'Languages/init.php';
-        if(!isset($_SESSION['logado'])):
-            header('Location: login.php');
-        endif;
+        if (!isset($_SESSION['id_usuario'])) {
+            echo "<script>alert('Erro: Usuário não autenticado. Faça login novamente.');</script>";
+            header("Location: ../login.php"); // Altere para o caminho da página de login
+        exit();}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -73,16 +74,13 @@ if (isset($_SESSION['username'])) {
                                         <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item me-1" href="#?lang=en">
+                                        <li><a class="dropdown-item me-1" href="index.php?lang=en">
                                                 <img src="../img/principais/us.png" alt="<?php echo $lang['usp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['in']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=es">
+                                        <li><a class="dropdown-item" href="index.php?lang=es">
                                                 <img src="../img/principais/es.png" alt="<?php echo $lang['esp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['es']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=fr">
-                                                <img src="../img/principais/Flag_of_France.png" alt="<?php echo $lang['frp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['fr']; ?>
-                                            </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=pt">
+                                        <li><a class="dropdown-item" href="index.php?lang=pt">
                                                 <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['pt']; ?>
                                             </a></li>
                                     </ul>
@@ -127,6 +125,19 @@ if (isset($_SESSION['username'])) {
                         <h1 class="me-4 w-100">Agende agora</h1>
                         <span class="linhaTitle2 me-4"></span>
                     </div>
+                    <?php
+
+                        include 'Sys/ligaBD.php';
+                        $query = "
+                            SELECT 
+                                tbl_animalcliente.idanimal,
+                                tbl_animalcliente.nome                              
+                            FROM 
+                                tbl_animalcliente";
+                        $resultado=mysqli_query($liga,$query);
+                    ?>
+                        
+                                
                     
                     <form action="">
                         <div class="row mt-5">
@@ -135,53 +146,61 @@ if (isset($_SESSION['username'])) {
                                 <div class="d-flex align-items-center">
                                     <select class="form-select" aria-label="Seleção de Animal">
                                         <option selected>Escolher o animal</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <?php
+                                            $resultado = mysqli_query($liga,$query);
+                                            if(mysqli_num_rows($resultado)>0){
+                                                while($row = mysqli_fetch_assoc($resultado)){ ?>
+                                                    <option value="<?= $row['idanimal']; ?>"><?= $row['nome']; ?></option>
+                                                <?php }
+                                                }else{
+                                                    echo "<tr><td colspan='11'>" . $lang['semanimal'] . "</td></tr>";
+                                                }
+                                            mysqli_close($liga);
+                                            ?>
                                     </select>
                                     <!-- ADICIONAR ANIMAL -->
-                                    <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar animal">
+                                    <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang['btnaddani']; ?>">
                                         <i class="fa-solid fa-plus"></i>
                                         <i class="fa-solid fa-dog"></i>
                                     </button>
 
-                                    <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="addAnimalModalLabel">Adicionar Animal</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
-                                                        <div class="mb-3">
-                                                            <label for="nomeani" class="form-label" require>Nome do Animal</label>
-                                                            <input type="text" class="form-control" id="nomeani" placeholder="Insira o nome do animal">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="especie" class="form-label">Espécie</label>
-                                                            <select class="form-select" id="especie">
-                                                                <option selected>Escolha a espécie</option>
-                                                                <option value="1">Cão</option>
-                                                                <option value="2">Gato</option>
-                                                                <option value="3">Ave</option>
-                                                                <option value="4">Réptil</option>
-                                                                <option value="5">Roedor</option>
-                                                                <option value="6">Coelho</option>
-                                                                <option value="7">Equino</option>
-                                                                <option value="8">Bovino</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="dateani" class="form-label">Data de Nascimento</label>
-                                                            <input type="date" class="form-control" id="dateani">
-                                                        </div>
-                                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addAnimalModalLabel"><?php echo $lang['btnaddani']; ?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
+                                    <div class="modal-body">
+                                        <form id="form_registo" method="POST" action="Sys/validacaoAnimal.php">
+                                            <div class="mb-3">
+                                                <label for="nomeani" class="form-label"><?php echo $lang['nomeani']; ?></label>
+                                                <input type="text" class="form-control" name="ctx_nomeani" id="nomeani" placeholder="<?php echo $lang['ctxnomeani']; ?>" required maxlength="20">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="especie" class="form-label"><?php echo $lang['especie']; ?></label>
+                                                <select class="form-select" id="especie" name="ctx_especie" required>
+                                                    <option selected><?php echo $lang['escolha']; ?></option>
+                                                    <option value="1"><?php echo $lang['cao']; ?></option>
+                                                    <option value="2"><?php echo $lang['gato']; ?></option>
+                                                    <option value="3"><?php echo $lang['ave']; ?></option>
+                                                    <option value="4"><?php echo $lang['reptil']; ?></option>
+                                                    <option value="5"><?php echo $lang['roedor']; ?></option>
+                                                    <option value="6"><?php echo $lang['coelho']; ?></option>
+                                                    <option value="7"><?php echo $lang['equino']; ?></option>
+                                                    <option value="8"><?php echo $lang['bovino']; ?></option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="dateani" class="form-label"><?php echo $lang['datanasc']; ?></label>
+                                                <input type="date" class="form-control" id="dataani" name="ctx_dataani" required>
+                                            </div>
+                                        <input type="submit" class="btn btn-primary botao" value="<?php echo $lang['salvar']; ?>">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                                 </div>
                             </div>

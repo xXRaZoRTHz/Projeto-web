@@ -203,7 +203,7 @@ if (isset($_SESSION['username'])) {
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="form_registo" method="POST" action="Sys/validacaoAnimal.php">
+                                        <form id="form_registo" method="POST" action="Sys/validacaoAnimalAg.php">
                                             <div class="mb-3">
                                                 <label for="nomeani" class="form-label"><?php echo $lang['nomeani']; ?></label>
                                                 <input type="text" class="form-control" name="ctx_nomeani" id="nomeani" placeholder="<?php echo $lang['ctxnomeani']; ?>" required maxlength="20">
