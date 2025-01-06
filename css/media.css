@@ -13,7 +13,6 @@
 @media (max-width: 576px) {
     .bannerbox1, .bannerbox2, .bannerbox3 {
         width: 80%; 
-         
         right: 0; 
         left: 0; 
         margin: 0 auto;
@@ -23,22 +22,38 @@
 @media (max-width: 768px) { /* Para telas médias (tablets) */
     .usbox {
         width: 90%; /* Reduz a largura */
-        top: 1600px; /* Ajusta a posição vertical */
+        top: 2505px; /* Ajusta a posição vertical */
         right: 5%; /* Centraliza horizontalmente */
+        left: 5%;
+    }
+    .usimg  {
+        width: 100%;
+    }
+    main{
+        height: 3600px;
+    }
+    .tam{
+        height: 400px;
     }
 }
 
 @media (max-width: 576px) { /* Para telas pequenas (smartphones) */
     .usbox {
         width: 95%; /* Ocupa toda a largura */
-        height: 35%;
-        top: 1735px; /* Aproxima da parte superior */
+        height: 50%;
+        top: 2517px; /* Aproxima da parte superior */
         right: 1px;
         left: 1px;
         margin: 0 auto; /* Certifica centralização */
     }
+    main{
+        height: 3500px;
+    }
+    .tam{
+        height: 400px;
+    }
 
-    .usimg {
-        width: 100%;
+    .usimg  {
+        display: none;
     }
 }

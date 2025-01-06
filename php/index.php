@@ -13,7 +13,10 @@
     <!-- se quiserem adicionar mais keywords, fiquem a vontade -->
     <meta name="keywords" content="clínica veterinária,clínica veterinária em Lisboa,veterinário em Lisboa, atendimento veterinário, consulta veterinária, saúde animal, cuidados com animais, veterinário, vacinação de pets, emergência veterinária, cirurgia veterinária, hospital veterinário, clínica veterinária perto de mim, exames laboratoriais para pets, veterinário especializado, pet shop, cuidados com cães e gatos, exames veterinários, clínica para pets, saúde de cães e gatos, veterinário 24h, atendimento de emergência para animais, consultas veterinárias para cães e gatos">
     <meta name="robots" content="follow">
-    <title>VetWorld</title>
+    <title>VetWorld</title>´
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <link rel="stylesheet" href="../css/media.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../javascript/bootstrap.bundle.min.js">
@@ -25,6 +28,12 @@
 </head>
 <body>
 <header class="sticky-top">
+<?php
+if (isset($_SESSION['username'])) {
+                        $username = htmlspecialchars($_SESSION['username']);
+                    } else {
+                        $username = $lang['login'];
+                    }?>
     <section>
         <div class="d-flex justify-content-between align-items-center pt-3 container position-top">
             <!-- Navbar -->
@@ -34,9 +43,8 @@
                          <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="<?php echo $lang['logop']; ?>">
                         </a>
-                    <h1 class="text-white border-text">Vet<span>World</span></h1>
+                    <h1 class="text-white border-text">Vet<span class="titulo">World</span></h1>
                     </div>
-                    
                     <!-- Botão de menu hamburguer-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -48,16 +56,16 @@
                                 <a class="nav-link" href="index.php"><?php echo $lang['home']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="servicos.html"><?php echo $lang['servicos']; ?></a>
+                                <a class="nav-link" href="servicos.php"><?php echo $lang['servicos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="agendar.html"><?php echo $lang['agende']; ?></a>
+                                <a class="nav-link" href="agendar.php"><?php echo $lang['agende']; ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contactos"><?php echo $lang['contactos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html"><?php echo $lang['faq']; ?></a>
+                                <a class="nav-link" href="faq.php"><?php echo $lang['faq']; ?></a>
                             </li>
                             <li class="nav-item">
                                 <div class="btn-group" role="group">
@@ -88,16 +96,23 @@
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="carrinho.html">
+                    <a href="carrinho.php">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['carp']; ?>">
                     </a>
-                    <p class="mt-2"><?php echo $lang['carrinho']; ?></p>
+                    <p class="mt-2 "><?php echo $lang['carrinho']; ?></p>
                 </div>
                 <div class="text-center">
-                    <a href="login.php">
+                    <?php if (isset($_SESSION['username'])) {?>
+                        <a href="perfiluser.php">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
                     </a>
-                    <p class="mt-2"><?php echo $lang['login']; ?></p>
+                    <?php } else { ?>
+                        <a href="login.php">
+                        <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
+                    </a>
+                    <?php }; ?>
+                    
+                    <p class="mt-2"><?=$username; ?></p>
                 </div>
             </div>
         </div>
@@ -123,7 +138,7 @@
                         <div class="container h-100">
                             <div class=" bannerbox2">
                                 <h2><?php echo $lang['bannerTitle2']; ?></h2>
-                                <p><?php echo $lang['bannerText2']; ?></p>
+                                <p><?php echo $lang['bannerText2']; ?> </p>
                                 <button class="btn btn-primary"><?php echo $lang['bannerButton2']; ?></button>
                             </div>
                         </div>
@@ -132,7 +147,7 @@
                         <img src="../img/banner/vetbanner.jpg" class="img-fluid d-block w-100" style="max-height: 600px; min-height: 263px; ; overflow: hidden;" alt="<?php echo $lang['bannerp3']; ?>">
                         <div class="container h-100">
                             <div class=" bannerbox3">
-                                <h2><?php echo $lang['bannerTitle3']; ?></h2>
+                                <h2><?php echo $lang['bannerTitle3']; ?> </h2>
                                 <p><?php echo $lang['bannerText3']; ?></p>
                                 <button class="btn btn-primary"><?php echo $lang['bannerButton3']; ?></button>
                             </div>
@@ -150,16 +165,15 @@
             </div>
         </section>
         <!--serviços  -->
-        <!-- Aqui falta colocar as imagens dos serviços e estiliza-las -->
         <section >
             <div class="seccao container">
                 <h2><?php echo $lang['servicos']; ?></h2>
             </div>
-            <div class="card-group mt-5 w-75 mx-auto">
+            <div class="card-group mt-5 mx-auto" style="width: 80%;">
                 <div class="row row-cols-1 row-cols-md-3 g-4 ">
                     <div class="col">
                       <div class="card h-100">
-                        <img src="../img/consultas.jpg" class="card-img-top" alt="<?php echo $lang['sAGp']; ?>">
+                        <img src="../img/servicos/consulta.jpg" style="max-height:250px;" class="card-img-top" alt="<?php echo $lang['sAGp']; ?>">
                         <div class="card-body">
                           <h5 class="card-title"><?php echo $lang['sAGt']; ?></h5>
                           <p class="card-text"><?php echo $lang['sAGdc']; ?></p>
@@ -169,7 +183,7 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                        <img src="../img/higiene.jpg" class="card-img-top" alt="<?php echo $lang['sBap']; ?>">
+                        <img src="../img/servicos/banho.jpg" class="card-img-top" alt="<?php echo $lang['sBap']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $lang['sBat']; ?></h5>
                             <p class="card-text"><?php echo $lang['sBadc']; ?></p>
@@ -179,7 +193,7 @@
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                        <img src="../img/vacinacao.jpg" class="card-img-top" alt="<?php echo $lang['sVap']; ?>">
+                        <img src="../img/servicos/vacinacao.jpg" class="card-img-top" alt="<?php echo $lang['sVap']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $lang['sVat']; ?></h5>
                             <p class="card-text"><?php echo $lang['sVadc']; ?></p>
@@ -204,7 +218,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
-                            <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
+                            <button type="button" class="btn btn-primary " onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar']; ?></button>
                         </div>
                     </div>
                 </div>
@@ -223,7 +237,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
-                                <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
+                                <button type="button" class="btn btn-primary " onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -244,13 +258,13 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo $lang['sbtnvoltar']; ?></button>
-                                <button type="button" class="btn btn-primary"><?php echo $lang['sbtnagendar']; ?></button>
+                                <button type="button" class="btn btn-primary " onclick="window.location.href='agendar.php';"><?php echo $lang['sbtnagendar']; ?></button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 text-md-end text-sm-center mt-5 px-5 ">
-                    <button class=" btn btn-primary botao ml-5 "onclick="window.location.href='servicos.html';"><?php echo $lang['sbtnver']; ?></button>
+                    <button class=" btn btn-primary botao ml-5 "onclick="window.location.href='servicos.php';"><?php echo $lang['sbtnver']; ?></button>
                 </div>
             </div>
         </section>
@@ -259,6 +273,7 @@
             <div class="seccao container">
                 <h2><?php echo $lang['newsl']; ?></h2>
             </div>
+
             <div>
                 <nav class="navbar newsl">
                     <div class="container-fluid">
@@ -277,18 +292,18 @@
             <div class="seccao container">
                 <h2>Por que nos escolher</h2>
             </div>
-                <div class="container-fluid">
+                <div class="container-fluid tam">
                     <img src="../img/banner/banner.jpg" class="img-fluid d-block mx-auto usimg" style="max-height: 600px; overflow: hidden; object-fit: cover;" alt=".">
                     <div class="container h-100">
-                        <div class="position-absolute rounded usbox">
-                            <h2>Sobre nois ai, há de ter nossas redes sociais</h2>
-                            <p>LOREM IPSUM</p>
+                        <div class="position-absolute rounded usbox"">
+                            <h2><?php echo $lang['tboxus']; ?></h2>
+                            <p><?php echo $lang['pboxus']; ?></p>
                             <nav  class="nav justify-content-center">
-                                <a class="nav-link" href=""><img src="../img/principais/instagram.png" alt="Nosso Instagram"></a>
-                                <a class="nav-link" href=""><img src="../img/principais/facebook.png" alt="Nosso Facebook"></a>
-                                <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="Nosso Twitter"></a>
-                                <a class="nav-link" href=""><img src="../img/principais/youtube 1.png" alt="Nosso YouTube"></a></nav>
-                            <button class="btn btn-primary botao">é nois!</button>
+                                <a class="nav-link" href=""><img src="../img/principais/instagram.png" alt="<?php echo $lang['pinsta']; ?>"></a>
+                                <a class="nav-link" href=""><img src="../img/principais/facebook.png" alt="<?php echo $lang['pface']; ?>"></a>
+                                <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="<?php echo $lang['ptwait']; ?>"></a>
+                                <a class="nav-link" href=""><img src="../img/principais/youtube 1.png" alt="<?php echo $lang['pyout']; ?>"></a></nav>
+                            <button class="btn btn-primary botao mt-3"><?php echo $lang['btnboxus']; ?></button>
                         </div>
                     </div>
                 </div>
@@ -325,13 +340,13 @@
                     <h5 class="textcolor"><?php echo $lang['info']; ?></h5>
                     <nav class="nav flex-column ">
                         <div>
-                            <a class="nav-link textcolor" href="sobrenos.html"><?php echo $lang['sobrenos']; ?></a>
+                            <a class="nav-link textcolor" href="sobrenos.php"><?php echo $lang['sobrenos']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="faq.html"><?php echo $lang['faq']; ?></a>
+                            <a class="nav-link textcolor" href="faq.php"><?php echo $lang['faq']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="reembolso.html"><?php echo $lang['cancelamento']; ?></a>
+                            <a class="nav-link textcolor" href="reembolso.php"><?php echo $lang['cancelamento']; ?></a>
                         </div>
                         <div class="mt-2 mb-3">
                             <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="<?php echo $lang['livrop']; ?>"></a>

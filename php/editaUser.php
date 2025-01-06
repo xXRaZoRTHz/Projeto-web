@@ -1,6 +1,5 @@
 <?php 
     require 'Languages/init.php';
-	session_start();
     $id = $_GET['id'];
     include 'Sys/ligaBD.php';
     $query = "SELECT * FROM tbl_cliente WHERE idcliente = $id";
@@ -30,10 +29,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php 
-        require 'Languages/init.php';
-    ?>
 <header class="sticky-top">
+<?php
+if (isset($_SESSION['username'])) {
+                        $username = htmlspecialchars($_SESSION['username']);
+                    } else {
+                        $username = $lang['login'];
+                    }?>
     <section>
         <div class="d-flex justify-content-between align-items-center pt-3 container position-top">
             <!-- Navbar -->
@@ -43,9 +45,8 @@
                          <a href="index.php">
                         <img src="../img/principais/logo.png" class="img-fluid" style="max-height: 100px; min-height: 75px;" alt="<?php echo $lang['logop']; ?>">
                         </a>
-                    <h1 class="text-white border-text">Vet<span class="text-info">World</span></h1>
+                    <h1 class="text-white border-text">Vet<span class="titulo">World</span></h1>
                     </div>
-                    
                     <!-- Botão de menu hamburguer-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -57,16 +58,16 @@
                                 <a class="nav-link" href="index.php"><?php echo $lang['home']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="servicos.html"><?php echo $lang['servicos']; ?></a>
+                                <a class="nav-link" href="servicos.php"><?php echo $lang['servicos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="agendar.html"><?php echo $lang['agende']; ?></a>
+                                <a class="nav-link" href="agendar.php"><?php echo $lang['agende']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contactos"><?php echo $lang['contactos']; ?></a>
+                                <a class="nav-link" href="contactos.php"><?php echo $lang['contactos']; ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="faq.html"><?php echo $lang['faq']; ?></a>
+                                <a class="nav-link" href="faq.php"><?php echo $lang['faq']; ?></a>
                             </li>
                             <li class="nav-item">
                                 <div class="btn-group" role="group">
@@ -97,21 +98,29 @@
         <!-- Carrinho e Login -->
             <div class="d-flex gap-4">
                 <div class="text-center">
-                    <a href="carrinho.html">
+                    <a href="carrinho.php">
                         <img src="../img/principais/shopping-cart.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['carp']; ?>">
                     </a>
-                    <p class="mt-2"><?php echo $lang['carrinho']; ?></p>
+                    <p class="mt-2 "><?php echo $lang['carrinho']; ?></p>
                 </div>
                 <div class="text-center">
-                    <a href="login.php">
+                    <?php if (isset($_SESSION['username'])) {?>
+                        <a href="perfiluser.php">
                         <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
                     </a>
-                    <p class="mt-2"><?php echo $lang['login']; ?></p>
+                    <?php } else { ?>
+                        <a href="login.php">
+                        <img src="../img/principais/user.png" class="img-fluid" style="max-width: 50px;" alt="<?php echo $lang['logp']; ?>">
+                    </a>
+                    <?php }; ?>
+                    
+                    <p class="mt-2"><?=$username; ?></p>
                 </div>
             </div>
         </div>
     </section>
 </header>
+
 	<main class="h-auto">
     <div id="registo" style="width:80%;margin-left: 10%;">
 			<form id="form_registo" method="POST" action="Sys/atualizaDados.php?id=<?= $row['idcliente']; ?>">
@@ -133,7 +142,7 @@
 				</div>
 				</div>
 				<div class="col-md-4">
-				<label for="tel" class="form-label"><?php echo $lang['telef']; ?></label>
+				<label for="tel" class="form-label"><?php echo $lang['tel']; ?></label>
 				<input type="tel" class="form-control" name="ctx_tel" id="tel" required maxlength="9" value="<?=$row['telefone']; ?>">
 				<div class="invalid-feedback">
                 <?php echo $lang['validatelef']; ?>
@@ -160,20 +169,20 @@
         </form>
 	</div>
 		</main>
-    <footer class="pt-2 " >
+        <footer class="pt-2 " >
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h5 class="textcolor"><?php echo $lang['info']; ?></h5>
                     <nav class="nav flex-column ">
                         <div>
-                            <a class="nav-link textcolor" href="sobrenos.html"><?php echo $lang['sobrenos']; ?></a>
+                            <a class="nav-link textcolor" href="sobrenos.php"><?php echo $lang['sobrenos']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="faq.html"><?php echo $lang['faq']; ?></a>
+                            <a class="nav-link textcolor" href="faq.php"><?php echo $lang['faq']; ?></a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="reembolso.html"><?php echo $lang['cancelamento']; ?></a>
+                            <a class="nav-link textcolor" href="reembolso.php"><?php echo $lang['cancelamento']; ?></a>
                         </div>
                         <div class="mt-2 mb-3">
                             <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="<?php echo $lang['livrop']; ?>"></a>

@@ -13,12 +13,12 @@
     $mail->Host = 'smtp.gmail.com';          // servidor de smtp da Google
     $mail->SMTPAuth = true;                  // requisição de autenticação
     $mail->SMTPSecure = 'tls';               // modo de segurança da transmissão de dados
-    $mail->Username = '@gmail.com';          // o seu email
-    $mail->Password = 'vossa_password';      // a sua password
+    $mail->Username = 'geral.vetworld@gmail.com';          // o seu email
+    $mail->Password = 'ggwcofguyeiysaoz';      // a sua password
     $mail->Port = 587;                       // porta de comunicação
 
-    $mail->setFrom('@gmail.com', 'Cencal');  // email de proveniência
-    $mail->addAddress('@gmail.com');        // a quem enviamos
+    $mail->setFrom('geral.vetworld@gmail.com', 'VetWorld');  // email de proveniência
+    $mail->addAddress($emaildestino);        // a quem enviamos
     // Opcional: mais de um destinatário
     // $mail->addAddress('fernando@email.com');
 
@@ -28,8 +28,8 @@
 
     $mail->isHTML(true);                                // envio dos dados em formato html
 
-    $mail->Subject = "ocorrencia";                      // assunto do email
-    $mail->Body    = nl2br($descricao);                 // corpo da mensagem
+    $mail->Subject = "Cadastrado na Newsletter com sucesso!";                      // assunto do email
+    $mail->Body    = nl2br("Parabéns! Você se encontra apto agora a obter as melhores promoções de nossos serviços, bem como novidades!");                 // corpo da mensagem
 
     // Opcional: Anexos
     // $mail->AddAttachment("/home/usuario/public_html/documento.pdf", "documento.pdf");

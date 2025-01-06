@@ -31,7 +31,7 @@ html {
 }
 
 main{
-    height: 2600px;
+    height: 2800px;
 }
 .navbar-nav .nav-link {
     color: var(--text);
@@ -45,15 +45,13 @@ main{
     -webkit-text-stroke: 0.5px rgb(63, 51, 189);
     
 }
-header h1{
-    -webkit-box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
-    box-shadow: 1px 32px 48px 13px rgba(0,0,0,0.75);
+.titulo{
+    color: #03f8ef;
 }
 /* aqui são os banners */
 .bannerbox1 {
     background-color: var(--bgbox);
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px; 
     width: 500px;
     text-align: center;
@@ -61,12 +59,12 @@ header h1{
     bottom: 150px;
     right: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: var(--text);
+    color: #333333;
 }
 
 .bannerbox2 {
     background-color: var(--bgbox);
-    padding: 40px;
+    padding: 15px;
     border-radius: 20px; 
     width: 500px;
     text-align: center;
@@ -74,11 +72,11 @@ header h1{
     bottom: 150px;
     left: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: var(--text);
+    color: #333333;
 }
 .bannerbox3 {
     background-color: var(--bgbox);
-    padding: 40px;
+    padding: 5px;
     border-radius: 20px; 
     width: 500px;
     text-align: center;
@@ -86,7 +84,7 @@ header h1{
     bottom: 150px;
     right: 200px;
     border: 2px solid var(--bgstrokebox);
-    color: var(--text);
+    color: #333333;
 }
 /* aqui são os botões do banner */
 .bannerbox1 button{
@@ -161,7 +159,7 @@ box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
     position: absolute; 
     border: 2px solid var(--bgstrokebox);
     color: white;
-    top: 1800px;
+    top: 2000px;
     right: 800px;
 }
 .usimg{
@@ -226,4 +224,8 @@ footer img{
 }
 .form-control {
     border-radius: 10px;
+}
+
+.card-img-top{
+    max-height: 320px;
 }
