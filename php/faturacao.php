@@ -1,3 +1,6 @@
+<?php 
+        require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -116,113 +119,90 @@
     <main>
         <section>
             <div class="position-relative m-4 w-75 mx-auto">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
-                  <div class="progress-bar" style="width: 50%;"></div>
+                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
+                  <div class="progress-bar"></div>
                 </div>
                 <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
+                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">2</button>
                 <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
             </div>
-            <div class="container" >
-            <div class="row">
-                <div class="col-md-9 col-sm-12">
-                    <div class="title mt-5 ms-md-5 ms-2">
-                        <h1 class="w-100">Métodos de pagamento</h1>
-                        <span class="linhaTitle ms-md-3 ms-2"></span>
-                    </div>
-                    <div class="container mt-4">
-                        <div class="accordion" id="paymentAccordion">
-                            <div class="accordion-item mb-5">
-                                <h2 class="accordion-header">
-                                    <label class="accordion-button collapsed radio-label" data-bs-toggle="collapse" data-bs-target="#creditCard">
-                                        <input type="radio" name="paymentOption" class="form-check-input me-2">
-                                        Cartão de Crédito
-                                        <img src="../img/principais/Visa_2021.svg" alt="Visa" class="payment-icon">
-                                    </label>
-                                </h2>
-                                <div id="creditCard" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
-                                    <div class="accordion-body">
-                                        <div class="container mt-4">
-                                            <form>
-                                                <div class="row">
-                                                <div class="mb-3 col-12">
-                                                    <label for="cardName" class="form-label">Nome no cartão</label>
-                                                    <input type="text" class="form-control" id="cardName" placeholder="Introduz o nome do titular do cartão">
-                                                </div>                                
-                                                <div class="col-md-8">
-                                                    <label for="cardNumber" class="form-label">Número do cartão</label>
-                                                    <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="expiryDate" class="form-label">Validade</label>
-                                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA">
-                                                </div>
-                                                <div class="mt-3 col-md-2 col-sm-3">
-                                                    <label for="cvv" class="form-label">CVV</label>
-                                                    <input type="text" class="form-control" id="cvv" placeholder="000">
-                                                </div>
-                                                <div class="form-check mt-3">
-                                                    <input class="form-check-input" type="checkbox" id="saveCard">
-                                                    <label class="form-check-label" for="saveCard">
-                                                        Guardar cartão
-                                                    </label>
-                                                </div>
-                                            </div>
-                                                <!-- Nota -->
-                                                <p class="text-muted mt-3">
-                                                    O pagamento só será efetuado após a revisão da encomenda no passo seguinte.
-                                                </p>
-                                                <button class="btn btn-primary botao" onclick="window.location.href='faturacao.html';">Próximo</button>
-                                            </form>
+            <div class="container mb-5">
+                <div class="row">
+                    <!-- Coluna principal -->
+                    <div class="col-md-9 col-sm-12">
+                        <div class="title mt-5 ms-md-5 ms-2">
+                            <h1><?php echo $lang['tfatura']; ?></h1>
+                            <span class="linhaTitle ms-md-3 ms-2"></span>
+                        </div>
+                        <div class="row">
+                            <form class="row g-3 needs-validation" novalidate>
+                                <div class="col-md-4">
+                                    <label for="nome" class="form-label"><?php echo $lang['nomecli']; ?></label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                    <div class="valid-feedback">
+                                    <?php echo $lang['valido']; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="nif" class="form-label"><?php echo $lang['nif']; ?></label>
+                                    <input type="text" class="form-control" id="nif">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="tel" class="form-label"><?php echo $lang['tel']; ?></label>
+                                    <input type="tel" class="form-control" id="tel" required>
+                                    <div class="invalid-feedback">
+                                    <?php echo $lang['ctxtel']; ?>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="morada" class="form-label"><?php echo $lang['endereco']; ?></label>
+                                    <div class="input-group has-validation">
+                                        <input type="text" class="form-control" id="morada" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                        <?php echo $lang['ctxendereco']; ?>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                
-                            <div class="accordion-item mb-5">
-                                <h2 class="accordion-header">
-                                    <label class="accordion-button collapsed radio-label" data-bs-toggle="collapse" data-bs-target="#mbway">
-                                        <input type="radio" name="paymentOption" class="form-check-input me-2">
-                                        MB WAY
-                                        <img src="../img/principais/MB_WAY.jpg" alt="MB Way" class="payment-icon">
-                                    </label>
-                                </h2>
-                                <div id="mbway" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
-                                    <div class="accordion-body">
-                                        <form action="">
-                                            <p>Após a revisão da encomenda, poderás finalizar o processo de pagamento através da App MB WAY.</p>
-                                            <div class="mb-3 col-6">
-                                                <label for="mbtel" class="form-label">Telefone</label>
-                                                <input type="tel" class="form-control" id="mbtel">
-                                            </div>
-                                            <button class="btn btn-primary botao mt-2" onclick="window.location.href='faturacao.html';">Próximo</button>
-                                        </form>
+                                <div class="col-md-5">
+                                    <label for="cidade" class="form-label"><?php echo $lang['cidade']; ?></label>
+                                    <input type="text" class="form-control" id="cidade" required>
+                                    <div class="invalid-feedback">
+                                    <?php echo $lang['ctxcidade']; ?>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <label for="codigo-postal" class="form-label"><?php echo $lang['cep']; ?></label>
+                                    <input type="text" class="form-control" id="codigo-postal" required>
+                                    <div class="invalid-feedback">
+                                    <?php echo $lang['ctxcep']; ?>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" onclick="window.location.href='metodpag.php';" type="submit"><?php echo $lang['btnprox']; ?></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Coluna lateral -->
+                    <div class="col-md-3 col-sm-12">
+                        <div class="caixa mx-auto">
+                            <div class="nItens">
+                                <span>0 <?php echo $lang['artigo']; ?></span>
+                            </div>
+                            <span class="linha"></span>
+                            <div class="total">
+                                <span><?php echo $lang['total']; ?></span>
+                                <span>0,00€</span>
+                            </div>
+                            <div class="taxas">
+                                <span><?php echo $lang['imposto']; ?></span>
+                                <span> 0,00€</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 text-center">
-                    <div class="caixa mx-auto">
-                        <div class="nItens">
-                            <span>0 artigos</span>
-                            <span>0,00€</span>
-                        </div>
-                        <span class="linha"></span>
-                        <div class="total">
-                            <span>Total</span>
-                            <span>0,00€</span>
-                        </div>
-                        <div class="taxas">
-                            <span>Impostos incluidos </span>
-                            <span> 0,00€</span>
-                        </div>
-                        
-                    </div>
-                </div>
             </div>
             
-        </div>
         </section>
         <!-- Botão do TOP -->
         <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
@@ -288,3 +268,60 @@
         });
     });
 </script>
+<!-- validar o nif -->
+<script>
+    function validaNIF($nif, $ignoreFirst=true) {
+        //Limpamos eventuais espaços a mais
+        $nif=trim($nif);
+        //Verificamos se é numérico e tem comprimento 9
+        if (!is_numeric($nif) || strlen($nif)!=9) {
+            return false;
+        } else {
+            $nifSplit=str_split($nif);
+            //O primeiro digíto tem de ser 1, 2, 3, 5, 6, 8 ou 9
+            //Ou não, se optarmos por ignorar esta "regra"
+            if (
+                in_array($nifSplit[0], array(1, 2, 3, 5, 6, 8, 9))
+                ||
+                $ignoreFirst
+            ) {
+                //Calculamos o dígito de controlo
+                $checkDigit=0;
+                for($i=0; $i<8; $i++) {
+                    $checkDigit+=$nifSplit[$i]*(10-$i-1);
+                }
+                $checkDigit=11-($checkDigit % 11);
+                //Se der 10 então o dígito de controlo tem de ser 0
+                if($checkDigit>=10) $checkDigit=0;
+                //Comparamos com o último dígito
+                if ($checkDigit==$nifSplit[8]) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+    </script>
+    <script>
+        (() => {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+    
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>

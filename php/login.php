@@ -189,7 +189,7 @@ if (isset($_SESSION['username'])) {
                   </div>
                 </div>
                 <div class="mb-3 ms-5">
-                  <a href="redefsenha.html"><?php echo $lang['esquecipass']; ?></a>
+                  <a href="redefsenha.php"><?php echo $lang['esquecipass']; ?></a>
                 </div>
                 <div class="mb-3 ms-5">
                   <label class="form-label"><?php echo $lang['aindanaoregis']; ?><a href="registar.php"><?php echo $lang['registarse']; ?></a></label>

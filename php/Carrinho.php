@@ -1,3 +1,6 @@
+<?php 
+        require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -118,7 +121,7 @@ if (isset($_SESSION['username'])) {
             <div class="row">
                 <div class="col-md-9 col-sm-12">
                     <div class="title mt-5 ms-md-5 ms-2">
-                        <h1 class="me-3">Carrinho</h1>
+                        <h1 class="me-3"><?php echo $lang['carrinho']; ?></h1>
                         <span class="linhaTitle2"></span>
                         </div>
                     <div class="col-8">
@@ -131,19 +134,19 @@ if (isset($_SESSION['username'])) {
                 <div class="col-md-3 col-sm-12">
                     <div class="caixa mx-auto">
                         <div class="nItens">
-                            <span>0 artigos</span>
+                            <span>0 <?php echo $lang['artigo']; ?></span>
                         </div>
                         <span class="linha"></span>
                         <div class="total">
-                            <span>Impostos incluidos</span>
+                            <span><?php echo $lang['imposto']; ?></span>
                             <span>0,00€</span>
                         </div>
                         <div class="taxas">
-                            <span>Total </span>
+                            <span><?php echo $lang['total']; ?> </span>
                             <span> 0,00€</span>
                         </div>
-                        <button class="btn btn-primary botao mt-3 btncomprar" onclick="window.location.href='faturacao.html';">Confirmar compra</button>
-                        <button class="btn btn-primary botao mt-3" onclick="window.location.href='agendar.php';" style="width: 190px;">Agendar mais</button>
+                        <button class="btn btn-primary botao mt-3 btncomprar" onclick="window.location.href='faturacao.php';"><?php echo $lang['btnconfirmcompra']; ?></button>
+                        <button class="btn btn-primary botao mt-3" onclick="window.location.href='agendar.php';" style="width: 190px;"><?php echo $lang['btnagendamais']; ?></button>
                     </div>
                 </div>
             </div>

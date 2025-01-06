@@ -73,7 +73,7 @@ if (isset($_SESSION['username'])) {
                                         <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item me-1" href="#?lang=en">
+                                        <li><a class="dropdown-item me-1" href="index.php?lang=en">
                                                 <img src="../img/principais/us.png" alt="<?php echo $lang['usp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['in']; ?> 
                                             </a></li>
                                         <li><a class="dropdown-item" href="#?lang=es">
@@ -82,7 +82,7 @@ if (isset($_SESSION['username'])) {
                                         <li><a class="dropdown-item" href="#?lang=fr">
                                                 <img src="../img/principais/Flag_of_France.png" alt="<?php echo $lang['frp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['fr']; ?>
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=pt">
+                                        <li><a class="dropdown-item" href="index.php?lang=pt">
                                                 <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['pt']; ?>
                                             </a></li>
                                     </ul>
@@ -129,7 +129,7 @@ if (isset($_SESSION['username'])) {
                             <div class=" bannerbox1">
                                 <h2><?php echo $lang['bannerTitle1']; ?></h2>
                                 <p><?php echo $lang['bannerText1']; ?></p>
-                                <button class="btn btn-primary"><?php echo $lang['bannerButton1']; ?></button>
+                                <button class="btn btn-primary" onclick="window.location.href='agendar.php';"><?php echo $lang['bannerButton1']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ if (isset($_SESSION['username'])) {
                             <div class=" bannerbox2">
                                 <h2><?php echo $lang['bannerTitle2']; ?></h2>
                                 <p><?php echo $lang['bannerText2']; ?> </p>
-                                <button class="btn btn-primary"><?php echo $lang['bannerButton2']; ?></button>
+                                <button class="btn btn-primary" onclick="window.location.href='sobrenos.php';"><?php echo $lang['bannerButton2']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ if (isset($_SESSION['username'])) {
                             <div class=" bannerbox3">
                                 <h2><?php echo $lang['bannerTitle3']; ?> </h2>
                                 <p><?php echo $lang['bannerText3']; ?></p>
-                                <button class="btn btn-primary"><?php echo $lang['bannerButton3']; ?></button>
+                                <button class="btn btn-primary" onclick="window.location.href='servicos.php';"><?php echo $lang['bannerButton3']; ?></button>
                             </div>
                         </div>
                     </div>
@@ -279,7 +279,7 @@ if (isset($_SESSION['username'])) {
                     <div class="container-fluid">
                         <img src="" alt="">
                         <p class=""><?php echo $lang['newsld']; ?></p>
-                        <form class="d-flex" >
+                        <form method="POST" class="d-flex" >
                         <input type="email" name="" id="" placeholder="<?php echo $lang['newsp']; ?>" class="email form-control mx-1" aria-label="Email">
                         <input class="botao btn btn-primary" type="submit" value="<?php echo $lang['newsbtn']; ?>" >
                       </form>
@@ -301,7 +301,7 @@ if (isset($_SESSION['username'])) {
                             <nav  class="nav justify-content-center">
                                 <a class="nav-link" href=""><img src="../img/principais/instagram.png" alt="<?php echo $lang['pinsta']; ?>"></a>
                                 <a class="nav-link" href=""><img src="../img/principais/facebook.png" alt="<?php echo $lang['pface']; ?>"></a>
-                                <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="<?php echo $lang['ptwait']; ?>"></a>
+                                <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="<?php echo $lang['ptwit']; ?>"></a>
                                 <a class="nav-link" href=""><img src="../img/principais/youtube 1.png" alt="<?php echo $lang['pyout']; ?>"></a></nav>
                             <button class="btn btn-primary botao mt-3"><?php echo $lang['btnboxus']; ?></button>
                         </div>

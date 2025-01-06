@@ -149,7 +149,7 @@ if (isset($_SESSION['username'])) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="modal1"><?php echo $lang['sECt']; ?></h1>
-                            <button type="button" class="btn-close" data-bs-dismiss<?php echo $lang['titulo']; ?>="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <p><strong><?php echo $lang['sdescricao']; ?></strong> <?php echo $lang['sECd']; ?></p>

@@ -1,3 +1,6 @@
+<?php 
+        require 'Languages/init.php';
+?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="../javascript/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -112,30 +116,17 @@
             </section>
         </header>
         
-    <main class="h-auto">
-        <section>
-            <div class="seccao container">
-                <h2>Contactos</h2>
+    <main>
+        <form action="">
+            <label for="inputRecEmail" class="form-label"><?php echo $lang['titulo']; ?></label>
+            <div id="emailHelpBlock" class="form-text">
+            <?php echo $lang['notasenha']; ?>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12 mb-5">
-                    <div class="servbox mx-auto img-fluid">
-                        <h5>Telefone: 987 675 456</h5>
-                        <h5>Email: geral.vetworld@gmail.com</h5>
-                        <h5>Endereço: Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</h5>
-                    </div>
-                </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="img-fluid">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3113.327785456777!2d-9.153204785460298!3d38.71028275097347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRua%20das%20Rosas%2C%20N%C2%BA%20125%2C%20Loja%202%201200-345%20Lisboa%2C%20Portugal!5e0!3m2!1spt-PT!2spt!4v1735214179828!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
+            <input type="email" id="inputRecEmail" class="form-control" aria-describedby="emailHelpBlock">
             </div>
-        </section>
-        <!-- Botão do TOP -->
-        <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px;" >
-            <i class="fa-solid fa-circle-arrow-up"></i>
-        </button>
+                <button type="submit" class="btn btn-primary btnlog"><?php echo $lang['btnentrar']; ?></button>
+            </div>
+        </form>
     </main>
     <footer class="pt-2 " >
         <div class="container">
