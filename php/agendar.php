@@ -160,9 +160,9 @@ if (isset($_SESSION['username'])) {
                                     </select>
                                     <!-- ADICIONAR ANIMAL -->
                                     <button type="button" class="btn btn-primary botao ms-2" style="width: 100px;" data-bs-toggle="modal" data-bs-target="#addAnimalModal" data-bs-toggle="tooltip" data-bs-placement="top" title="<?php echo $lang['btnaddani']; ?>">
-                                        <i class="fa-solid fa-plus"></i>
-                                        <i class="fa-solid fa-dog"></i>
-                                    </button>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-dog"></i>
+                        </button>
 
                         <div class="modal fade" id="addAnimalModal" tabindex="-1" aria-labelledby="addAnimalModalLabel" aria-hidden="true">
                             <div class="modal-dialog">

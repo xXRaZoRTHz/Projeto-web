@@ -171,45 +171,44 @@ if (isset($_SESSION['username'])) {
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>Agradecemos por escolher a nossa clínica veterinária. Para garantir a transparência e proteção dos nossos utilizadores e serviços, pedimos que leia atentamente os Termos e Condições antes de efetuar o registo no nosso site. Ao registar-se, concorda em cumprir os seguintes termos:  </p>
-                                <h3>1. Aceitação dos Termos</h3>
-                                <p>Ao criar uma conta no site da Clínica Veterinária, declara que leu, entendeu e concorda com estes Termos e Condições. Caso não concorde com qualquer parte destes termos, não deverá concluir o registo.</p>
-                                <h3>2. Elegibilidade para Registo</h3>
-                                <p>- Apenas utilizadores com idade igual ou superior a 18 anos podem registar-se no site.</p>
-                                <p>- É necessário fornecer informações pessoais precisas, atuais e completas durante o processo de registo.</p>
-                                <h3>3. Uso Permitido</h3>
-                                <p>Ao registar-se no nosso site, compromete-se a:</p>
-                                <p>- Utilizar o site apenas para fins legais e relacionados com os serviços da clínica, como agendamento de consultas, acesso a histórico de tratamentos e pedidos de informações.</p>
-                                <p>- Não partilhar o seu acesso ou informações da conta com terceiros.</p>
-                                <h3>4. Dados Pessoais</h3>
-                                <p>- Os dados fornecidos durante o registo serão tratados de acordo com a nossa <strong>Política de Privacidade</strong>.</p>
-                                <p>- A clínica compromete-se a proteger a sua privacidade e os seus dados pessoais, utilizando-os apenas para gerir os serviços oferecidos.</p>
-                                <p>- É sua responsabilidade manter os dados da conta atualizados.</p>
-                                <h3>5. Responsabilidade do Utilizador</h3>
-                                <p>- O utilizador é responsável por manter a confidencialidade das credenciais de acesso à conta.</p>
-                                <p>- Em caso de uso não autorizado ou suspeita de violação da conta, deve informar imediatamente a clínica.</p>
-                                <h3>6. Serviços Disponíveis</h3>
-                                <p>Após o registo, o utilizador poderá:</p>
-                                <p>- Agendar e gerir consultas para os seus animais de estimação.</p>
-                                <p>- Aceder a informações sobre tratamentos e serviços.</p>
-                                <p>- Receber notificações e atualizações sobre a saúde e bem-estar dos seus animais.</p>
-                                <h3>7. Direitos da Clínica</h3>
-                                <p>Reservamo-nos o direito de:</p>
-                                <p>- Suspender ou encerrar a conta de utilizadores que violem estes Termos e Condições ou utilizem o site de forma inadequada.</p>
-                                <p>- Alterar ou descontinuar temporariamente os serviços disponíveis no site por motivos técnicos ou administrativos.</p>
-                                <h3>8. Limitação de Responsabilidade</h3>
-                                <p>- A clínica não será responsável por danos diretos, indiretos ou incidentais decorrentes do uso do site, incluindo, mas não limitado a, perda de dados ou interrupção de serviços.</p>
-                                <p>- O site é fornecido "tal como está" e pode conter erros ou interrupções temporárias.</p>
-                                <h3>9. Alterações aos Termos</h3>
-                                <p>Podemos atualizar estes Termos e Condições periodicamente. Quaisquer alterações serão notificadas no site. O uso continuado do site após a notificação implica aceitação das alterações.</p>
-                                <h3>10. Resolução de Disputas</h3>
-                                <p>Qualquer disputa relacionada com o uso do site será resolvida de acordo com as leis em vigor em [país/região da clínica], em tribunais competentes.</p>
-                                <h3>11. Contato</h3>
-                                <p>Se tiver dúvidas ou preocupações sobre estes Termos e Condições, pode contactar-nos através de:</p>
-                                <p>- <strong>Email:</strong> geral.vetworld@gmail.com</p>
-                                <p>- <strong>Telefone:</strong> 987 675 456</p>
-                                <p>- <strong>Endereço:</strong> Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal</p>
-                                <p><strong>Ao clicar em "Aceito", confirma que leu e concorda com estes Termos e Condições.</strong></p>
+                            <p><?php echo $lang['agradecimento']; ?></p>
+                            <h3><?php echo $lang['aceitacao_termos']; ?></h3>
+                            <p><?php echo $lang['aceitacao_termos_detalhe']; ?></p>
+                            <h3><?php echo $lang['elegibilidade_registo']; ?></h3>
+                            <p><?php echo $lang['elegibilidade_registo_1']; ?></p>
+                            <p><?php echo $lang['elegibilidade_registo_2']; ?></p>
+                            <h3><?php echo $lang['uso_permitido']; ?></h3>
+                            <p><?php echo $lang['uso_permitido_detalhe']; ?></p>
+                            <p><?php echo $lang['uso_permitido_1']; ?></p>
+                            <p><?php echo $lang['uso_permitido_2']; ?></p>
+                            <h3><?php echo $lang['dados_pessoais']; ?></h3>
+                            <p><?php echo $lang['dados_pessoais_1']; ?></p>
+                            <p><?php echo $lang['dados_pessoais_2']; ?></p>
+                            <p><?php echo $lang['dados_pessoais_3']; ?></p>
+                            <h3><?php echo $lang['responsabilidade_utilizador']; ?></h3>
+                            <p><?php echo $lang['responsabilidade_utilizador_1']; ?></p>
+                            <p><?php echo $lang['responsabilidade_utilizador_2']; ?></p>
+                            <h3><?php echo $lang['servicos_disponiveis']; ?></h3>
+                            <p><?php echo $lang['servicos_disponiveis_1']; ?></p>
+                            <p><?php echo $lang['servicos_disponiveis_2']; ?></p>
+                            <p><?php echo $lang['servicos_disponiveis_3']; ?></p>
+                            <p><?php echo $lang['servicos_disponiveis_4']; ?></p>
+                            <h3><?php echo $lang['direitos_clinica']; ?></h3>
+                            <p><?php echo $lang['direitos_clinica_1']; ?></p>
+                            <p><?php echo $lang['direitos_clinica_2']; ?></p>
+                            <p><?php echo $lang['direitos_clinica_3']; ?></p>
+                            <h3><?php echo $lang['limitacao_responsabilidade']; ?></h3>
+                            <p><?php echo $lang['limitacao_responsabilidade_1']; ?></p>
+                            <p><?php echo $lang['limitacao_responsabilidade_2']; ?></p>
+                            <h3><?php echo $lang['alteracoes_termos']; ?></h3>
+                            <p><?php echo $lang['alteracoes_termos_detalhe']; ?></p>
+                            <h3><?php echo $lang['resolucao_disputas']; ?></h3>
+                            <p><?php echo $lang['resolucao_disputas_detalhe']; ?></p>
+                            <h3><?php echo $lang['contato']; ?></h3>
+                            <p><?php echo $lang['contato_email']; ?></p>
+                            <p><?php echo $lang['contato_telefone']; ?></p>
+                            <p><?php echo $lang['contato_endereco']; ?></p>
+                            <p><?php echo $lang['aceito_texto']; ?></p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

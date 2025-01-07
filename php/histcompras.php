@@ -70,16 +70,13 @@ if (isset($_SESSION['username'])) {
                                         <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item me-1" href="#?lang=en">
+                                        <li><a class="dropdown-item me-1" href="index.php?lang=en">
                                                 <img src="../img/principais/us.png" alt="<?php echo $lang['usp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['in']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=es">
+                                        <li><a class="dropdown-item" href="index.php?lang=es">
                                                 <img src="../img/principais/es.png" alt="<?php echo $lang['esp']; ?>" style="width: 30px; height: 20px;"><?php echo $lang['es']; ?> 
                                             </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=fr">
-                                                <img src="../img/principais/Flag_of_France.png" alt="<?php echo $lang['frp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['fr']; ?>
-                                            </a></li>
-                                        <li><a class="dropdown-item" href="#?lang=pt">
+                                        <li><a class="dropdown-item" href="index.php?lang=pt">
                                                 <img src="../img/principais/pt.png" alt="<?php echo $lang['ptp']; ?>" style="width: 30px; height: 20px;"> <?php echo $lang['pt']; ?>
                                             </a></li>
                                     </ul>
