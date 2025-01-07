@@ -129,7 +129,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                     <div class="col-md-6">
                         <div class="inputbox">
-                            <form action="#" method="POST">
+                            <form action="#" method="POST" netlify>
                                 <div class="mb-3">
                                     <input type="text" name="name" class="form-control" placeholder="<?php echo $lang['ctxnome']; ?>" required>
                                 </div>

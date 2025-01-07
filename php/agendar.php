@@ -2,7 +2,7 @@
         require 'Languages/init.php';
         if (!isset($_SESSION['id_usuario'])) {
             echo "<script>alert('Erro: Usuário não autenticado. Faça login novamente.');</script>";
-            header("Location: ../login.php"); // Altere para o caminho da página de login
+            header("Location: login.php");
         exit();}
 ?>
 <!DOCTYPE html>
