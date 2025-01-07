@@ -1,13 +1,8 @@
 <?php 
         require 'Languages/init.php';
-        if (!isset($_SESSION['id_usuario'])) {
-            echo "<script>alert('Erro: Usuário não autenticado. Faça login novamente.');</script>";
-            header("Location: login.php");
-        exit();}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,91 +111,47 @@ if (isset($_SESSION['username'])) {
         </div>
     </section>
 </header>
-
-    <main class="h-auto"> 
+    <main class="h-auto">
+        <!-- banner falta setar um texto pra cada item--> 
         <section >
-            <div class="row">
+            <div class="row ms-5">
                 <div class="col-12">
                     <div class="title mt-5 ms-md-5 ms-2">
-                        <h1 class="me-4 w-100">Agende agora</h1>
-                        <span class="linhaTitle2 me-4"></span>
+                        <h1 class="me-4 w-100 ">Adicionar animal</h1>
+                        <span class="linhaTitle2 me-4" style="width: 300%;"></span>
                     </div>
-                    <?php
-
-                        include 'Sys/ligaBD.php';
-                        $query = "
-                            SELECT 
-                                tbl_animalcliente.idanimal,
-                                tbl_animalcliente.nome                              
-                            FROM 
-                                tbl_animalcliente";
-                        $resultado=mysqli_query($liga,$query);
-                    ?>
-                        
-                                
                     
-                    <form method="POST" action="Sys/validacao2.php">
-                        <div class="row mt-5">
-                            <div class="col-md-6 col-sm-12">
-                                <label for="animal" class="form-label"><h3>Selecione o animal</h3></label>
-                                <div class="d-flex align-items-center">
-                                    <select class="form-select" name="animal" aria-label="Seleção de Animal">
-                                        <option selected>Escolher o animal</option>
-                                        <?php
-                                            $resultado = mysqli_query($liga,$query);
-                                            if(mysqli_num_rows($resultado)>0){
-                                                while($row = mysqli_fetch_assoc($resultado)){
-                                                    $_SESSION['id_animal'] = $row['idanimal']; ?>
-                                                    <option value="<?= $row['idanimal']; ?>"><?= $row['nome']; ?></option>
-                                                <?php }
-                                                }else{
-                                                    echo "<tr><td colspan='11'>" . $lang['semanimal'] . "</td></tr>";
-                                                }
-                                            
-                                            ?>
-                                    </select>
-                                    
+                    <!-- ADICIONAR ANIMAL -->
+                    
 
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <label for="animal" class="form-label"><h3>Selecione o serviço</h3></label>
-                                <select class="form-select" name="servico" aria-label="Seleção de Serviço">
-                                    <option selected>Escolher o serviço</option>
-                                    <option value="1">Consulta de Avaliação Geral</option>
-                                    <option value="2">Banho</option>
-                                    <option value="3">Tosa</option>
-                                    <option value="4">Controle de Parasitas</option>
-                                    <option value="5">Vacinação</option>
-                                    <option value="6">Exames Laboratoriais</option>
-                                    <option value="7">Castração (Esterilização)</option>
-                                    <option value="8">Cirurgias Gerais</option>
-                                    <option value="9">Check-ups Preventivos</option>
-                                    <option value="10">Radiologia e Ultrassonografia</option>
-                                    <option value="11">Atendimento de Emergência</option>
-                                    <option value="12">Odontologia Veterinária</option>
-                                    <option value="13">Serviços de Reprodução</option>
-                                    <option value="14">Eutanásia e Cremação</option>
-                                    <option value="15">Internação</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <label for="date" class="form-label" aria-label="Selecione a data"><h3>Selecione a data</h3></label>
-                                <div class="d-flex align-items-start">
-                                    <input class="form-control w-25 me-2" type="date" name="date" id="date" min="2025-01-02" max="2025-12-31">
-                                    <p class="text-success">Disponibilidade: <br> Dias úteis de segunda a sexta</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <label for="time" class="form-label" aria-label="Selecione a hora"><h3>Selecione a hora</h3></label>
-                                <div class="d-flex align-items-start">
-                                    <input class="form-control w-25 me-2" type="time" name="time" id="time" min="09:00" max="22:00">
-                                    <p class="text-success">Horários disponíveis:<br> Das 8:00 às 12:00 <br> Das 14:00 às 22:00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" class="btn btn-primary botao mt-5 mb-5 d-block mx-auto" action="Sys/validacao.php" value="Adicionar ao carrinho">
-                    </form>
+                        
+                                        <form id="form_registo" method="POST" action="Sys/validacaoAnimalAg.php">
+                                            <div class="mb-3 col-6">
+                                                <label for="nomeani" class="form-label"><?php echo $lang['nomeani']; ?></label>
+                                                <input type="text" class="form-control" name="ctx_nomeani" id="nomeani" placeholder="<?php echo $lang['ctxnomeani']; ?>" required maxlength="20">
+                                            </div>
+                                            <div class="mb-3 col-3">
+                                                <label for="especie" class="form-label"><?php echo $lang['especie']; ?></label>
+                                                <select class="form-select" id="especie" name="ctx_especie" required>
+                                                    <option selected><?php echo $lang['escolha']; ?></option>
+                                                    <option value="1"><?php echo $lang['cao']; ?></option>
+                                                    <option value="2"><?php echo $lang['gato']; ?></option>
+                                                    <option value="3"><?php echo $lang['ave']; ?></option>
+                                                    <option value="4"><?php echo $lang['reptil']; ?></option>
+                                                    <option value="5"><?php echo $lang['roedor']; ?></option>
+                                                    <option value="6"><?php echo $lang['coelho']; ?></option>
+                                                    <option value="7"><?php echo $lang['equino']; ?></option>
+                                                    <option value="8"><?php echo $lang['bovino']; ?></option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-3">
+                                                <label for="dateani" class="form-label"><?php echo $lang['datanasc']; ?></label>
+                                                <input type="date" class="form-control" id="dataani" name="ctx_dataani" required>
+                                            </div>
+                                        <input type="submit" class="btn btn-primary botao mb-5" value="<?php echo $lang['salvar']; ?>">
+                                        </form>
+                              
+                    
                 </div>
         </section>
         <!-- Botão do TOP -->
@@ -212,30 +163,30 @@ if (isset($_SESSION['username'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h5 class="textcolor"><?php echo $lang['info']; ?></h5>
+                    <h5 class="textcolor">Informações</h5>
                     <nav class="nav flex-column ">
                         <div>
-                            <a class="nav-link textcolor" href="sobrenos.php"><?php echo $lang['sobrenos']; ?></a>
+                            <a class="nav-link textcolor" href="sobrenos.html">Sobre nós</a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="faq.php"><?php echo $lang['faq']; ?></a>
+                            <a class="nav-link textcolor" href="faq.html">Fale conosco</a>
                         </div>
                         <div>
-                            <a class="nav-link textcolor" href="reembolso.php"><?php echo $lang['cancelamento']; ?></a>
+                            <a class="nav-link textcolor" href="reembolso.html">Cancelamentos e reembolsos</a>
                         </div>
                         <div class="mt-2 mb-3">
-                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="<?php echo $lang['livrop']; ?>"></a>
+                            <a class="ms-3" href="https://www.livroreclamacoes.pt/Inicio/"><img class="img-fluid livroimg" src="../img/principais/livro.png" alt="Livro de reclamações"></a>
                         </div>
                     </nav>   
                 </div>
                 <div class="col-md-6 col-sm-12 text-md-end">
-                    <h5 class="mx-md-5 textcolor"><?php echo $lang['metodos']; ?></h5>
-                    <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="ç<?php echo $lang['metodosp']; ?>">
+                    <h5 class="mx-md-5 textcolor">Métodos de pagamento</h5>
+                    <img class="mt-4 img-fluid" src="../img/principais/metodos.png" alt="Métodos de pagamento: MBWay, Multibanco, Paypal, Maestro, MasterCard, Visa">
                 </div>
             </div>
         </div>
         <div class="text-center pb-2 text-white">
-            <p><?php echo $lang['direitos']; ?></p>
+            <p>© 2024 VetWorld. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
@@ -267,8 +218,3 @@ if (isset($_SESSION['username'])) {
         });
     });
 </script>
-<!-- TOOLTIP -->
- <script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
- </script>

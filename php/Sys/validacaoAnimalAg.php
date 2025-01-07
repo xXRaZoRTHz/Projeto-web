@@ -1,4 +1,5 @@
 <?php
+session_start();
 $nomeani = $_POST['ctx_nomeani'];
 $iddono = $_SESSION['id_usuario'];
 $especie = $_POST['ctx_especie'];

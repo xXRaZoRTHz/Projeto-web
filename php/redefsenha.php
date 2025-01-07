@@ -115,7 +115,7 @@
         
     <main>
         <form action="">
-            <label for="inputRecEmail" class="form-label"><?php echo $lang['titulo']; ?></label>
+            <label for="inputRecEmail" class="form-label"><?php echo $lang['redefsenha']; ?></label>
             <div id="emailHelpBlock" class="form-text">
             <?php echo $lang['notasenha']; ?>
             </div>

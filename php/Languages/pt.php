@@ -37,7 +37,7 @@ Não deixe para depois! Agende agora mesmo e tenha a tranquilidade de saber que 
 'contato_email' => '- Email: geral.vetworld@gmail.com',
 'contato_telefone' => '- Telefone: 987 675 456',
 'contato_endereco' => '- Endereço: Rua das Rosas, Nº 125, Loja 2 1200-345 Lisboa, Portugal',
-'aceito_texto' => 'Ao clicar em "Aceito", confirma que leu e concorda com estes Termos e Condições.',
+'aceito_texto' => 'Ao clicar em "Aceito", confirma que leu e concorda com estes Termos e Condições.','redefsenha' => 'Redefinir Senha'
 );
 
 

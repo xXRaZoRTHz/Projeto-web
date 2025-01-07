@@ -300,7 +300,7 @@ if (isset($_SESSION['username'])) {
                                 <a class="nav-link" href=""><img src="../img/principais/facebook.png" alt="<?php echo $lang['pface']; ?>"></a>
                                 <a class="nav-link" href=""><img src="../img/principais/twitter 1.png" alt="<?php echo $lang['ptwit']; ?>"></a>
                                 <a class="nav-link" href=""><img src="../img/principais/youtube 1.png" alt="<?php echo $lang['pyout']; ?>"></a></nav>
-                            <button class="btn btn-primary botao mt-3"><?php echo $lang['btnboxus']; ?></button>
+                            <button class="btn btn-primary botao mt-3" onclick="window.location.href='sobrenos.php';"><?php echo $lang['btnboxus']; ?></button>
                         </div>
                     </div>
                 </div>
